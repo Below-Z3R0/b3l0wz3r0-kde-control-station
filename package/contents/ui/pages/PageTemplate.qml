@@ -25,6 +25,7 @@ Lib.Card {
 
     property string sectionTitle
     property bool customHeader: false
+    property alias extraHeaderItems: extraHeaderItems.data
 
     default property alias content: dataContainer.data
 
@@ -53,7 +54,7 @@ Lib.Card {
         anchors.margins: 5
 
         RowLayout {
-            id:headerActions
+            id: headerActions
 
             Layout.fillWidth: true
             visible: !customHeader
@@ -74,7 +75,13 @@ Lib.Card {
             PlasmaComponents.Label {
                 text: page.sectionTitle
                 font.pixelSize: root.largeFontSize * 1.2
+            }
+
+            Item {
+                id: extraHeaderItems
                 Layout.fillWidth: true
+                Layout.preferredHeight: root.largeFontSize * 2.5
+                visible: extraHeaderItems
             }
 
         }

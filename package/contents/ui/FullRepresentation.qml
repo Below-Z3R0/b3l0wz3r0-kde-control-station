@@ -63,6 +63,11 @@ Item {
         id: brightnessControlPage
     }
 
+    // Bluetooth control Page
+    Pages.BluetoothPage {
+        id: bluetoothPage
+    }
+
     // Main wrapper
     ColumnLayout {
         id: wrapper
