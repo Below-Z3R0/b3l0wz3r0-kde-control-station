@@ -66,42 +66,11 @@ Item {
         id: bluetoothPage
     }
 
-    // Main wrapper
-    ColumnLayout {
+    Loader {
         id: wrapper
-
+        source: "layouts/Default.qml"
+        active: true
+        asynchronous: true
         anchors.fill: parent
-        anchors.margins: 1
-        spacing: 1
-
-        RowLayout {
-            id: header
-            spacing: 1
-            Layout.fillWidth: true
-            anchors.margins: 1
-
-            Components.UserAvatar{}
-            Components.Battery{}
-            Components.SystemActions{}
-        }
-
-        RowLayout {
-            id: sectionA
-
-            spacing: 1
-            anchors.margins: 1
-
-            Layout.preferredHeight: root.sectionHeight
-            Layout.maximumHeight: root.sectionHeight
-            
-            // Network, Bluetooth and Settings Button
-            Components.SectionQuickToggleButtons{}
-
-            // Screen controls section
-            Components.SectionScreenControls{}
-        }
-
-        Components.Volume{}
-        Components.MediaPlayer{}
     }
 }
