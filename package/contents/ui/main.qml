@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import "js/colorType.js" as ColorType
-import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels as KItemModels
 
@@ -75,26 +74,10 @@ PlasmoidItem {
         || Plasmoid.location === PlasmaCore.Types.RightEdge
         || Plasmoid.location === PlasmaCore.Types.BottomEdge
         || Plasmoid.location === PlasmaCore.Types.LeftEdge)
-
-    Plasma5Support.DataSource {
-        id: pmSource
-        engine: "powermanagement"
-        connectedSources: sources
-        function performOperation(what) {
-            var service = serviceForSource("PowerDevil")
-            var operation = service.operationDescription(what)
-            service.startOperationCall(operation)
-        }
-    }
-
-
-    property var battery: pmSource.data["Battery"]
     
     switchHeight: fullRepWidth
     switchWidth: fullRepWidth
     preferredRepresentation: inPanel ? Plasmoid.compactRepresentation : Plasmoid.fullRepresentation
-    fullRepresentation: FullRepresentation {
-        battery: root.battery
-    }
+    fullRepresentation: FullRepresentation { }
     compactRepresentation: CompactRepresentation {}
 }

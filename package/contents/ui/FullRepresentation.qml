@@ -16,8 +16,6 @@ import "js/funcs.js" as Funcs
 
 Item {
     id: fullRep
-
-    property alias battery: mainBatteryWidget.battery
     
     // PROPERTIES
     Layout.preferredWidth: root.fullRepWidth
@@ -83,9 +81,7 @@ Item {
             anchors.margins: 1
 
             Components.UserAvatar{}
-            Components.Battery {
-                id: mainBatteryWidget
-            }
+            Components.Battery{}
             Components.SystemActions{}
         }
 

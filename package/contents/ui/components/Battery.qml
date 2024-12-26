@@ -7,6 +7,7 @@ import org.kde.kquickcontrolsaddons as KQuickAddons
 import org.kde.coreaddons as KCoreAddons
 import org.kde.plasma.workspace.components 2.0
 import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasma5support as Plasma5Support
 
 import "../lib" as Lib
 
@@ -17,7 +18,18 @@ Lib.Card {
     Layout.preferredHeight: root.sectionHeight/3.3
     smallMargins: true
 
-    property var battery
+    Plasma5Support.DataSource {
+        id: pmSource
+        engine: "powermanagement"
+        connectedSources: sources
+        function performOperation(what) {
+            var service = serviceForSource("PowerDevil")
+            var operation = service.operationDescription(what)
+            service.startOperationCall(operation)
+        }
+    }
+
+    property var battery: pmSource.data["Battery"]
 
     RowLayout {
         anchors.fill: parent
