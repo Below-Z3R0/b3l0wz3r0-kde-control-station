@@ -53,6 +53,7 @@ PageTemplate {
         id: buttonsColumn
         anchors.fill: parent
         anchors.margins: root.smallSpacing
+        anchors.bottomMargin: 90
 
         columns: 1
 
@@ -67,6 +68,7 @@ PageTemplate {
                 visible: root.showColorSwitcher
                 Layout.fillWidth: true
                 Layout.preferredHeight: root.sectionHeight / 3
+                isLongButton: true
                 title: name
                 Kirigami.Icon {
                     anchors.fill: parent

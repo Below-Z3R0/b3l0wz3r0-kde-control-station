@@ -41,6 +41,10 @@ ColumnLayout {
         id: brightnessSlider
          Layout.preferredHeight: root.sectionHeight/2
     }
-    Components.Volume{}
-    Components.MediaPlayer{}
+    Components.Volume{
+        Layout.preferredHeight: root.sectionHeight/2
+    }
+    Components.MediaPlayer{
+        Layout.preferredHeight: root.sectionHeight/2
+    }
 }

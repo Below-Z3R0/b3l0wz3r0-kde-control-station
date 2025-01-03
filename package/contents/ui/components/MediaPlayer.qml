@@ -15,7 +15,7 @@ Lib.Card {
     id: mediaPlayer
     visible: root.showMediaPlayer
     Layout.fillWidth: true
-    Layout.preferredHeight: root.sectionHeight/2
+    Layout.fillHeight: true
     
     MouseArea {
         id: mouseArea
