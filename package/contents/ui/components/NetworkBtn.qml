@@ -49,7 +49,7 @@ Lib.CardButton {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
-    
+    heading: isLongButton ? (isWifi ? "Wi-Fi" : isAirplane ? "Airplane mode" : "Network") : ""
     title: network.networkStatus.activeConnections ?  "Connected" : isAirplane ? "On" : "Disconnected" //(isWifi || isWired) ? "Connected" : isAirplane ? "On" : "Disconnected"
     Lib.Icon {
         anchors.fill: parent

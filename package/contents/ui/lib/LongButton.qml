@@ -5,14 +5,10 @@ import QtQuick.Layouts 1.15
 
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.ksvg as KSvg
 
-
-KSvg.FrameSvgItem {
+Card {
     id: button
 
-    imagePath: "widgets/viewitem"
-    prefix: mouseArea.containsMouse ? (mouseArea.pressed ? "selected+hover" : "hover") : "normal"
     Layout.fillWidth: true
     Layout.fillHeight: true
     Layout.rightMargin: root.smallSpacing
