@@ -9,6 +9,10 @@
         <entry name="scale" type="Int">
             <default>100</default>
         </entry>
+        <entry name="layout" type="Int">
+            <label>Layout</label>
+            <default>0</default>
+        </entry>
         <entry name="transparency" type="Bool">
             <default>False</default>
         </entry>

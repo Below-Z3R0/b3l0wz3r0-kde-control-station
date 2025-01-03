@@ -25,6 +25,8 @@ Item {
     Layout.minimumHeight: Layout.preferredHeight
     Layout.maximumHeight: Layout.preferredHeight
     clip: true
+
+    property var layouts : ["layouts/Default.qml", "layouts/ControlCenter.qml"]
     
     // Lists all available network connections
     Components.SectionNetworks{
@@ -68,7 +70,7 @@ Item {
 
     Loader {
         id: wrapper
-        source: "layouts/Default.qml"
+        source: fullRep.layouts[plasmoid.configuration.layout]
         active: true
         asynchronous: true
         anchors.fill: parent

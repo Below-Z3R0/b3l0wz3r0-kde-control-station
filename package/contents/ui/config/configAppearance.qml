@@ -11,6 +11,7 @@ import org.kde.kcmutils as KCM
 
 KCM.SimpleKCM {
     property alias cfg_scale: scale.value
+    property alias cfg_layout: layout.currentIndex
     property alias cfg_transparency: transparency.checked
     property alias cfg_showKDEConnect: showKDEConnect.checked
     property alias cfg_showNightLight: showNightLight.checked
@@ -58,6 +59,17 @@ KCM.SimpleKCM {
             id: scale
             Kirigami.FormData.label: i18n("Scale:")
             from: 0; to: 1000
+        }
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+        ComboBox {
+            id: layout
+            Kirigami.FormData.label: i18n("Layout:")
+            model: [
+                i18n("KDE Control Station (Default)"),
+                i18n("Control Center")
+            ]
         }
 
         Item {

@@ -24,7 +24,7 @@ PlasmoidItem {
     property string generalDarkTheme: preferChangeGlobalTheme ? Plasmoid.configuration.darkGlobalTheme : Plasmoid.configuration.darkTheme
 
     property var scale: Plasmoid.configuration.scale * 1 / 100
-    property int fullRepWidth: 420 * scale
+    property int fullRepWidth: plasmoid.configuration.layout == 0 ? 420 : 380 * scale
     property int fullRepHeight: 380 * scale
     property int sectionHeight: 180 * scale
 
