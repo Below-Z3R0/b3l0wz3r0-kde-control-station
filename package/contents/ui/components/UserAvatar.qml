@@ -12,7 +12,7 @@ import "../lib" as Lib
 Lib.Card {
     id: useraAvatar
 
-    Layout.preferredWidth: (root.fullRepWidth / 3) * 1.9
+    Layout.fillWidth: true
     Layout.preferredHeight: root.sectionHeight/3.3
 
     smallMargins: true

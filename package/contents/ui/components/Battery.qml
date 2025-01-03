@@ -14,8 +14,8 @@ import "../lib" as Lib
 Lib.Card { 
     id: battery
 
-    Layout.fillWidth: true
     Layout.preferredHeight: root.sectionHeight/3.3
+    Layout.preferredWidth: Layout.preferredHeight * 1.7
     smallMargins: true
 
     Plasma5Support.DataSource {
@@ -31,10 +31,12 @@ Lib.Card {
 
     property var battery: pmSource.data["Battery"]
 
+    visible: battery.battery["Has Battery"]
+    
     RowLayout {
         anchors.fill: parent
         anchors.margins: root.mediumSpacing
-        
+        spacing: 0
         clip: true
         
         BatteryIcon {
