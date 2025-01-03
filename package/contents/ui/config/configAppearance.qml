@@ -19,6 +19,9 @@ KCM.SimpleKCM {
     property alias cfg_showVolume: showVolume.checked
     property alias cfg_showBrightness: showBrightness.checked
     property alias cfg_showMediaPlayer: showMediaPlayer.checked
+    property alias cfg_showAvatar: showAvatar.checked
+    property alias cfg_showBattery: showBattery.checked
+    property alias cfg_showSessionActions: showSessionActions.checked
     // property alias cfg_showCmd1: showCmd1.checked
     // property alias cfg_showCmd2: showCmd2.checked
     property alias cfg_showPercentage: showPercentage.checked
@@ -197,6 +200,18 @@ KCM.SimpleKCM {
         CheckBox {
             id: showMediaPlayer
             text: i18n('Media Player')
+        }
+         CheckBox {
+            id: showAvatar
+            text: i18n('User Avatar')
+        }
+        CheckBox {
+            id: showBattery
+            text: i18n('Battery')
+        }
+        CheckBox {
+            id: showSessionActions
+            text: i18n('Session Actions')
         }
     }
 

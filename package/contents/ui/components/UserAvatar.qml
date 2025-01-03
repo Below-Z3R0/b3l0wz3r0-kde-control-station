@@ -15,6 +15,8 @@ Lib.Card {
     Layout.fillWidth: true
     Layout.preferredHeight: root.sectionHeight/3.3
 
+    visible: root.showAvatar
+
     smallMargins: true
 
     KCoreAddons.KUser {

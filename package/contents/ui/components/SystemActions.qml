@@ -18,6 +18,8 @@ Lib.Card {
    Layout.preferredHeight: root.sectionHeight/3.3
 
    property bool showToolTip: false
+
+    visible: root.showSessionActions
  
     PlasmaComponents.ToolTip {
         text: i18n("Power Off")

@@ -80,6 +80,15 @@
         <entry name="showMediaPlayer" type="bool">
             <default>true</default>
         </entry>
+        <entry name="showAvatar" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="showBattery" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="showSessionActions" type="bool">
+            <default>true</default>
+        </entry>
         <!-- <entry name="showCmd1" type="bool">
             <default>false</default>
         </entry>

@@ -31,8 +31,8 @@ Lib.Card {
 
     property var battery: pmSource.data["Battery"]
 
-    visible: battery.battery["Has Battery"]
-    
+    visible: battery.battery["Has Battery"] && root.showBattery
+
     RowLayout {
         anchors.fill: parent
         anchors.margins: root.mediumSpacing

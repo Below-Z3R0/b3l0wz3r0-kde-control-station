@@ -59,6 +59,9 @@ PlasmoidItem {
     property bool showVolume: Plasmoid.configuration.showVolume
     property bool showBrightness: Plasmoid.configuration.showBrightness
     property bool showMediaPlayer: Plasmoid.configuration.showMediaPlayer
+    property bool showAvatar: Plasmoid.configuration.showAvatar
+    property bool showBattery: Plasmoid.configuration.showBattery
+    property bool showSessionActions: Plasmoid.configuration.showSessionActions
     // property bool showCmd1: Plasmoid.configuration.showCmd1
     // property bool showCmd2: Plasmoid.configuration.showCmd2
     property bool showPercentage: Plasmoid.configuration.showPercentage
