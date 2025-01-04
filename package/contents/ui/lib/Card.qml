@@ -63,11 +63,18 @@ Rectangle {
 
     Rectangle {
         id: cardBg; 
+        property color borderColor: root.isDarkTheme ? Qt.lighter(root.themeBgColor, 2.0) : Qt.darker(root.themeBgColor, 1.3)
         color: root.enableTransparency ? 
                 Qt.rgba(root.themeBgColor.r, root.themeBgColor.g, root.themeBgColor.b, root.transparencyLevel/100)
                 : root.themeBgColor
 
-        border.color: root.showBorders ? (root.isDarkTheme ? Qt.lighter(root.themeBgColor, 2.0) : Qt.darker(root.themeBgColor, 1.3)) : "transparent"
+        border.color: {
+            if(root.showBorders) {
+                if(root.enableTransparency) {
+                     return Qt.rgba(cardBg.borderColor.r, cardBg.borderColor.g, cardBg.borderColor.b, 0.7);
+                } else { return root.themeBgColor; }
+            } else { return "transparent"; }
+        }
         anchors.centerIn: shadowContainer
         visible: !isContainer
         width: shadowWidget.width
