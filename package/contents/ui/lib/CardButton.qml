@@ -48,6 +48,7 @@ Card {
             verticalAlignment: Qt.AlignVCenter
             wrapMode: Text.WordWrap
             elide: Text.ElideRight
+            visible: text
         }
     }
     MouseArea {
