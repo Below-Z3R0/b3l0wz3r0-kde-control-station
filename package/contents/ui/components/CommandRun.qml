@@ -10,11 +10,16 @@ import "../lib" as Lib
 import "../js/funcs.js" as Funcs
 
 Lib.CardButton {
+    id: cmdRunButton
     Layout.fillWidth: true
     Layout.fillHeight: true
     property string icon;
     property string command;
     
+    property color normalBgColor: root.enableTransparency ? 
+           Qt.rgba(root.themeBgColor.r, root.themeBgColor.g, root.themeBgColor.b, root.transparencyLevel/100)
+           : root.themeBgColor
+           
     function exec(cmd) {
         executable.connectSource(cmd)
     }
@@ -24,6 +29,14 @@ Lib.CardButton {
         source: icon
     }
     
+    Timer {
+        id: timer
+        interval: 1500; 
+        onTriggered: {
+            cmdRunButton.customBgColor = normalBgColor;
+        }
+    }
+    
     Plasma5Support.DataSource {
         id: executable
         engine: "executable"
@@ -31,6 +44,16 @@ Lib.CardButton {
 
         onNewData: {
             disconnectSource(connectedSources)
+            if(data["exit code"] == 0){
+                timer.running = false;
+                timer.restart();
+                cmdRunButton.customBgColor = Kirigami.Theme.positiveTextColor;
+                timer.running = true;
+                
+            } else {
+                cmdRunButton.customBgColor = Kirigami.Theme.negativeTextColor;
+                timer.running = true;
+            }
         }
     }
     

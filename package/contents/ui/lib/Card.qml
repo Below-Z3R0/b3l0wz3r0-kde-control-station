@@ -22,6 +22,11 @@ Rectangle {
     *******/
     property bool smallMargins: false
 
+    /******
+     This is used to manage widget background color so we can change the color depending on widget status(Command Run) 
+    *******/
+    property alias customBgColor: cardBg.color
+
     property var margins: shadowContainer.margins
     default property alias content: dataContainer.data
     radius: 12
