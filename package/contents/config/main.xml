@@ -89,18 +89,21 @@
         <entry name="showSessionActions" type="bool">
             <default>true</default>
         </entry>
-        <!-- <entry name="showCmd1" type="bool">
+        <entry name="showScreenshot" type="bool">
+            <default>false</default>
+        </entry>
+        <entry name="showCmd1" type="bool">
             <default>false</default>
         </entry>
         <entry name="showCmd2" type="bool">
             <default>false</default>
-        </entry> -->
+        </entry>
         <entry name="showPercentage" type="bool">
             <default>false</default>
         </entry>
         
         <!--      HEHEHE GET RICKROLLED LOL        -->
-        <!-- <entry name="cmdRun1" type="string">
+        <entry name="cmdRun1" type="string">
             <default>xdg-open "https://shattereddisk.github.io/rickroll/rickroll.mp4"</default>
         </entry>
         <entry name="cmdTitle1" type="string">
@@ -117,6 +120,6 @@
         </entry>
         <entry name="cmdIcon2" type="string">
             <default>system-run-symbolic</default>
-        </entry> -->
+        </entry>
     </group>
 </kcfg>

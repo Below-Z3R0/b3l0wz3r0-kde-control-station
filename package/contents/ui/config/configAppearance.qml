@@ -22,22 +22,46 @@ KCM.SimpleKCM {
     property alias cfg_showAvatar: showAvatar.checked
     property alias cfg_showBattery: showBattery.checked
     property alias cfg_showSessionActions: showSessionActions.checked
-    // property alias cfg_showCmd1: showCmd1.checked
-    // property alias cfg_showCmd2: showCmd2.checked
+    property alias cfg_showScreenshot: showScreenshot.checked
+    property alias cfg_showCmd1: showCmd1.checked
+    property alias cfg_showCmd2: showCmd2.checked
     property alias cfg_showPercentage: showPercentage.checked
     property alias cfg_mainIconName: mainIconName.icon.name
-    // property alias cfg_cmdIcon1: cmdIcon1.icon.name
-    // property alias cfg_cmdRun1: cmdRun1.text
-    // property alias cfg_cmdTitle1: cmdTitle1.text
-    // property alias cfg_cmdIcon2: cmdIcon2.icon.name
-    // property alias cfg_cmdRun2: cmdRun2.text
-    // property alias cfg_cmdTitle2: cmdTitle2.text
+    property alias cfg_cmdIcon1: cmdIcon1.icon.name
+    property alias cfg_cmdRun1: cmdRun1.text
+    property alias cfg_cmdTitle1: cmdTitle1.text
+    property alias cfg_cmdIcon2: cmdIcon2.icon.name
+    property alias cfg_cmdRun2: cmdRun2.text
+    property alias cfg_cmdTitle2: cmdTitle2.text
 
     property alias cfg_transparencyLevel: transparencyLevel.value
     property alias cfg_showBorders: showBorders.checked
 
-    property int numChecked: showKDEConnect.checked + showColorSwitcher.checked + showNightLight.checked + showCmd1.checked + showCmd2.checked
-    property int maxNum: 2
+    property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
+    property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 : 2 
+
+
+    function toggleLayoutDefaults(index) {                    
+        showNightLight.checked = true;
+        showColorSwitcher.checked = true;
+        showBrightness.checked = true;
+        showKDEConnect.checked = true;
+
+        showScreenshot.checked = false;
+        showCmd1.checked = false;
+        showCmd2.checked = false;
+
+        switch (index) {
+            case 0:
+                showColorSwitcher.enabled = true;
+                showKDEConnect.enabled = false;
+                break;
+            case 1:
+                showColorSwitcher.enabled = false;
+                showKDEConnect.enabled = true;
+                break;
+        }
+    }
 
     // Used to select icons
     KIconThemes.IconDialog {
@@ -73,6 +97,7 @@ KCM.SimpleKCM {
                 i18n("KDE Control Station (Default)"),
                 i18n("Control Center")
             ]
+            onActivated: toggleLayoutDefaults(index)
         }
 
         Item {
@@ -117,72 +142,77 @@ KCM.SimpleKCM {
         CheckBox {
             id: showNightLight
             text: i18n('Night Light')
-           // enabled: !checked && numChecked < maxNum || checked
+            enabled: !checked && numChecked < maxNum || checked
         }
         CheckBox {
             id: showColorSwitcher
             text: i18n('Color Scheme Switcher')
-           // enabled: !checked && numChecked < maxNum || checked
+            enabled: !checked && numChecked < maxNum || checked
         }
-        // CheckBox {
-        //     id: showCmd1
-        //     text: i18n('Custom Command Block 1')
-        //    // enabled: !checked && numChecked < maxNum || checked
-        // }
-        // Kirigami.FormLayout {
-        //     visible: showCmd1.checked
-        //     TextField {
-        //         id: cmdTitle1
-        //         Kirigami.FormData.label: i18n("Name:")
-        //     }
-        //     TextField {
-        //         id: cmdRun1
-        //         Kirigami.FormData.label: i18n("Command:")
-        //     }
-        //     Button {
-        //         id: cmdIcon1
-        //         Kirigami.FormData.label: i18n("Icon:")
-        //         icon.width: Kirigami.Units.iconSizes.medium
-        //         icon.height: icon.width
-        //         onClicked: {
-        //             iconDialog.open()
-        //             iconDialog.iconObj= cmdIcon1.icon
-        //         }
-        //     }
-        // }
-        // CheckBox {
-        //     id: showCmd2
-        //     text: i18n('Custom Command Block 2')
-        //   //  enabled: !checked && numChecked < maxNum || checked
-        // }
-        // Kirigami.FormLayout {
-        //     visible: showCmd2.checked
-        //     TextField {
-        //         id: cmdTitle2
-        //         Kirigami.FormData.label: i18n("Name:")
-        //     }
-        //     TextField {
-        //         id: cmdRun2
-        //         Kirigami.FormData.label: i18n("Command:")
-        //     }
-        //     Button {
-        //         id: cmdIcon2
-        //         Kirigami.FormData.label: i18n("Icon:")
-        //         icon.width: Kirigami.Units.iconSizes.medium
-        //         icon.height: icon.width
-        //         onClicked: {
-        //             iconDialog.open()
-        //             iconDialog.iconObj= cmdIcon2.icon
-        //         }
-        //     }
-        // }
-        // Label {
-        //     text: i18n("You can enable only 2 toggle buttons at a time.")
-        //     font: Kirigami.Theme.smallestFont
-        //     color: Kirigami.Theme.neutralTextColor
-        //     Layout.fillWidth: true
-        //     wrapMode: Text.Wrap
-        // }
+        CheckBox {
+            id: showScreenshot
+            text: i18n('Screenshot Button')
+            enabled: !checked && numChecked < maxNum || checked
+        }
+        CheckBox {
+            id: showCmd1
+            text: i18n('Custom Command Block 1')
+            enabled: !checked && numChecked < maxNum || checked
+        }
+        Kirigami.FormLayout {
+            visible: showCmd1.checked
+            TextField {
+                id: cmdTitle1
+                Kirigami.FormData.label: i18n("Name:")
+            }
+            TextField {
+                id: cmdRun1
+                Kirigami.FormData.label: i18n("Command:")
+            }
+            Button {
+                id: cmdIcon1
+                Kirigami.FormData.label: i18n("Icon:")
+                icon.width: Kirigami.Units.iconSizes.medium
+                icon.height: icon.width
+                onClicked: {
+                    iconDialog.open()
+                    iconDialog.iconObj= cmdIcon1.icon
+                }
+            }
+        }
+        CheckBox {
+            id: showCmd2
+            text: i18n('Custom Command Block 2')
+            enabled: !checked && numChecked < maxNum || checked
+        }
+        Kirigami.FormLayout {
+            visible: showCmd2.checked
+            TextField {
+                id: cmdTitle2
+                Kirigami.FormData.label: i18n("Name:")
+            }
+            TextField {
+                id: cmdRun2
+                Kirigami.FormData.label: i18n("Command:")
+            }
+            Button {
+                id: cmdIcon2
+                Kirigami.FormData.label: i18n("Icon:")
+                icon.width: Kirigami.Units.iconSizes.medium
+                icon.height: icon.width
+                onClicked: {
+                    iconDialog.open()
+                    iconDialog.iconObj= cmdIcon2.icon
+                }
+            }
+        }
+        Label {
+            text: i18n(`You can enable only ${maxNum} toggle buttons at a time.`)
+            font: Kirigami.Theme.smallestFont
+            color: Kirigami.Theme.neutralTextColor
+            Layout.fillWidth: true
+            wrapMode: Text.Wrap
+        }
 
         Item {
             Kirigami.FormData.isSection: true
