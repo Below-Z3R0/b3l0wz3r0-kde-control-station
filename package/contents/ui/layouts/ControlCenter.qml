@@ -16,6 +16,7 @@ ColumnLayout {
         spacing: 1
         Layout.fillWidth: true
         anchors.margins: 1
+        visible: header.children.length > 0
 
         Components.UserAvatar{}
         Components.Battery {}
@@ -39,7 +40,8 @@ ColumnLayout {
     }
     Components.BrightnessSlider{
         id: brightnessSlider
-         Layout.preferredHeight: root.sectionHeight/2
+        Layout.preferredHeight: root.sectionHeight/2
+        canTogglePage: true
     }
     Components.Volume{
         Layout.preferredHeight: root.sectionHeight/2

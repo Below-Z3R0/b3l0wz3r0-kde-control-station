@@ -16,7 +16,8 @@ ColumnLayout {
         spacing: 1
         Layout.fillWidth: true
         anchors.margins: 1
-
+        visible: header.children.length > 0
+        
         Components.UserAvatar{}
         Components.Battery {
             id: mainBatteryWidget
