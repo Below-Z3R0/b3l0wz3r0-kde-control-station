@@ -28,11 +28,6 @@ Item {
 
     property var layouts : ["layouts/Default.qml", "layouts/ControlCenter.qml"]
     
-    // Lists all available network connections
-    Components.SectionNetworks{
-        id: sectionNetworks
-    }
-
     // System session actions page
     Pages.SystemSessionActionsPage {
         id: systemSessionActionsPage
@@ -66,6 +61,11 @@ Item {
     // Bluetooth control Page
     Pages.BluetoothPage {
         id: bluetoothPage
+    }
+
+    // Network control Page
+    Pages.NetworkPage {
+        id: networkPage
     }
 
     Loader {
