@@ -15,7 +15,9 @@ Lib.Card {
     id: sectionQuickToggleButtons
     Layout.fillWidth: true
     Layout.fillHeight: true
-    isContainer: true
+    flat: true
+    noMargins: true
+    
     // NETWORK
     property var network: network
     Network {

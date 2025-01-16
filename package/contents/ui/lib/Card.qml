@@ -10,22 +10,23 @@ Rectangle {
     id: rectangle
     color: "transparent"
 
-    /*******
-     Container means that is used to group widgets(sections) such as QuickToggleButtons and SectionScreenControls,
-     and it shoud not display a shadow nor background color 
-    ********/
-    property bool isContainer: false
-
     /******
      We need to gain space to display the shadow so we reduce top and bottom margins to avoid cut elements
      in small widgets such as UserAvatar 
     *******/
-    property bool smallMargins: false
-
+    property bool smallTopMargins: false
+    property bool smallBottomMargins: false
+    property bool smallLeftMargins: false
+    property bool smallRightMargins: false
     /******
      This is used to manage widget background color so we can change the color depending on widget status(Command Run) 
     *******/
     property alias customBgColor: cardBg.color
+
+
+    property bool flat: false
+
+    property bool noMargins: false
 
     property var margins: shadowContainer.margins
     default property alias content: dataContainer.data
@@ -33,7 +34,7 @@ Rectangle {
 
     Item {
         id: shadowContainer
-        visible: !isContainer
+        visible: !flat
         
         anchors.fill: parent
         anchors.margins: 0
@@ -81,7 +82,7 @@ Rectangle {
             } else { return "transparent"; }
         }
         anchors.centerIn: shadowContainer
-        visible: !isContainer
+        visible: !flat
         width: shadowWidget.width
         height: shadowWidget.height
         radius: 12
@@ -91,9 +92,9 @@ Rectangle {
     Item {
         id: dataContainer
         anchors.fill: parent
-        anchors.topMargin: isContainer ? -1 : smallMargins ? 2 : 5
-        anchors.bottomMargin: isContainer ? -1 : smallMargins ? 2 : 5
-        anchors.leftMargin: isContainer ? -1 : 5
-        anchors.rightMargin: isContainer ? -1 : 5
+        anchors.topMargin: noMargins ? -1 : smallTopMargins ? 2 : 5
+        anchors.bottomMargin: noMargins ? -1 : smallBottomMargins ? 2 : 5
+        anchors.leftMargin: (noMargins || smallLeftMargins) ? -1 : 5
+        anchors.rightMargin: (noMargins || smallRightMargins) ? -1 : 5
     }
 }

@@ -13,7 +13,9 @@ Lib.Card {
     Layout.fillWidth: true
     Layout.fillHeight: true
     //visible: brightnessSlider.visible || root.showBrightness || root.showColorSwitcher || root.showNightLight
-    isContainer: true
+    flat: true
+    noMargins: true
+    
     // All Buttons
     GridLayout {
         id: buttonsColumn

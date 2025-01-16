@@ -14,7 +14,8 @@ Lib.Card {
     Layout.preferredHeight: root.sectionHeight
     Layout.alignment: Qt.AlignTop
    // visible: brightnessSlider.visible || root.showBrightness || root.showColorSwitcher || root.showNightLight
-    isContainer: true
+    flat: true
+    noMargins: true
     // All Buttons
     ColumnLayout {
         id: buttonsColumn

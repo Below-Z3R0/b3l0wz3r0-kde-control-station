@@ -17,7 +17,10 @@ Lib.Card {
 
     visible: root.showAvatar
 
-    smallMargins: true
+    smallTopMargins: true
+    smallBottomMargins: true
+
+    property bool singleLineWidget: false
 
     KCoreAddons.KUser {
       id: kuser
@@ -61,6 +64,7 @@ Lib.Card {
 
             PlasmaComponents.Label {
                 id: userHost
+                visible: !singleLineWidget
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.margins: root.smallSpacing

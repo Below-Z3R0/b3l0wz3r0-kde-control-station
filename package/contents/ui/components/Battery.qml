@@ -16,7 +16,8 @@ Lib.Card {
 
     Layout.preferredHeight: root.sectionHeight/3.3
     Layout.preferredWidth: Layout.preferredHeight * 1.7
-    smallMargins: true
+    smallTopMargins: true
+    smallBottomMargins: true
 
     Plasma5Support.DataSource {
         id: pmSource

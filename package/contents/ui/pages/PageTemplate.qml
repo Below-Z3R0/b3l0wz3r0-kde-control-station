@@ -21,7 +21,8 @@ Lib.Card {
     Layout.minimumHeight: Layout.preferredHeight
     Layout.maximumHeight: Layout.preferredHeight
     clip: true
-    isContainer: true
+    flat: true
+    noMargins: true
 
     property string sectionTitle
     property bool customHeader: false
