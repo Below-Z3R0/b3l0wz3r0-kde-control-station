@@ -74,6 +74,13 @@ PlasmoidItem {
     property string cmdTitle2: Plasmoid.configuration.cmdTitle2
     property string cmdIcon2: Plasmoid.configuration.cmdIcon2
 
+    property bool volume_widget_flat: Plasmoid.configuration.volume_widget_flat
+    property bool volume_widget_title: Plasmoid.configuration.volume_widget_title
+    property bool volume_widget_thin: Plasmoid.configuration.volume_widget_thin
+    property bool brightness_widget_flat: Plasmoid.configuration.brightness_widget_flat
+    property bool brightness_widget_title: Plasmoid.configuration.brightness_widget_title
+    property bool brightness_widget_thin: Plasmoid.configuration.brightness_widget_thin
+
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge
         || Plasmoid.location === PlasmaCore.Types.BottomEdge

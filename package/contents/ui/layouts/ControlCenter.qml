@@ -40,11 +40,11 @@ ColumnLayout {
     }
     Components.BrightnessSlider{
         id: brightnessSlider
-        Layout.preferredHeight: root.sectionHeight/2
+        Layout.preferredHeight: root.sectionHeight / (root.brightness_widget_title ? 2 : 2.8)
         canTogglePage: true
     }
     Components.Volume{
-        Layout.preferredHeight: root.sectionHeight/2
+        Layout.preferredHeight: root.sectionHeight / (root.volume_widget_title ? 2 : 2.8)
     }
     Components.MediaPlayer{
         Layout.preferredHeight: root.sectionHeight/2

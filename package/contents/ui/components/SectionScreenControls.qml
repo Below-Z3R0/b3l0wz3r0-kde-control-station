@@ -31,7 +31,6 @@ Lib.Card {
         BrightnessSlider{
             id: brightnessSlider
             Layout.columnSpan: 2
-            Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
 

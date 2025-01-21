@@ -64,6 +64,10 @@ Lib.Slider {
     source: "brightness-high"
     secondaryTitle: Math.round((mainScreen.brightness / mainScreen.maxBrightness)*100) + "%"
     
+    showTitle: root.brightness_widget_title
+    thinSlider: root.brightness_widget_thin
+    flat: root.brightness_widget_flat // bind to Lib.Card property
+    
     from: 0
     to: mainScreen.maxBrightness
     value: mainScreen.brightness

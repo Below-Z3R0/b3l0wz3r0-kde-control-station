@@ -30,6 +30,10 @@ Lib.Slider {
     
     value: Math.round(sink.volume / Vol.PulseAudio.NormalVolume * 100)
     secondaryTitle: Math.round(sink.volume / Vol.PulseAudio.NormalVolume * 100) + "%"
+
+    showTitle: root.volume_widget_title
+    thinSlider: root.volume_widget_thin
+    flat: root.volume_widget_flat // bind to Lib.Card property
     
     // Changes icon based on the current volume percentage
     source: Funcs.volIconName(sink.volume, sink.muted)

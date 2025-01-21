@@ -37,6 +37,15 @@ KCM.SimpleKCM {
     property alias cfg_transparencyLevel: transparencyLevel.value
     property alias cfg_showBorders: showBorders.checked
 
+    property alias cfg_volume_widget_flat: volume_widget_flat.checked
+    property alias cfg_volume_widget_title: volume_widget_title.checked
+    property alias cfg_volume_widget_thin: volume_widget_thin.checked
+
+    property alias cfg_brightness_widget_flat: brightness_widget_flat.checked
+    property alias cfg_brightness_widget_title: brightness_widget_title.checked
+    property alias cfg_brightness_widget_thin: brightness_widget_thin.checked
+
+
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
     property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 : 2 
 
@@ -50,6 +59,14 @@ KCM.SimpleKCM {
         showScreenshot.checked = false;
         showCmd1.checked = false;
         showCmd2.checked = false;
+
+        volume_widget_flat.checked = false;
+        volume_widget_title.checked = true;
+        volume_widget_thin.checked = false;
+
+        brightness_widget_flat.checked = false;
+        brightness_widget_title.checked = true;
+        brightness_widget_thin.checked = false;
 
         switch (index) {
             case 0:
@@ -223,9 +240,43 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18n("Show other components:")
             text: i18n('Volume Control')
         }
+        Kirigami.FormLayout {
+            visible: showVolume.checked
+            RowLayout {
+                CheckBox {
+                    id: volume_widget_flat
+                    text: i18n('Flat component')
+                }
+                CheckBox {
+                    id: volume_widget_title
+                    text: i18n('Show volume title')
+                }
+                CheckBox {
+                    id: volume_widget_thin
+                    text: i18n('Thin slider')
+                }
+            }
+        }
         CheckBox {
             id: showBrightness
             text: i18n('Brightness Control')
+        }
+        Kirigami.FormLayout {
+            visible: showBrightness.checked
+            RowLayout {
+                CheckBox {
+                    id: brightness_widget_flat
+                    text: i18n('Flat component')
+                }
+                CheckBox {
+                    id: brightness_widget_title
+                    text: i18n('Show brightness title')
+                }
+                CheckBox {
+                    id: brightness_widget_thin
+                    text: i18n('Thin slider')
+                }
+            }
         }
         CheckBox {
             id: showMediaPlayer

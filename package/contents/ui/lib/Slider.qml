@@ -20,6 +20,9 @@ Card {
 
     property bool canTogglePage: false
 
+    property bool showTitle: true
+    property bool thinSlider: false
+
     property int from: 0
     property int to: 100
 
@@ -41,6 +44,7 @@ Card {
             Layout.fillHeight: true
             Layout.fillWidth: true
             spacing: 1
+            visible: showTitle
 
             PlasmaComponents.Label {
                 id: title
@@ -90,7 +94,7 @@ Card {
                 onClicked: sliderComp.clicked()
             }
             
-            PlasmaComponents.Slider {
+            Slider {
                 id: slider
                 Layout.fillWidth: true
                 Layout.margins: 0
@@ -103,7 +107,7 @@ Card {
                     x: slider.leftPadding
                     y: slider.topPadding + slider.availableHeight / 2 - height / 2
                     implicitWidth: 200
-                    implicitHeight: 20
+                    implicitHeight: thinSlider ? 7 : 20
                     width: slider.availableWidth
                     height: parent.height
                     radius: height / 2
@@ -124,8 +128,8 @@ Card {
                     id: handle
                     x: slider.leftPadding + slider.visualPosition * (slider.availableWidth - width)
                     y: slider.topPadding + slider.availableHeight / 2 - height / 2
-                    implicitWidth: levelIndicator.height
-                    implicitHeight: levelIndicator.height
+                    implicitWidth: thinSlider ? 17 : levelIndicator.height
+                    implicitHeight: thinSlider ? 17 : levelIndicator.height
                     radius: height / 2
                     color: slider.pressed ? "#f0f0f0" : "#f6f6f6"
                     border.color: "#bdbebf"

@@ -121,5 +121,26 @@
         <entry name="cmdIcon2" type="string">
             <default>system-run-symbolic</default>
         </entry>
+
+        <!-- Sliders properties -->
+
+        <entry name="volume_widget_flat" type="bool">
+            <default>false</default>
+        </entry>
+        <entry name="volume_widget_title" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="volume_widget_thin" type="bool">
+            <default>false</default>
+        </entry>
+        <entry name="brightness_widget_flat" type="bool">
+            <default>false</default>
+        </entry>
+        <entry name="brightness_widget_title" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="brightness_widget_thin" type="bool">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>
