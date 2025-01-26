@@ -47,7 +47,7 @@ KCM.SimpleKCM {
 
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
-    property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 : 2 
+    property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  layout.currentIndex == 2 ? 6 : 2 
 
 
     function toggleLayoutDefaults(index) {                    
@@ -76,6 +76,16 @@ KCM.SimpleKCM {
             case 1:
                 showColorSwitcher.enabled = false;
                 showKDEConnect.enabled = true;
+                maxNum = 2;
+                break;
+            case 2:
+                volume_widget_flat.checked = true;
+                volume_widget_title.checked = false;
+                volume_widget_thin.checked = true;
+
+                brightness_widget_flat.checked = true;
+                brightness_widget_title.checked = false;
+                brightness_widget_thin.checked = true;
                 break;
         }
     }
@@ -112,7 +122,8 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18n("Layout:")
             model: [
                 i18n("KDE Control Station (Default)"),
-                i18n("Control Center")
+                i18n("Control Center"),
+                i18n("Flat")
             ]
             onActivated: toggleLayoutDefaults(index)
         }

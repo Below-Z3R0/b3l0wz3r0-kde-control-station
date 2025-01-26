@@ -8,7 +8,6 @@ import org.kde.kirigami as Kirigami
 
 Lib.CardButton {
     visible: root.showDnd
-    Layout.columnSpan: 2
     Layout.fillWidth: true
     Layout.fillHeight: true
     title: i18n("Do Not Disturb")

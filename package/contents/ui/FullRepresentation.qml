@@ -26,7 +26,11 @@ Item {
     Layout.maximumHeight: Layout.preferredHeight
     clip: true
 
-    property var layouts : ["layouts/Default.qml", "layouts/ControlCenter.qml"]
+    property var layouts : [
+        "layouts/Default.qml", 
+        "layouts/ControlCenter.qml",
+        "layouts/Flat.qml",
+    ]
     
     // System session actions page
     Pages.SystemSessionActionsPage {
