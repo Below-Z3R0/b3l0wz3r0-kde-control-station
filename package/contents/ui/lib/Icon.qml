@@ -14,10 +14,12 @@ Item
     property alias image: imageIcon.source
     property bool customIcon: false
 
+    property color highlightColor: root.useSystemColorsOnToggles ? root.themeHighlightColor : root.toggleButtonsColor
+
     Rectangle {
         id: rect
         radius: width/2
-        color: icon.selected ? Kirigami.Theme.highlightColor : root.disabledBgColor
+        color: icon.selected ? highlightColor : root.disabledBgColor
         anchors.fill: parent
         
 

@@ -82,6 +82,11 @@ PlasmoidItem {
     property bool brightness_widget_title: Plasmoid.configuration.brightness_widget_title
     property bool brightness_widget_thin: Plasmoid.configuration.brightness_widget_thin
 
+    property bool useSystemColorsOnToggles: Plasmoid.configuration.useSystemColorsOnToggles
+    property bool useSystemColorsOnSliders: Plasmoid.configuration.useSystemColorsOnSliders
+    property color toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
+    property color slidersColor: Plasmoid.configuration.slidersColor
+
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge
         || Plasmoid.location === PlasmaCore.Types.BottomEdge

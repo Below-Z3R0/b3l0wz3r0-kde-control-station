@@ -2,6 +2,7 @@ import QtQml 2.15
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 import org.kde.iconthemes as KIconThemes
@@ -47,6 +48,10 @@ KCM.SimpleKCM {
 
     property alias cfg_animations: animations.checked
 
+    property alias cfg_useSystemColorsOnToggles: useSystemColorsOnToggles.checked
+    property alias cfg_useSystemColorsOnSliders: useSystemColorsOnSliders.checked
+    property color cfg_toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
+    property color cfg_slidersColor: Plasmoid.configuration.slidersColor
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
     property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  layout.currentIndex == 2 ? 6 : 2 
@@ -161,6 +166,68 @@ KCM.SimpleKCM {
         CheckBox {
             id: showBorders
             text: i18n("Show borders aroud components")
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: "Toggle buttons and sliders"
+        }
+
+        CheckBox {
+            id: useSystemColorsOnToggles
+            Kirigami.FormData.label: i18n("Highlight color")
+            text: i18n('Use System highlight color on toggle buttons')
+           // enabled: !checked && numChecked < maxNum || checked
+        }
+
+        Button {
+            id: toggleButtonColorButton
+            visible: !useSystemColorsOnToggles.checked
+            width: Kirigami.Units.iconSizes.small
+            height: width
+            Kirigami.FormData.label: i18n("Toggle buttons color")
+            Rectangle {
+                anchors.centerIn: parent
+                anchors.fill: parent
+                radius: 10
+                color: cfg_toggleButtonsColor
+            }
+            onPressed: toggleButtonsColorDialog.visible ? toggleButtonsColorDialog.close() : toggleButtonsColorDialog.open()
+            ColorDialog {
+                id: toggleButtonsColorDialog
+                title: i18n("Please choose a color")
+                onAccepted: {
+                    cfg_toggleButtonsColor = toggleButtonsColorDialog.selectedColor;
+                }
+            }
+        }
+
+        CheckBox {
+            id: useSystemColorsOnSliders
+            text: i18n('Use System highlight color on sliders')
+           // enabled: !checked && numChecked < maxNum || checked
+        }
+
+        Button {
+            id: slidersColorButton
+            visible: !useSystemColorsOnSliders.checked
+            width: Kirigami.Units.iconSizes.small
+            height: width
+            Kirigami.FormData.label: i18n("Sliders color")
+            Rectangle {
+                anchors.centerIn: parent
+                anchors.fill: parent
+                radius: 10
+                color: cfg_slidersColor
+            }
+            onPressed: slidersColorDialog.visible ? slidersColorDialog.close() : slidersColorDialog.open()
+            ColorDialog {
+                id: slidersColorDialog
+                title: i18n("Please choose a color")
+                onAccepted: {
+                    cfg_slidersColor = slidersColorDialog.selectedColor;
+                }
+            }
         }
 
         Item {

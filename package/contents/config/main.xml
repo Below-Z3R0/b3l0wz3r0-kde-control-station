@@ -145,5 +145,22 @@
         <entry name="brightness_widget_thin" type="bool">
             <default>false</default>
         </entry>
+
+        <!-- Toggle buttons and sliders colors -->
+
+        <entry name="useSystemColorsOnToggles" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="useSystemColorsOnSliders" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="toggleButtonsColor" type="Color">
+            <label>Highlight color of toggle buttons.</label>
+            <default>#007aff</default>
+        </entry>
+        <entry name="slidersColor" type="Color">
+            <label>Highlight color of sliders.</label>
+            <default>#ffffff</default>
+        </entry>
     </group>
 </kcfg>

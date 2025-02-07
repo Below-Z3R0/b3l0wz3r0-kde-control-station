@@ -26,6 +26,8 @@ Card {
     property int from: 0
     property int to: 100
 
+    property color highlightColor: root.useSystemColorsOnSliders ? root.themeHighlightColor : root.slidersColor
+
     MouseArea {
         id: mouseArea
         anchors.fill: parent
@@ -107,17 +109,18 @@ Card {
                     x: slider.leftPadding
                     y: slider.topPadding + slider.availableHeight / 2 - height / 2
                     implicitWidth: 200
-                    implicitHeight: thinSlider ? 7 : 20
+                    implicitHeight: thinSlider ? 7 : 22
                     width: slider.availableWidth
                     height: parent.height
                     radius: height / 2
                     color: root.disabledBgColor
+                    border.color: root.isDarkTheme ? root.disabledBgColor : Qt.rgba(0, 0, 0, 0.27)
 
                     Rectangle {
                         id: levelIndicator
                         width: (value - from) / (to - from) * (slider.width - handle.width) + (handle.width)
-                        height: parent.height
-                        color:  root.themeHighlightColor
+                        height: parent.height - 2
+                        color:  highlightColor
                         radius: height / 2
                         border.width: 0
                         anchors.verticalCenter: parent.verticalCenter
