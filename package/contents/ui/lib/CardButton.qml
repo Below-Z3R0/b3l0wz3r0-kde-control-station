@@ -23,7 +23,10 @@ Card {
 
         Item {
             id: icon
-            Layout.preferredHeight: parent.small ? parent.height/1.3-root.smallSpacing : isLongButton ? parent.height : parent.height - root.largeSpacing
+            Layout.preferredHeight: (parent.small && plasmoid.configuration.layout == 1) ? parent.height/1.8 
+                                    : parent.small ? parent.height/1.5 
+                                    : isLongButton ? parent.height 
+                                    : parent.height - root.largeSpacing
             Layout.preferredWidth: Layout.preferredHeight
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             Layout.rowSpan: 2
@@ -42,12 +45,12 @@ Card {
             Layout.fillWidth: true
             Layout.margins:  (parent.small || !heading.visible) ? root.smallSpacing : 1
             Layout.rowSpan: heading.visible ? 1 : 2
-            font.pixelSize: (parent.small || heading.visible) ? root.smallFontSize : root.mediumFontSize
+            font.pixelSize: (parent.small || heading.visible) ? root.smallFontSize+0.5 : root.mediumFontSize
             font.weight: (parent.small || !heading.visible) ? Font.Bold : Font.Normal
             horizontalAlignment: parent.small ? Qt.AlignHCenter : Qt.AlignLeft
             verticalAlignment: Qt.AlignVCenter
             wrapMode: Text.WordWrap
-            elide: Text.ElideRight
+            elide: plasmoid.configuration.layout == 1 ? Text.ElideNone : Text.ElideRight
             visible: text
         }
     }
