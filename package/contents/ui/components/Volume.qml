@@ -49,7 +49,8 @@ Lib.Slider {
     }
     // Display view that shows audio devices list
     onTogglePage: {
-        volumePage.toggleSection()
+        var pageHeight =  volumePage.contentItemHeight + volumePage.headerHeight;
+        fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, volumePage);
     }
     
     property var oldVol: 100 * Vol.PulseAudio.NormalVolume / 100

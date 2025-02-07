@@ -52,7 +52,7 @@ Lib.Card {
         cursorShape: Qt.PointingHandCursor
         hoverEnabled: true
         onClicked: {
-            systemSessionActionsPage.toggleSection()
+            fullRep.togglePage(300, 350, systemSessionActionsPage);
         }
         onEntered: showToolTip = true
         onExited: showToolTip = false

@@ -31,7 +31,15 @@ Item {
         "layouts/ControlCenter.qml",
         "layouts/Flat.qml",
     ]
-    
+
+    property int defaultInitialWidth: root.fullRepWidth
+    property int defaultInitialHeight: wrapper.implicitHeight
+
+    property int newWidth: 0
+    property int newHeight: 0
+
+    property var activePage: wrapper
+
     // System session actions page
     Pages.SystemSessionActionsPage {
         id: systemSessionActionsPage
@@ -78,5 +86,55 @@ Item {
         active: true
         asynchronous: true
         anchors.fill: parent
+        visible: true
+        property bool shown: true
+        states: [
+            State {
+                name: "show"; when: wrapper.shown
+                PropertyChanges { target: wrapper; opacity: 1 }
+                PropertyChanges { target: wrapper; visible: true }
+            },
+
+            State {
+                name: "hide"; when: !wrapper.shown
+                PropertyChanges { target: wrapper; opacity: 0 }
+                PropertyChanges { target: wrapper; visible: false }
+            }
+        ]
+
+        transitions: Transition {
+            PropertyAnimation { target: wrapper; property: "opacity"; easing.type: Easing.InOutQuad; duration: 20 }
+        }
+    }
+
+    SequentialAnimation  {
+        id: animation
+        running: false
+
+        property var hide: wrapper
+        property var show: activePage
+
+        PropertyAnimation { target: animation.hide; property: "shown"; from: animation.hide.shown; to: !animation.hide.shown; duration: 20 }
+        ParallelAnimation {
+            PropertyAnimation { target: fullRep; property: "Layout.preferredWidth"; to: newWidth; duration: 50 }
+            PropertyAnimation { target: fullRep; property: "Layout.preferredHeight"; to: newHeight; duration: 50 }
+        }
+        PropertyAnimation { target: animation.show; property: "shown"; from: animation.show.shown; to: !animation.show.shown; duration: 20}
+    }
+
+    function togglePage(width = defaultInitialWidth, height = defaultInitialHeight, page = activePage) {
+        if(root.animations) {
+            newHeight = height;
+            newWidth = width;
+        }else {
+            newHeight = defaultInitialHeight;
+            newWidth = defaultInitialWidth;
+        }
+
+        activePage = page;
+
+        animation.hide = wrapper.shown ? wrapper : activePage;
+        animation.show = wrapper.shown ? activePage : wrapper;
+        animation.running = true;
     }
 }

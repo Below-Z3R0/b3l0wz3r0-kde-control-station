@@ -24,29 +24,33 @@ Lib.Card {
     flat: true
     noMargins: true
 
+    property int headerHeight
     property string sectionTitle
     property bool customHeader: false
     property alias extraHeaderItems: extraHeaderItems.data
 
     default property alias content: dataContainer.data
 
-    function toggleSection() {
-        if (!page.visible) {
-            wrapper.visible = false;
-            page.visible = true;
-        } else {
-            wrapper.visible = true;
-            page.visible = false;
-        }
-    }
-
     anchors.fill: parent
     z: 999
-    visible: false
-    scale: visible ? 1.0 : 0.1
 
-    Behavior on scale { 
-        NumberAnimation  { duration: 200 ; easing.type: Easing.InOutQuad  } 
+    property bool shown: false
+    states: [
+        State {
+            name: "show"; when: shown
+            PropertyChanges { target: page; opacity: 1 }
+            PropertyChanges { target: page; visible: true }
+        },
+
+        State {
+            name: "hide"; when: !shown
+            PropertyChanges { target: page; opacity: 0 }
+            PropertyChanges { target: page; visible: false }
+        }
+    ]
+
+    transitions: Transition {
+        PropertyAnimation { target: page; property: "opacity"; easing.type: Easing.InOutQuad ; duration: 10}
     }
 
     ColumnLayout {
@@ -67,9 +71,7 @@ Lib.Card {
                     
                     anchors.fill: parent
                     
-                    onClicked: {
-                        page.toggleSection();
-                    }
+                    onClicked: fullRep.togglePage();
                 }
             }
 
@@ -107,6 +109,10 @@ Lib.Card {
             id: dataContainer
         }
 
+    }
+
+    Component.onCompleted: {
+        page.headerHeight = headerActions.height + separatorLine.height;
     }
 
 }

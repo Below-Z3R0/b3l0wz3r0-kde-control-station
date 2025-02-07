@@ -56,6 +56,6 @@ Lib.CardButton {
         source: network.activeConnectionIcon
         selected: (network.networkStatus.activeConnections != "") || isAirplane 
     }
-    onClicked: networkPage.toggleSection();
+    onClicked: fullRep.togglePage(fullRep.defaultInitialWidth, 400, networkPage);
     
 }

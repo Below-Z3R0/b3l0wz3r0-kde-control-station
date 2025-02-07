@@ -19,6 +19,8 @@ PageTemplate {
 
     sectionTitle: i18n("Audio Volume")
 
+    property int contentItemHeight: contentItem.implicitHeight
+
     GlobalConfig {
         id: config
     }
@@ -132,7 +134,7 @@ PageTemplate {
     }
 
     ColumnLayout {
-
+        id: contentItem
         spacing: Kirigami.Units.gridUnit
         anchors.fill: parent
 

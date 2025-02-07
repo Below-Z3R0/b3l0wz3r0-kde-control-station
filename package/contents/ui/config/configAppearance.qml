@@ -45,6 +45,8 @@ KCM.SimpleKCM {
     property alias cfg_brightness_widget_title: brightness_widget_title.checked
     property alias cfg_brightness_widget_thin: brightness_widget_thin.checked
 
+    property alias cfg_animations: animations.checked
+
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
     property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  layout.currentIndex == 2 ? 6 : 2 
@@ -136,6 +138,10 @@ KCM.SimpleKCM {
             id: showPercentage
             Kirigami.FormData.label: i18n("General:")
             text: i18n("Show volume/brightness percentage")
+        }
+        CheckBox {
+            id: animations
+            text: i18n("Enable animations (Experimental)")
         }
         CheckBox {
             id: transparency

@@ -17,8 +17,10 @@ PageTemplate {
 
     sectionTitle: i18n("Night Light")
 
-    RowLayout {
+    property int contentItemHeight: contentItem.implicitHeight
 
+    RowLayout {
+        id: contentItem
         spacing: Kirigami.Units.gridUnit
         anchors.fill: parent
 

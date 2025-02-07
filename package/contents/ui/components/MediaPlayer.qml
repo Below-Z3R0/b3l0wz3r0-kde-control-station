@@ -23,7 +23,7 @@ Lib.Card {
         hoverEnabled: true
 
         onClicked: {
-            mediaPlayerPage.toggleSection()
+            fullRep.togglePage(fullRep.defaultInitialWidth, fullRep.defaultInitialHeight, mediaPlayerPage);
         }
     }
 

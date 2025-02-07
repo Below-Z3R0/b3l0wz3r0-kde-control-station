@@ -76,7 +76,10 @@ Lib.Slider {
         sbControl.setBrightness(mainScreen.displayName, Math.max(brightnessMin, Math.min(mainScreen.maxBrightness, value))) ;
     }
 
-    onTogglePage: brightnessControlPage.toggleSection()
+    onTogglePage: {
+        var pageHeight = brightnessControlPage.contentItemHeight + brightnessControlPage.headerHeight;
+        fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, brightnessControlPage);
+    }
 
     Connections {
         target: sbControl

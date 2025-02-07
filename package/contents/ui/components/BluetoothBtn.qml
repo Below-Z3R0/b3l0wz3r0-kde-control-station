@@ -34,6 +34,6 @@ Lib.CardButton {
         selected:  Funcs.getBtDevice() != "Disabled"
     }
     onClicked: {
-        bluetoothPage.toggleSection()
+       fullRep.togglePage(fullRep.defaultInitialWidth, 400, bluetoothPage);
     }
 }

@@ -48,6 +48,7 @@ Lib.CardButton {
     }
 
     onClicked: {
-        nightLightPage.toggleSection()
+        var pageHeight =  nightLightPage.contentItemHeight + nightLightPage.headerHeight;
+        fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, nightLightPage);
     }
 }

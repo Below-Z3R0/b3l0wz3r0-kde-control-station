@@ -12,6 +12,8 @@ PageTemplate {
 
     sectionTitle: i18n("Brightness Control")
 
+    property int contentItemHeight: scrollView.implicitHeight
+
     ScreenBrightnessControl {
         id: screenBrightnessControl
         isSilent: true

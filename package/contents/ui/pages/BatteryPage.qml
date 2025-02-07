@@ -23,6 +23,8 @@ import "components/battery" as BatteryComponents
 PageTemplate {
     id: batterymonitor
 
+    property var contentItemHeight: mainView.implicitContentHeight
+
     PowerProfilesControl {
         id: powerProfilesControl
 
@@ -77,6 +79,7 @@ PageTemplate {
     sectionTitle: batteryControl.hasBatteries ? i18n("Power and Battery") : i18n("Power Management")
 
     BatteryComponents.MainView {
+        id: mainView
         anchors.fill: parent
 
         model: batteryControl

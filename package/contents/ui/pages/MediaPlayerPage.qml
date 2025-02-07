@@ -66,7 +66,7 @@ PageTemplate {
                     anchors.fill: parent
                     
                     onClicked: {
-                        mediaPlayerPage.toggleSection();
+                        fullRep.togglePage();
                     }
                 }
             }

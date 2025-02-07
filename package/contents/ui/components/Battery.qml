@@ -67,7 +67,8 @@ Lib.Card {
         cursorShape: Qt.PointingHandCursor
         hoverEnabled: false
         onClicked: {
-            batteryPage.toggleSection()
+            var pageHeight =  batteryPage.contentItemHeight + batteryPage.headerHeight;
+            fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, batteryPage);
         }
     }
 }
