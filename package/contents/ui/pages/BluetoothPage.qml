@@ -23,10 +23,15 @@ PageTemplate {
     readonly property alias toggleBluetoothAction: toggleBluetoothAction
 
     readonly property bool emptyList: BluezQt.Manager.devices.length === 0
+    
+    readonly property var oldDevicesModel: PlasmaBt.DevicesProxyModel {
+        id: oldDevicesModel
+        sourceModel: BluezQt.DevicesModel { }
+    }
 
     PlasmaBt.DevicesProxyModel {
         id: devicesModel
-        hideBlockedDevices: true
+     //   hideBlockedDevices: true
         sourceModel: PlasmaBt.SharedDevicesStateProxyModel
     }
 
@@ -95,7 +100,7 @@ PageTemplate {
         contentItem: ListView {
             id: listView
 
-            model: BluezQt.Manager.adapters.length > 0 && !BluezQt.Manager.bluetoothBlocked ? devicesModel : null
+            model: (BluezQt.Manager.adapters.length > 0 && !BluezQt.Manager.bluetoothBlocked) ? root.plasmaVersion < 2 ? oldDevicesModel : devicesModel : null
             clip: true
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
@@ -182,5 +187,9 @@ PageTemplate {
                 }
             }
         }
+    }
+
+    Component.onCompleted: {
+        console.log(typeof oldModel)
     }
 }

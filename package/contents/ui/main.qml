@@ -5,7 +5,7 @@ import org.kde.plasma.core as PlasmaCore
 import "js/colorType.js" as ColorType
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels as KItemModels
-
+import org.kde.plasma.plasma5support as Plasma5Support
 
 PlasmoidItem {
     id: root
@@ -91,6 +91,20 @@ PlasmoidItem {
         || Plasmoid.location === PlasmaCore.Types.RightEdge
         || Plasmoid.location === PlasmaCore.Types.BottomEdge
         || Plasmoid.location === PlasmaCore.Types.LeftEdge)
+
+    property int plasmaVersion
+
+    Plasma5Support.DataSource {
+        id: executable
+        engine: "executable"
+        connectedSources: ["plasmashell -v"]
+        onNewData: {
+            if(data["exit code"] == 0){
+                plasmaVersion = data.stdout.split(" ")[1].split(".")[1];
+            }
+            disconnectSource(connectedSources)
+        }
+    }
     
     switchHeight: fullRepWidth
     switchWidth: fullRepWidth

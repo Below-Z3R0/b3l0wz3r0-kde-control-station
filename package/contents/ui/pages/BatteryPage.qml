@@ -12,8 +12,6 @@ import org.kde.kitemmodels as KItemModels
 
 import org.kde.plasma.private.batterymonitor
 import org.kde.plasma.private.battery
-
-
 import org.kde.plasma.components as PlasmaComponents3
 
 
@@ -43,9 +41,26 @@ PageTemplate {
         readonly property bool isSomehowFullyCharged: batteryControl.pluggedIn && batteryControl.state === BatteryControlModel.FullyCharged
     }
 
-    PowerManagementControl {
-        id: powerManagementControl
-    }
+    property var possibleInhibitionControls: [
+        `
+            import org.kde.plasma.private.batterymonitor
+            PowerManagementControl {
+                id: inhibitionControl
+            }
+        `,
+        `
+            import org.kde.plasma.private.batterymonitor
+            InhibitionControl {
+                id: inhibitionControl
+            }
+        `
+    ]
+
+    property var inhibitionControl: Qt.createQmlObject(
+        root.plasmaVersion < 3 ? possibleInhibitionControls[0] : possibleInhibitionControls[1], 
+        batterymonitor, 
+        "inhibitionControl"
+    )
 
     readonly property bool kcmAuthorized: KAuthorized.authorizeControlModule("powerdevilprofilesconfig")
     readonly property bool kcmEnergyInformationAuthorized: KAuthorized.authorizeControlModule("kcm_energyinfo")
@@ -54,13 +69,13 @@ PageTemplate {
 
     onInhibitionChangeRequested: inhibit => {
 
-        powerManagementControl.isSilent = root.expanded; // show OSD only when the plasmoid isn't expanded since the changing switch is feedback enough
+        inhibitionControl.isSilent = root.expanded; // show OSD only when the plasmoid isn't expanded since the changing switch is feedback enough
 
         if (inhibit) {
             const reason = i18n("The battery applet has enabled suppressing sleep and screen locking");
-            powerManagementControl.inhibit(reason)
+            inhibitionControl.inhibit(reason)
         } else {
-            powerManagementControl.uninhibit()
+            inhibitionControl.uninhibit()
         }
     }
 
@@ -77,22 +92,22 @@ PageTemplate {
     }
 
     sectionTitle: batteryControl.hasBatteries ? i18n("Power and Battery") : i18n("Power Management")
-
+    
     BatteryComponents.MainView {
         id: mainView
         anchors.fill: parent
 
         model: batteryControl
 
-        isManuallyInhibited: powerManagementControl.isManuallyInhibited
-        isManuallyInhibitedError: powerManagementControl.isManuallyInhibitedError
+        isManuallyInhibited: inhibitionControl.isManuallyInhibited
+        isManuallyInhibitedError: inhibitionControl.isManuallyInhibitedError
         pluggedIn: batteryControl.pluggedIn
         chargeStopThreshold: batteryControl.chargeStopThreshold
         remainingTime: batteryControl.remainingTime
         activeProfile: powerProfilesControl.activeProfile
         activeProfileError: powerProfilesControl.profileError
-        inhibitions: powerManagementControl.inhibitions
-        inhibitsLidAction: powerManagementControl.isLidPresent && !powerManagementControl.triggersLidAction
+        inhibitions: inhibitionControl.inhibitions
+        inhibitsLidAction: inhibitionControl.isLidPresent && !inhibitionControl.triggersLidAction
         profilesInstalled: powerProfilesControl.isPowerProfileDaemonInstalled
         profiles: powerProfilesControl.profiles
         inhibitionReason: powerProfilesControl.inhibitionReason
