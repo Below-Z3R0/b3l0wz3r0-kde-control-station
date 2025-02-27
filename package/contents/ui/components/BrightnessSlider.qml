@@ -9,14 +9,17 @@ import org.kde.kitemmodels as KItemModels
 
 import org.kde.plasma.private.brightnesscontrolplugin
 
-Lib.Slider {
+Item {
     id: brightnessControl
-    
-    // Dimensions
+
     Layout.fillHeight: true
     Layout.fillWidth: true
-   // Layout.preferredHeight: root.sectionHeight/2
-    
+
+    property var mainScreen
+    property bool disableBrightnessUpdate: true
+
+    property bool canTogglePage: false
+
     // Get brightness control from KDE components
     ScreenBrightnessControl {
         id: sbControl
@@ -42,6 +45,7 @@ Lib.Slider {
                 };
             });
             brightnessControl.mainScreen = screenBrightnessInfo[0];
+            sliderLoader.active = true;
         }
         function onDataChanged() { update(); }
         function onModelReset() { update(); }
@@ -50,38 +54,44 @@ Lib.Slider {
         function onRowsRemoved() { update(); }
     }
 
-    // Other properties
-    property var mainScreen: displayModelConnections.screenBrightnessInfo[0]
-    property bool disableBrightnessUpdate: true
-
-    readonly property int brightnessMin: (mainScreen.maxBrightness > 100 ? 1 : 0)
-
-    // Should be visible ONLY if the monitor supports it
     visible: sbControl.isBrightnessAvailable && root.showBrightness
-
-    // Slider properties
-    title: mainScreen.label
-    source: "brightness-high"
-    secondaryTitle: Math.round((mainScreen.brightness / mainScreen.maxBrightness)*100) + "%"
     
-    showTitle: root.brightness_widget_title
-    thinSlider: root.brightness_widget_thin
-    flat: root.brightness_widget_flat // bind to Lib.Card property
-    
-    from: 0
-    to: mainScreen.maxBrightness
-    value: mainScreen.brightness
-    
-    onMoved: {
-        sbControl.setBrightness(mainScreen.displayName, Math.max(brightnessMin, Math.min(mainScreen.maxBrightness, value))) ;
+    Loader {
+        id: sliderLoader
+        active: false
+        sourceComponent: sliderComponent 
+        anchors.fill: parent
     }
 
-    onTogglePage: {
-        var pageHeight = brightnessControlPage.contentItemHeight + brightnessControlPage.headerHeight;
-        fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, brightnessControlPage);
-    }
+    Component {
+        id: sliderComponent
+        Lib.Slider {
+                        
+            readonly property int brightnessMin: (mainScreen.maxBrightness > 100 ? 1 : 0)
 
-    Connections {
-        target: sbControl
+            // Slider properties
+            title: mainScreen.label
+            source: "brightness-high"
+            secondaryTitle: Math.round((mainScreen.brightness / mainScreen.maxBrightness)*100) + "%"
+
+            canTogglePage: brightnessControl.canTogglePage
+            
+            showTitle: root.brightness_widget_title
+            thinSlider: root.brightness_widget_thin
+            flat: root.brightness_widget_flat // bind to Lib.Card property
+            
+            from: 0
+            to: mainScreen.maxBrightness
+            value: mainScreen.brightness
+            
+            onMoved: {
+                sbControl.setBrightness(mainScreen.displayName, Math.max(brightnessMin, Math.min(mainScreen.maxBrightness, value))) ;
+            }
+
+            onTogglePage: {
+                var pageHeight = brightnessControlPage.contentItemHeight + brightnessControlPage.headerHeight;
+                fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, brightnessControlPage);
+            }
+        }
     }
 }
