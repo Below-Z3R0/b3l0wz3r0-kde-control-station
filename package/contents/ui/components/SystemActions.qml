@@ -25,19 +25,14 @@ Lib.Card {
         text: i18n("Power Off")
     }
 
-    Image {
+    Kirigami.Icon {
         id: powerImage
-        source: "../icons/feather/power.svg"
-        width: 20 * 1
+        width: 23
         height: width
         anchors.centerIn: parent
-
-        ColorOverlay {
-            visible: true
-            anchors.fill: powerImage
-            source: powerImage
-            color: Kirigami.Theme.textColor
-        }
+        source: Qt.resolvedUrl("../icons/feather/pwr.svg")
+        isMask: true
+        color: Kirigami.Theme.textColor
     }
 
     PlasmaComponents.ToolTip {
