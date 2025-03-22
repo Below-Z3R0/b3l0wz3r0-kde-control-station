@@ -157,8 +157,7 @@ Item {
                 id: img
                 horizontalAlignment: Image.AlignHCenter
                 verticalAlignment: Image.AlignVCenter
-               // width: 130; height: 130
-                fillMode: container.inCompactRepresentation ? Image.PreserveAspectCrop : Image.PreserveAspectFit
+                fillMode: container.inCompactRepresentation ? Image.PreserveAspectCrop : Image.PreserveAspectCrop
 
                 asynchronous: true
                 cache: false
@@ -168,7 +167,7 @@ Item {
                 StackView.onDeactivated: destroy()
                 StackView.onRemoved: destroy()
 
-                layer.enabled: false
+                layer.enabled: true
                 layer.effect: OpacityMask {
                     maskSource: Item {
                         width: img.width
@@ -177,7 +176,7 @@ Item {
                             anchors.centerIn: parent
                             width: img.adapt ? img.width : Math.min(img.width, img.height)
                             height: img.adapt ? img.height : width
-                            radius: Math.min(width, height)
+                            radius: 16//Math.min(width, height)
                         }
                     }
                 }

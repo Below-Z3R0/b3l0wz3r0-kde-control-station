@@ -204,14 +204,16 @@ PlasmaExtras.Representation {
                 sourceItem: albumArt.albumArt
             }
 
-            anchors.fill: parent
+            anchors.fill: albumArt
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: albumArt.verticalCenter
             visible: (albumArt.animating || albumArt.hasImage) && !softwareRendering
 
             layer.enabled: !softwareRendering
             layer.effect: HueSaturation {
                 cached: true
 
-                lightness: -0.5
+                lightness: -0.2
                 saturation: 0.9
 
                 layer.enabled: true
@@ -220,7 +222,7 @@ PlasmaExtras.Representation {
 
                     radius: 128
 
-                    transparentBorder: false
+                    transparentBorder: true
                 }
             }
             // use State to avoid unnecessary reevaluation of width and height
@@ -230,132 +232,119 @@ PlasmaExtras.Representation {
                 PropertyChanges {
                     target: backgroundImage
                     scaleFactor: Math.max(parent.width / shaderEffectSource.sourceItem.currentItem.paintedWidth, parent.height / shaderEffectSource.sourceItem.currentItem.paintedHeight)
-                    width: Math.round(shaderEffectSource.sourceItem.currentItem.paintedWidth * scaleFactor)
-                    height: Math.round(shaderEffectSource.sourceItem.currentItem.paintedHeight * scaleFactor)
+                    width: Math.round(shaderEffectSource.sourceItem.currentItem.paintedWidth)
+                    height: Math.round(shaderEffectSource.sourceItem.currentItem.paintedHeight)
                 }
                 PropertyChanges {
                     target: shaderEffectSource
                     // HACK: Fix background ratio when DPI > 1
-                    sourceRect: Qt.rect(shaderEffectSource.sourceItem.width - shaderEffectSource.sourceItem.currentItem.paintedWidth,
-                                    Math.round((shaderEffectSource.sourceItem.height - shaderEffectSource.sourceItem.currentItem.paintedHeight) / 2),
-                                    shaderEffectSource.sourceItem.currentItem.paintedWidth,
-                                    shaderEffectSource.sourceItem.currentItem.paintedHeight)
+                    sourceRect: Qt.rect(0, 0, shaderEffectSource.sourceItem.width, shaderEffectSource.sourceItem.height)
                 }
             }
         }
-        Item { // Album Art + Details
-            id: albumRow
 
-            anchors.fill: parent
+        AlbumArtStackView {
+            id: albumArt
 
-            AlbumArtStackView {
-                id: albumArt
+            anchors {
+                top: parent.top
+                bottom: detailsColumn.top
+                left: parent.left
+                right: parent.right
+                leftMargin: Kirigami.Units.gridUnit * 5
+                rightMargin: Kirigami.Units.gridUnit * 5
+                topMargin: root.largeFontSize * 3
+                bottomMargin: root.largeFontSize
+            }
 
-                anchors {
-                    top: parent.top
-                    bottom: detailsColumn.top
-                    left: parent.left
-                    right: parent.right
-                    leftMargin: Kirigami.Units.gridUnit * 5
-                    rightMargin: Kirigami.Units.gridUnit * 5
-                    topMargin: root.largeFontSize * 3
-                    bottomMargin: root.largeFontSize
-                }
+            Connections {
+                enabled: true
+                target: mediaPlayerPage
 
-                Connections {
-                    enabled: true
-                    target: mediaPlayerPage
-
-                    function onAlbumArtChanged() {
-                        albumArt.loadAlbumArt();
-                        console.log(mediaPlayerPage.albumArt);
-                    }
-                }
-
-                Component.onCompleted: {
-
-                     if (albumArt.albumArt.currentItem instanceof Image && albumArt.albumArt.currentItem.source.toString() === Qt.resolvedUrl(mediaPlayerPage.albumArt).toString()) {
-                            // QTBUG-119904 StackView ignores transitions when it's invisible
-                            albumArt.albumArt.currentItem.opacity = 1;
-                        } else {
-                            albumArt.loadAlbumArt();
-                        }
-                    
+                function onAlbumArtChanged() {
+                    albumArt.loadAlbumArt();
+                    console.log(mediaPlayerPage.albumArt);
                 }
             }
 
-            ColumnLayout { // Details Column
-                id: detailsColumn
-                anchors {
-                    baseline: parent.verticalCenter
-                    baselineOffset: Kirigami.Units.gridUnit * 3
-                    horizontalCenter: parent.horizontalCenter
-                    left: parent.left
-                    leftMargin: Kirigami.Units.gridUnit / 2
-                    right: parent.right
-                    rightMargin: Kirigami.Units.gridUnit / 2
-                }
-                visible: mediaPlayerPage.track.length > 0
+            Component.onCompleted: {
 
-                Item {
-                    Layout.fillHeight: true
-                }
+                    if (albumArt.albumArt.currentItem instanceof Image && albumArt.albumArt.currentItem.source.toString() === Qt.resolvedUrl(mediaPlayerPage.albumArt).toString()) {
+                        // QTBUG-119904 StackView ignores transitions when it's invisible
+                        albumArt.albumArt.currentItem.opacity = 1;
+                    } else {
+                        albumArt.loadAlbumArt();
+                    }
+                
+            }
+        }
 
-                Kirigami.Heading { // Song Title
-                    id: songTitle
-                    level: 4
+        ColumnLayout { // Details Column
+            id: detailsColumn
+            anchors {
+                baseline: parent.verticalCenter
+                baselineOffset: Kirigami.Units.gridUnit * 3
+                left: parent.left
+                leftMargin: Kirigami.Units.gridUnit / 2
+                right: parent.right
+                rightMargin: Kirigami.Units.gridUnit / 2
+            }
+            visible: mediaPlayerPage.track.length > 0
 
-                    color: (softwareRendering || !albumArt.hasImage) ? Kirigami.Theme.textColor : "white"
+            Item {
+                Layout.fillHeight: true
+            }
 
-                    textFormat: Text.PlainText
-                    wrapMode: Text.Wrap
-                    fontSizeMode: Text.VerticalFit
-                    elide: Text.ElideRight
-                    text: mediaPlayerPage.track
-                    font.pixelSize: root.largeFontSize + 2
-                    font.weight: Font.Bold
+            Kirigami.Heading { // Song Title
+                id: songTitle
+                level: 4
 
-                    Layout.maximumHeight: Kirigami.Units.gridUnit * 5
-                    Layout.alignment: Qt.AlignCenter
-                    Layout.maximumWidth: detailsColumn.width
-                }
-                Kirigami.Heading { // Song Artist
-                    id: songArtist
-                    visible: mediaPlayerPage.artist
-                    level: 5
+                textFormat: Text.PlainText
+                wrapMode: Text.Wrap
+                fontSizeMode: Text.VerticalFit
+                elide: Text.ElideRight
+                text: mediaPlayerPage.track
+                font.pixelSize: root.largeFontSize + 3
+                font.weight: Font.Bold
 
-                    color: (softwareRendering || !albumArt.hasImage) ? Kirigami.Theme.textColor : "white"
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 5
+                Layout.alignment: Qt.AlignCenter
+                Layout.maximumWidth: detailsColumn.width
+            }
+            Kirigami.Heading { // Song Artist
+                id: songArtist
+                visible: mediaPlayerPage.artist
+                level: 5
 
-                    textFormat: Text.PlainText
-                    wrapMode: Text.Wrap
-                    fontSizeMode: Text.VerticalFit
-                    elide: Text.ElideRight
-                    font.pixelSize: root.largeFontSize 
-                    text: mediaPlayerPage.artist
-                    Layout.maximumHeight: Kirigami.Units.gridUnit * 2
-                    Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                }
-                Kirigami.Heading { // Song Album
-                    color: (softwareRendering || !albumArt.hasImage) ? Kirigami.Theme.textColor : "white"
+                textFormat: Text.PlainText
+                wrapMode: Text.Wrap
+                fontSizeMode: Text.VerticalFit
+                elide: Text.ElideRight
+                font.pixelSize: root.largeFontSize 
+                text: mediaPlayerPage.artist
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 2
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            }
+            // Kirigami.Heading { // Song Album
+            //     color: (softwareRendering || !albumArt.hasImage) ? Kirigami.Theme.textColor : "white"
 
-                    level: 5
-                    opacity: 0.6
+            //     level: 5
+            //     opacity: 0.6
 
-                    textFormat: Text.PlainText
-                    wrapMode: Text.Wrap
-                    fontSizeMode: Text.VerticalFit
-                    elide: Text.ElideRight
-                    font.pixelSize: root.largeFontSize 
+            //     textFormat: Text.PlainText
+            //     wrapMode: Text.Wrap
+            //     fontSizeMode: Text.VerticalFit
+            //     elide: Text.ElideRight
+            //     font.pixelSize: root.largeFontSize 
 
-                    visible: text.length > 0
-                    text: mediaPlayerPage.album
-                    Layout.maximumHeight: Kirigami.Units.gridUnit * 2
-                    Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                }
+            //     visible: text.length > 0
+            //     text: mediaPlayerPage.album
+            //     Layout.maximumHeight: Kirigami.Units.gridUnit * 2
+            //     Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            // }
 
-                Item {
-                    Layout.fillHeight: true
-                }
+            Item {
+                Layout.fillHeight: true
             }
         }
     }

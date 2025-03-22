@@ -75,9 +75,10 @@ PageTemplate {
                 id: playerSelector
                 objectName: "playerSelector"
                 Layout.fillWidth: true
-                implicitHeight: contentHeight
+                implicitHeight: Kirigami.Units.gridUnit * 2
                 currentIndex: playerSelector.count, mpris2Model.currentIndex
                 position: PC3.TabBar.Header
+                visible: playerList.count > 2
 
                 Repeater {
                     id: playerList
