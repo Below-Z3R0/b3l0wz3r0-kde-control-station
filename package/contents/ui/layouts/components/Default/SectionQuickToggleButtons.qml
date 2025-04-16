@@ -8,8 +8,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
 
-import "../lib" as Lib
-import "../js/funcs.js" as Funcs
+import "../../../components" as Components
+import "../../../lib" as Lib
 
 Lib.Card {
     id: sectionQuickToggleButtons
@@ -20,7 +20,7 @@ Lib.Card {
     
     // NETWORK
     property var network: network
-    Network {
+    Components.Network {
         id: network
     }
     
@@ -37,15 +37,15 @@ Lib.Card {
         RowLayout {
             anchors.margins: 1
             spacing: 1
-            NetworkBtn{}
-            BluetoothBtn{}
+            Components.NetworkBtn{}
+            Components.BluetoothBtn{}
         }
 
         RowLayout {
             anchors.margins: 1
             spacing: 1
-            DndButton{}
-            KDEConnect{}
+            Components.DndButton{}
+            Components.KDEConnect{}
         }
     }
 }

@@ -3,6 +3,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.0
 import "../components" as Components
+import "components/Default" as LayoutComponents 
 
 ColumnLayout {
     id: wrapper
@@ -35,10 +36,10 @@ ColumnLayout {
         Layout.maximumHeight: root.sectionHeight
         
         // Network, Bluetooth and Settings Button
-        Components.SectionQuickToggleButtons{}
+        LayoutComponents.SectionQuickToggleButtons{}
 
         // Screen controls section
-        Components.SectionScreenControls{}
+        LayoutComponents.SectionScreenControls{}
     }
 
     Components.Volume{

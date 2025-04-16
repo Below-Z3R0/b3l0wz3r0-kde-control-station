@@ -5,8 +5,8 @@ import QtQuick.Layouts
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami as Kirigami
 
-import "../lib" as Lib
-import "../js/funcs.js" as Funcs
+import "../../../components" as Components
+import "../../../lib" as Lib
 
 Lib.Card {
     id: sectionScreenControls
@@ -28,25 +28,25 @@ Lib.Card {
         columnSpacing: 1
         rowSpacing: 1
         uniformCellHeights: true
-        BrightnessSlider{
+        Components.BrightnessSlider{
             id: brightnessSlider
             Layout.columnSpan: 2
             Layout.alignment: Qt.AlignTop
         }
 
-        NightLight{
+        Components.NightLight{
             Layout.maximumHeight: parent.height / 2
              Layout.alignment: Qt.AlignTop
         }
-        ColorSchemeSwitcher{
+        Components.ColorSchemeSwitcher{
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
-        ScreenshotBtn {
+        Components.ScreenshotBtn {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
-        CommandRun{
+        Components.CommandRun{
             visible: root.showCmd1
             title: root.cmdTitle1
             icon: root.cmdIcon1
@@ -54,7 +54,7 @@ Lib.Card {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
-        CommandRun{
+        Components.CommandRun{
             visible: root.showCmd2
             title: root.cmdTitle2
             icon: root.cmdIcon2
