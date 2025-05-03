@@ -170,7 +170,7 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: "Toggle buttons and sliders"
+            Kirigami.FormData.label: i18n("Toggle buttons and sliders")
         }
 
         CheckBox {

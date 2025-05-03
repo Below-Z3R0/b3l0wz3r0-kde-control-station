@@ -26,13 +26,13 @@ Lib.Card {
             flat: true
             noMargins: true
             isLongButton: true
-            heading: "Bluetooth"
+            heading: i18n("Bluetooth")
         }
         Components.ColorSchemeSwitcher{
             flat: true
             noMargins: true
             isLongButton: true
-            heading: "Appearance"
+            heading: i18n("Appearance")
         }
     }
 }

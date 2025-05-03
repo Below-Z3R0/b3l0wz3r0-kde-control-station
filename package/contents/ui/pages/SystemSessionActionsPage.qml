@@ -18,36 +18,33 @@ PageTemplate {
         id: sm
     }
 
-     ListModel {
-        id: actionsModel
-
-        ListElement {
-            name: "Lock Screen"
-            icon: "system-lock-screen"
+    property var actionsModel: [
+        {
+            name: i18n("Lock Screen"),
+            icon: "system-lock-screen",
             action: () => sm.lock()
-        }
-        ListElement {
-            name: "Log Out"
-            icon: "system-log-out"
+        },
+        {
+            name: i18n("Log Out"),
+            icon: "system-log-out",
             action: () => sm.requestLogout(1)
-        }
-        ListElement {
-            name: "Restart"
-            icon: "system-reboot"
+        },
+        {
+            name:  i18n("Restart"),
+            icon: "system-reboot",
             action: () => sm.requestReboot(1)
-        }
-        ListElement {
-            name: "Shutdown"
-            icon: "system-shutdown"
+        },
+        {
+            name:  i18n("Shutdown"),
+            icon: "system-shutdown",
             action: () => sm.requestShutdown(1)
-        }
-        ListElement {
-            name: "Suspend"
-            icon: "system-suspend"
+        },
+        {
+            name:  i18n("Suspend"),
+            icon: "system-suspend",
             action: () => sm.suspend()
         }
-    }
-
+    ]
 
     GridLayout {
         id: buttonsColumn
@@ -64,19 +61,19 @@ PageTemplate {
             id: repeater
             model: actionsModel
             Lib.CardButton {
-
+                property var item: model.modelData ? model.modelData : model
                 visible: root.showColorSwitcher
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 isLongButton: true
-                title: name
+                title: item.name
                 Kirigami.Icon {
                     anchors.fill: parent
-                    source: icon
+                    source: item.icon
                     selected: false
                 }
 
-                onClicked: action()
+                onClicked: item.action()
             }
         }
     }

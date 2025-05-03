@@ -55,7 +55,7 @@ PageTemplate {
 
                 PlasmaComponents3.Label {
                     id: title
-                    text: "Night light status"
+                    text: i18n("Night light status")
                     textFormat: Text.PlainText
 
                     elide: Text.ElideRight
