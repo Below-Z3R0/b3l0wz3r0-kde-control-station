@@ -20,29 +20,46 @@ PageTemplate {
 
     property var actionsModel: [
         {
-            name: i18n("Lock Screen"),
-            icon: "system-lock-screen",
-            action: () => sm.lock()
-        },
-        {
-            name: i18n("Log Out"),
-            icon: "system-log-out",
-            action: () => sm.requestLogout(1)
+            name:  i18n("Suspend"),
+            icon: "system-suspend",
+            visible: sm.canSuspend,
+            action: () => sm.suspend()
         },
         {
             name:  i18n("Restart"),
             icon: "system-reboot",
+            visible: sm.canReboot,
             action: () => sm.requestReboot(1)
         },
         {
             name:  i18n("Shutdown"),
             icon: "system-shutdown",
+            visible: sm.canShutdown,
             action: () => sm.requestShutdown(1)
         },
         {
-            name:  i18n("Suspend"),
-            icon: "system-suspend",
-            action: () => sm.suspend()
+            name:  i18n("Hibernate"),
+            icon: "system-suspend-hibernate",
+            visible: sm.canSuspendThenHibernate,
+            action: () => sm.suspendThenHibernate()
+        },
+        {
+            name: i18n("Lock Screen"),
+            icon: "system-lock-screen",
+            visible: sm.canLock,
+            action: () => sm.lock()
+        },
+        {
+            name: i18n("Log Out"),
+            icon: "system-log-out",
+            visible: sm.canLogout,
+            action: () => sm.requestLogout(1)
+        },
+        {
+            name: i18n("Switch User"),
+            icon: "system-switch-user",
+            visible: sm.canSwitchUser,
+            action: () => sm.switchUser()
         }
     ]
 
@@ -50,7 +67,6 @@ PageTemplate {
         id: buttonsColumn
         anchors.fill: parent
         anchors.margins: root.smallSpacing
-        anchors.bottomMargin: !root.animations ? 90 : -1
 
         columns: 1
 
@@ -62,7 +78,7 @@ PageTemplate {
             model: actionsModel
             Lib.CardButton {
                 property var item: model.modelData ? model.modelData : model
-                visible: root.showColorSwitcher
+                visible: item.visible
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 isLongButton: true
