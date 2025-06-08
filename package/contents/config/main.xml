@@ -29,11 +29,17 @@
         <entry name="isDarkTheme" type="bool">
             <default>false</default>
         </entry>
-        <entry name="mainIconHeight" type="int">
-            <default>24</default>
-        </entry>
-        <entry name="mainIconName" type="string">
+        <entry name="icon" type="String">
+            <label>The name of the icon to use for the compact representation (e.g. on a small panel).</label>
             <default>configure</default>
+        </entry>
+        <entry name="useCustomButtonImage" type="Bool">
+            <label>Whether to use a custom image instead of an icon in the compact representation (e.g. on a small panel).</label>
+            <default>false</default>
+        </entry>
+        <entry name="customButtonImage" type="Url">
+            <label>The URL of the custtom image to use instead of an icon in the compact representation (e.g. on a small panel).</label>
+            <default></default>
         </entry>
         <entry name="lightTheme" type="String">
             <label>Light Theme</label>

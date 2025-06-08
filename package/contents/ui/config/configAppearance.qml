@@ -10,7 +10,13 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kcmutils as KCM
 
+import org.kde.draganddrop 2.0 as DragDrop
+import org.kde.ksvg 1.0 as KSvg
+
+
 KCM.SimpleKCM {
+    id: configAppearance
+
     property alias cfg_scale: scale.value
     property alias cfg_layout: layout.currentIndex
     property alias cfg_transparency: transparency.checked
@@ -27,7 +33,9 @@ KCM.SimpleKCM {
     property alias cfg_showCmd1: showCmd1.checked
     property alias cfg_showCmd2: showCmd2.checked
     property alias cfg_showPercentage: showPercentage.checked
-    property alias cfg_mainIconName: mainIconName.icon.name
+    property string cfg_icon: Plasmoid.configuration.icon
+    property bool cfg_useCustomButtonImage: Plasmoid.configuration.useCustomButtonImage
+    property string cfg_customButtonImage: Plasmoid.configuration.customButtonImage
     property alias cfg_cmdIcon1: cmdIcon1.icon.name
     property alias cfg_cmdRun1: cmdRun1.text
     property alias cfg_cmdTitle1: cmdTitle1.text
@@ -97,22 +105,102 @@ KCM.SimpleKCM {
         }
     }
 
-    // Used to select icons
-    KIconThemes.IconDialog {
-        id: iconDialog
-        property var iconObj
-        onIconNameChanged: iconObj.name = iconName
-    }
-
     Kirigami.FormLayout {
         Button {
-            id: mainIconName
+            id: iconButton
+
             Kirigami.FormData.label: i18n("Icon:")
-            icon.width: Kirigami.Units.iconSizes.medium
-            icon.height: icon.width
-            onClicked: {
-                iconDialog.open()
-                iconDialog.iconObj= mainIconName.icon
+
+            implicitWidth: previewFrame.width + Kirigami.Units.smallSpacing * 2
+            implicitHeight: previewFrame.height + Kirigami.Units.smallSpacing * 2
+
+            // Just to provide some visual feedback when dragging;
+            // cannot have checked without checkable enabled
+            checkable: true
+            checked: dropArea.containsAcceptableDrag
+
+            onPressed: iconMenu.opened ? iconMenu.close() : iconMenu.open()
+
+            DragDrop.DropArea {
+                id: dropArea
+
+                property bool containsAcceptableDrag: false
+
+                anchors.fill: parent
+
+                onDragEnter: {
+                    // Cannot use string operations (e.g. indexOf()) on "url" basic type.
+                    var urlString = event.mimeData.url.toString();
+
+                    // This list is also hardcoded in KIconDialog.
+                    var extensions = [".png", ".xpm", ".svg", ".svgz"];
+                    containsAcceptableDrag = urlString.indexOf("file:///") === 0 && extensions.some(function (extension) {
+                        return urlString.indexOf(extension) === urlString.length - extension.length; // "endsWith"
+                    });
+
+                    if (!containsAcceptableDrag) {
+                        event.ignore();
+                    }
+                }
+                onDragLeave: containsAcceptableDrag = false
+
+                onDrop: {
+                    if (containsAcceptableDrag) {
+                        // Strip file:// prefix, we already verified in onDragEnter that we have only local URLs.
+                        iconDialog.setCustomButtonImage(event.mimeData.url.toString().substr("file://".length));
+                    }
+                    containsAcceptableDrag = false;
+                }
+            }
+
+            KIconThemes.IconDialog {
+                id: iconDialog
+
+                function setCustomButtonImage(image) {
+                    configAppearance.cfg_customButtonImage = image || configAppearance.cfg_icon || "start-here-kde-symbolic"
+                    configAppearance.cfg_useCustomButtonImage = true;
+                }
+
+                onIconNameChanged: setCustomButtonImage(iconName);
+            }
+
+            KSvg.FrameSvgItem {
+                id: previewFrame
+                anchors.centerIn: parent
+                imagePath: Plasmoid.location === PlasmaCore.Types.Vertical || Plasmoid.location === PlasmaCore.Types.Horizontal
+                        ? "widgets/panel-background" : "widgets/background"
+                width: Kirigami.Units.iconSizes.medium + fixedMargins.left + fixedMargins.right
+                height: Kirigami.Units.iconSizes.medium + fixedMargins.top + fixedMargins.bottom
+
+                Kirigami.Icon {
+                    anchors.centerIn: parent
+                    width: Kirigami.Units.iconSizes.medium
+                    height: width
+                    source: configAppearance.cfg_useCustomButtonImage ? configAppearance.cfg_customButtonImage : configAppearance.cfg_icon
+                }
+            }
+
+            Menu {
+                id: iconMenu
+
+                // Appear below the button
+                y: +parent.height
+
+                onClosed: iconButton.checked = false;
+
+                MenuItem {
+                    text: i18nc("@item:inmenu Open icon chooser dialog", "Choose…")
+                    icon.name: "document-open-folder"
+                    onClicked: iconDialog.open()
+                }
+                MenuItem {
+                    text: i18nc("@item:inmenu Reset icon to default", "Clear Icon")
+                    icon.name: "edit-clear"
+                    onClicked: {
+                        configAppearance.cfg_icon = "configure"
+                        configAppearance.cfg_useCustomButtonImage = false
+                    }
+                }
             }
         }
 

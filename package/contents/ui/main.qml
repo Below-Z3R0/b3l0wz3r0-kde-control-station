@@ -49,8 +49,7 @@ PlasmoidItem {
     property color disabledBgColor: isDarkTheme ? Qt.rgba(255, 255, 255, 0.15) : Qt.rgba(0, 0, 0, 0.15)
     
     // Main Icon
-    property string mainIconName: Plasmoid.configuration.mainIconName
-    property string mainIconHeight: Plasmoid.configuration.mainIconHeight
+     Plasmoid.icon: Plasmoid.configuration.useCustomButtonImage ? Plasmoid.configuration.customButtonImage : Plasmoid.configuration.icon
     
     // Components
     property bool showKDEConnect: Plasmoid.configuration.showKDEConnect
