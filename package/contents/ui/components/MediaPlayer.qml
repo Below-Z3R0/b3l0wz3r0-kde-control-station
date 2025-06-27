@@ -6,7 +6,6 @@ import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
-import org.kde.plasma.private.mediacontroller 1.0
 import org.kde.plasma.private.mpris as Mpris
 
 import "../lib" as Lib

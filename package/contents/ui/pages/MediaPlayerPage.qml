@@ -9,7 +9,6 @@ import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kirigami 2 as Kirigami
 
 
-import org.kde.plasma.private.mediacontroller
 import org.kde.plasma.private.mpris as Mpris
 
 
@@ -20,8 +19,6 @@ PageTemplate {
 
     sectionTitle: i18n("Media Player")
     customHeader: true
-
-    readonly property int volumePercentStep: config.volumeStep
 
     property alias mpris2Model: mpris2Model
     property alias playerList: playerList
@@ -145,9 +142,5 @@ PageTemplate {
 
     Mpris.Mpris2Model {
         id: mpris2Model
-    }
-
-    GlobalConfig {
-        id: config
     }
 }
