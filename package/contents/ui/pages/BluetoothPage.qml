@@ -188,8 +188,4 @@ PageTemplate {
             }
         }
     }
-
-    Component.onCompleted: {
-        console.log(typeof oldModel)
-    }
 }

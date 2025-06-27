@@ -142,7 +142,6 @@ KCM.SimpleKCM {
                     var targetLabel =  preferChangeGlobalTheme.checked ? labelD : labelB
                     if (isChangeAvailable)
                        targetLabel.text = currentText
-                        console.log(targetLabel.text)
                 }
             }
         }

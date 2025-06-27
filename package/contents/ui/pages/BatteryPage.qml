@@ -82,7 +82,6 @@ PageTemplate {
     signal activateProfileRequested(string profile)
 
     onActivateProfileRequested: profile => {
-        console.log(profile)
         powerProfilesControl.isSilent = root.expanded;
 
         if (profile === powerProfilesControl.activeProfile) {

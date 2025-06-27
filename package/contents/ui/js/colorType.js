@@ -6,18 +6,6 @@ function isDark(color) {
     var g = color.g;
     var b = color.b;
 
-    // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
-    // var hsp = Math.sqrt(
-    //     0.299 * (r * r) +
-    //     0.587 * (g * g) +
-    //     0.114 * (b * b)
-    // );
-
-    // Using the HSP value, determine whether the color is light or dark
-    console.log("Script de color llamado")
-
-
-    // return (hsp > 127.5) ? false : true;
 
     var colorArray = [r, g , b ].map(v => {
         if (v <= 0.03928) {

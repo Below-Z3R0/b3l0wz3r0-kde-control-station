@@ -41,7 +41,6 @@ function checkInhibition() {
     if (!NotificationManager.Server.valid) {
         return false;
     }
-    console.log("pass")
     var inhibitedUntil = notificationSettings.notificationsInhibitedUntil;
     if (!isNaN(inhibitedUntil.getTime())) {
         inhibited |= (Date.now() < inhibitedUntil.getTime());

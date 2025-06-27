@@ -263,7 +263,6 @@ PlasmaExtras.Representation {
 
                 function onAlbumArtChanged() {
                     albumArt.loadAlbumArt();
-                    console.log(mediaPlayerPage.albumArt);
                 }
             }
 

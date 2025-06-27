@@ -124,7 +124,6 @@ PlasmaComponents3.ItemDelegate {
                 onMoved: {
                     const { canBeInhibited, profile } = powerProfileItem.profileData[value];
                     if (!(canBeInhibited && powerProfileItem.inhibited)) {
-                        console.log(profile)
                         activateProfileRequested(profile);
 
                     }
