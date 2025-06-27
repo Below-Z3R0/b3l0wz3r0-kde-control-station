@@ -11,11 +11,12 @@ Card {
     property alias title: title.text
     property alias heading: heading.text
     property bool isLongButton: false // Used in ControlCenter layout
+    property bool fullSizeIcon: false
     
     GridLayout {
         anchors.fill: parent
         property bool small: width < root.fullRepWidth/3
-        anchors.margins: small ? root.smallSpacing : isLongButton ? root.mediumSpacing : root.largeSpacing
+        anchors.margins: fullSizeIcon ? 0 : small ? root.smallSpacing : isLongButton ? root.mediumSpacing : root.largeSpacing
         rows: small ? 2 : 2
         columns: small ? 1 : 2
         columnSpacing: small ? 0 : 10*root.scale
@@ -24,6 +25,7 @@ Card {
         Item {
             id: icon
             Layout.preferredHeight: (parent.small && plasmoid.configuration.layout == 1) ? parent.height/1.8 
+                                    : fullSizeIcon ? parent.height - root.largeSpacing
                                     : parent.small ? parent.height/1.5 
                                     : isLongButton ? parent.height 
                                     : parent.height - root.largeSpacing

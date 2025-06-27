@@ -26,7 +26,19 @@ Rectangle {
 
     property bool flat: false
 
+    property bool shadow: flat ? false : true
+
+    property bool filled:  flat ? false : true
+
+    property bool bordr:  flat ? false : true
+
+    property bool glassEffect: false
+
     property bool noMargins: false
+
+    property bool roundedWidget: false
+
+    property int cornerRadius: roundedWidget ? 32 : 12
 
     property var margins: shadowContainer.margins
     default property alias content: dataContainer.data
@@ -34,13 +46,13 @@ Rectangle {
 
     Item {
         id: shadowContainer
-        visible: !flat
+        visible: shadow
         
         anchors.fill: parent
         anchors.margins: 0
         layer.enabled: true
 
-        opacity: 0.2 // This controls the opcity of the shadow
+        opacity: 0.1 // This controls the opcity of the shadow
         clip: true
 
         /*
@@ -52,8 +64,7 @@ Rectangle {
             anchors.fill: parent
             anchors.margins: 6
             color: root.themeBgColor
-            radius: 12
-                
+            radius: cornerRadius
         }
         DropShadow {
             anchors.fill: shadowWidget
@@ -69,16 +80,17 @@ Rectangle {
 
     Rectangle {
         id: cardBg; 
-        color: root.enableTransparency ? 
+        color: !filled ? "transparent" :
+                root.enableTransparency ? 
                 Qt.rgba(root.themeBgColor.r, root.themeBgColor.g, root.themeBgColor.b, root.transparencyLevel/100)
                 : root.themeBgColor
 
-        border.color: root.showBorders ? root.disabledBgColor : "transparent"
+        border.color: glassEffect ? Qt.rgba(255, 255, 255, 0.18): root.disabledBgColor
+        border.width: root.showBorders && bordr ? 1 : 0
         anchors.centerIn: shadowContainer
-        visible: !flat
         width: shadowWidget.width
         height: shadowWidget.height
-        radius: 12
+        radius: cornerRadius
         z: -1
     }
 

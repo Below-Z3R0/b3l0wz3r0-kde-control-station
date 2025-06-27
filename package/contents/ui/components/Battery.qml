@@ -14,8 +14,8 @@ import "../lib" as Lib
 Lib.Card { 
     id: battery
 
-    Layout.preferredHeight: root.sectionHeight/3.3
-    Layout.preferredWidth: Layout.preferredHeight * 1.7
+    Layout.fillHeight: true
+    Layout.fillWidth: true
     smallTopMargins: true
     smallBottomMargins: true
 
@@ -43,7 +43,8 @@ Lib.Card {
         BatteryIcon {
             id: batteryIcon
 
-            Layout.alignment: Qt.AlignCenterLeft | Qt.AlignVcenter
+            Layout.alignment: Qt.AlignRight | Qt.AlignVcenter
+            Layout.rightMargin: 5
             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
 

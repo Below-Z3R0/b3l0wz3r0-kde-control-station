@@ -19,8 +19,7 @@ Lib.CardButton {
     property bool mini: false 
 
     Layout.fillHeight: true
-    Layout.fillWidth: mini ? false : true
-    Layout.preferredWidth: mini ? root.sectionHeight/3.3 : -1
+    Layout.fillWidth: true
     title: i18n("Screenshot")
     property string command:  "spectacle"
     Kirigami.Icon {

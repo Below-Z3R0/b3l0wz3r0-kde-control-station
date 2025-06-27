@@ -14,6 +14,7 @@ import "../lib" as Lib
 Lib.Card {
     id: mediaPlayer
     visible: root.showMediaPlayer
+    property bool small: width < (root.fullRepWidth / 4)*3 
     Layout.fillWidth: true
     Layout.fillHeight: true
     
@@ -27,9 +28,12 @@ Lib.Card {
         }
     }
 
-    RowLayout {
+    GridLayout {
         anchors.fill: parent
         anchors.margins: root.largeSpacing
+
+        rows: small ? 4 : 1
+        columns: small? 1 : 3
 
         Image {
             id: audioThumb
@@ -37,6 +41,7 @@ Lib.Card {
             source: mediaPlayerPage.albumArt || "../../assets/music.svg"
             Layout.fillHeight: true
             Layout.preferredWidth: height
+            Layout.rowSpan: small ? 2 : 1
             enabled: mediaPlayerPage.track || (mediaPlayerPage.playbackStatus > Mpris.PlaybackStatus.Stopped) ? true : false
 
             ColorOverlay {
@@ -45,10 +50,24 @@ Lib.Card {
                 source: audioThumb
                 color: Kirigami.Theme.textColor
             }
+
+            layer.enabled: true
+            layer.effect: OpacityMask {
+                maskSource: Item {
+                    width: audioThumb.width
+                    height: audioThumb.height
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: audioThumb.adapt ? audioThumb.width : Math.min(audioThumb.width, audioThumb.height)
+                        height: audioThumb.adapt ? audioThumb.height : width
+                        radius: 12//Math.min(width, height)
+                    }
+                }
+            }
         }
         ColumnLayout {
             id: mediaNameWrapper
-            Layout.margins: root.smallSpacing
+           // Layout.margins: root.smallSpacing
             Layout.fillHeight: true
             spacing: 0
 
@@ -72,7 +91,7 @@ Lib.Card {
         }
         RowLayout {
             id: audioControls
-            Layout.alignment: Qt.AlignRight
+            Layout.alignment: small ? Qt.AlignHCenter : Qt.AlignRight
             Layout.fillWidth: true
 
             PlasmaComponents.ToolButton {

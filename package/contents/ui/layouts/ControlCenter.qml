@@ -15,12 +15,20 @@ ColumnLayout {
         id: header
         spacing: 1
         Layout.fillWidth: true
+        Layout.preferredHeight: root.sectionHeight/3.3
         anchors.margins: 1
         visible: header.children.length > 0
-
+        
         Components.UserAvatar{}
-        Components.Battery {}
-        Components.SystemActions{}
+        Components.Battery {
+            id: mainBatteryWidget
+            Layout.preferredWidth: header.Layout.preferredHeight * 1.7
+            Layout.maximumWidth: Layout.preferredWidth
+        }
+        Components.SystemActions{
+            Layout.preferredWidth: header.Layout.preferredHeight
+            Layout.maximumWidth: Layout.preferredWidth
+        }
     }
 
     RowLayout {

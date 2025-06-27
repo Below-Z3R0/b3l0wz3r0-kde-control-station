@@ -8,16 +8,17 @@ import Qt5Compat.GraphicalEffects
 
 Item
 {
-    property alias sourceColor:rect.color
+    property color sourceColor
     property alias source: icon.source
     property alias selected: icon.selected
+    property bool fullSizeIcon : false
 
     property color highlightColor: root.useSystemColorsOnToggles ? root.themeHighlightColor : root.toggleButtonsColor
 
     Rectangle {
         id: rect
         radius: width/2
-        color: icon.selected ? highlightColor : root.disabledBgColor
+        color: icon.selected ? highlightColor : sourceColor.valid ? sourceColor : root.disabledBgColor
         anchors.fill: parent
         
 
@@ -25,7 +26,7 @@ Item
             id: icon
             visible: true
             anchors.fill: parent
-            anchors.margins: root.smallSpacing
+            anchors.margins: fullSizeIcon ? root.largeSpacing : root.smallSpacing
             anchors.centerIn: parent
             selected: false
             isMask: true

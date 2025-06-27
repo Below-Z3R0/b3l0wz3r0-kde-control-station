@@ -14,8 +14,8 @@ import "../lib" as Lib
 Lib.Card {
     id: sysActions
 
-   Layout.preferredWidth: root.sectionHeight/3.3
-   Layout.preferredHeight: root.sectionHeight/3.3
+    Layout.fillHeight: true
+    Layout.fillWidth: true
 
    property bool showToolTip: false
 

@@ -62,7 +62,7 @@ KCM.SimpleKCM {
     property color cfg_slidersColor: Plasmoid.configuration.slidersColor
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
-    property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  layout.currentIndex == 2 ? 6 : 2 
+    property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  (layout.currentIndex == 2 || layout.currentIndex == 3 )? 6 : 2 
 
 
     function toggleLayoutDefaults(index) {                    
@@ -102,6 +102,11 @@ KCM.SimpleKCM {
                 brightness_widget_title.checked = false;
                 brightness_widget_thin.checked = true;
                 break;
+            case 3:
+                showScreenshot.checked = true;
+                maxNum = 6;
+                break;
+
         }
     }
 
@@ -218,7 +223,8 @@ KCM.SimpleKCM {
             model: [
                 i18n("KDE Control Station (Default)"),
                 i18n("Control Center"),
-                i18n("Flat")
+                i18n("Flat"),
+                i18n("Tahoe")
             ]
             onActivated: toggleLayoutDefaults(index)
         }

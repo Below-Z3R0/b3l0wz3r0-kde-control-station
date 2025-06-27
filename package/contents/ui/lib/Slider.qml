@@ -22,6 +22,7 @@ Card {
 
     property bool showTitle: true
     property bool thinSlider: false
+    property bool mediumSizeSlider: false
 
     property int from: 0
     property int to: 100
@@ -109,7 +110,7 @@ Card {
                     x: slider.leftPadding
                     y: slider.topPadding + slider.availableHeight / 2 - height / 2
                     implicitWidth: 200
-                    implicitHeight: thinSlider ? 7 : 22
+                    implicitHeight: thinSlider ? 7 : mediumSizeSlider ? 11 : 22
                     width: slider.availableWidth
                     height: parent.height
                     radius: height / 2
@@ -131,11 +132,18 @@ Card {
                     id: handle
                     x: slider.leftPadding + slider.visualPosition * (slider.availableWidth - width)
                     y: slider.topPadding + slider.availableHeight / 2 - height / 2
-                    implicitWidth: thinSlider ? 17 : levelIndicator.height
-                    implicitHeight: thinSlider ? 17 : levelIndicator.height
-                    radius: height / 2
-                    color: slider.pressed ? "#f0f0f0" : "#f6f6f6"
+                    implicitWidth: thinSlider ? 17 : 
+                                    (mediumSizeSlider&&(slider.hovered || slider.pressed)) ? levelIndicator.height*3.7 : 
+                                    levelIndicator.height
+                    implicitHeight: thinSlider ? 17 : 
+                                    (mediumSizeSlider&&(slider.hovered || slider.pressed)) ? levelIndicator.height*2.5 :
+                                    levelIndicator.height
+                    radius: mediumSizeSlider ? 10 : height / 2
+                    color: mediumSizeSlider && slider.pressed ? "transparent" : slider.pressed ? "#f0f0f0" : "#f6f6f6"
                     border.color: "#bdbebf"
+                    Behavior on implicitWidth {
+                        NumberAnimation { duration: 200 }
+                    }
                 }
                 
                 onMoved: {

@@ -20,6 +20,10 @@ Item {
 
     property bool canTogglePage: false
 
+    property bool glassEffect: false
+    property int cornerRadius: 12
+    property bool mediumSizeSlider: false
+
     // Get brightness control from KDE components
     ScreenBrightnessControl {
         id: sbControl
@@ -75,6 +79,9 @@ Item {
             secondaryTitle: Math.round((mainScreen.brightness / mainScreen.maxBrightness)*100) + "%"
 
             canTogglePage: brightnessControl.canTogglePage
+            glassEffect: brightnessControl.glassEffect
+            cornerRadius: brightnessControl.cornerRadius
+            mediumSizeSlider: brightnessControl.mediumSizeSlider
             
             showTitle: root.brightness_widget_title
             thinSlider: root.brightness_widget_thin

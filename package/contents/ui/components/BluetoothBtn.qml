@@ -10,10 +10,11 @@ import "../js/funcs.js" as Funcs
 
 
 Lib.CardButton {
-
+    id:bt
+    
     // BLUETOOTH
     property QtObject btManager : BluezQt.Manager
-
+    property alias sourceColor: icon.sourceColor
     visible: true
 
     Layout.fillWidth: true
@@ -21,7 +22,9 @@ Lib.CardButton {
     
     title: Funcs.getBtDevice() // i18n("Bluetooth")
     Lib.Icon {
+        id: icon
         anchors.fill: parent
+        fullSizeIcon: bt.fullSizeIcon
         source: {
             if (BluezQt.Manager.connectedDevices.length > 0) {
                 return "network-bluetooth-activated-symbolic";
