@@ -29,13 +29,13 @@ PageTemplate {
             name:  i18n("Restart"),
             icon: "system-reboot",
             visible: sm.canReboot,
-            action: () => sm.requestReboot(1)
+            action: () => sm.requestReboot()
         },
         {
             name:  i18n("Shutdown"),
             icon: "system-shutdown",
             visible: sm.canShutdown,
-            action: () => sm.requestShutdown(1)
+            action: () => sm.requestShutdown()
         },
         {
             name:  i18n("Hibernate"),
@@ -53,7 +53,7 @@ PageTemplate {
             name: i18n("Log Out"),
             icon: "system-log-out",
             visible: sm.canLogout,
-            action: () => sm.requestLogout(1)
+            action: () => sm.requestLogout()
         },
         {
             name: i18n("Switch User"),
