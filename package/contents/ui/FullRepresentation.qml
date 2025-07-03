@@ -41,6 +41,8 @@ Item {
 
     property var activePage: wrapper
 
+    property bool expanded: root.expanded
+
     // System session actions page
     Pages.SystemSessionActionsPage {
         id: systemSessionActionsPage
@@ -137,5 +139,11 @@ Item {
         animation.hide = wrapper.shown ? wrapper : activePage;
         animation.show = wrapper.shown ? activePage : wrapper;
         animation.running = true;
+    }
+
+    onExpandedChanged: {
+        if(!wrapper.shown) {
+            togglePage();
+        }
     }
 }
