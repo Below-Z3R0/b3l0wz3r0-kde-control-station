@@ -18,7 +18,6 @@ PlasmoidItem {
     property int transparencyLevel: Plasmoid.configuration.transparencyLevel
     property bool showBorders: Plasmoid.configuration.showBorders
     property var animationDuration: Kirigami.Units.veryShortDuration
-    property bool playVolumeFeedback: Plasmoid.configuration.playVolumeFeedback
 
     property bool preferChangeGlobalTheme: Plasmoid.configuration.preferChangeGlobalTheme
     property string generalLightTheme: preferChangeGlobalTheme ? Plasmoid.configuration.lightGlobalTheme : Plasmoid.configuration.lightTheme

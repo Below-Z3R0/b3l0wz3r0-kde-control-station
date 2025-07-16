@@ -12,6 +12,7 @@ Card {
     signal clicked
     signal togglePage
 
+    property alias pressed: slider.pressed
     property alias title: title.text
     property alias secondaryTitle: secondaryTitle.text
     property alias value: slider.value

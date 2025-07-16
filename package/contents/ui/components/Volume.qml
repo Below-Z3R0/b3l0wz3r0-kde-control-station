@@ -37,13 +37,18 @@ Lib.Slider {
     
     // Changes icon based on the current volume percentage
     source: Funcs.volIconName(sink.volume, sink.muted)
-    
-    onValueChanged: {
-        if(root.playVolumeFeedback) {
-            feedback.play(sink.index)
+
+    onPressedChanged: {
+        if (!pressed) {
+            // Make sure to sync the volume once the button was
+            // released.
+            // Otherwise it might be that the slider is at v10
+            // whereas PA rejected the volume change and is
+            // still at v15 (e.g.).
+            volumePage.playFeedback(sink.Index);
         }
     }
-    // Update volume
+    
     onMoved: {
         sink.volume = value * Vol.PulseAudio.NormalVolume / 100
     }

@@ -61,12 +61,6 @@
             <default>org.kde.breezedark.desktop</default>
         </entry>
         
-        <!--    BEHAVIOUR      -->
-        <entry name="playVolumeFeedback" type="Bool">
-            <label>Play Volume Feedback</label>
-            <default>True</default>
-        </entry>
-        
         <!--    SHOW/HIDE Components      -->
         <entry name="showKDEConnect" type="bool">
             <default>true</default>
