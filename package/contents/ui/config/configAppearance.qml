@@ -160,13 +160,21 @@ KCM.SimpleKCM {
 
             KIconThemes.IconDialog {
                 id: iconDialog
+                
+                // This property is used to change icon of a specific target such as command buttons icons
+                property var target: null
 
                 function setCustomButtonImage(image) {
-                    configAppearance.cfg_customButtonImage = image || configAppearance.cfg_icon || "start-here-kde-symbolic"
-                    configAppearance.cfg_useCustomButtonImage = true;
+                    if (target) {
+                        target.icon.name = image;
+                        target = null;
+                    } else {
+                        configAppearance.cfg_customButtonImage = image || configAppearance.cfg_icon || "start-here-kde-symbolic"
+                        configAppearance.cfg_useCustomButtonImage = true;
+                    }
                 }
 
-                onIconNameChanged: setCustomButtonImage(iconName);
+                onIconNameChanged: iconName => setCustomButtonImage(iconName);
             }
 
             KSvg.FrameSvgItem {
@@ -371,7 +379,7 @@ KCM.SimpleKCM {
                 icon.height: icon.width
                 onClicked: {
                     iconDialog.open()
-                    iconDialog.iconObj= cmdIcon1.icon
+                    iconDialog.target= cmdIcon1
                 }
             }
         }
@@ -397,7 +405,7 @@ KCM.SimpleKCM {
                 icon.height: icon.width
                 onClicked: {
                     iconDialog.open()
-                    iconDialog.iconObj= cmdIcon2.icon
+                    iconDialog.target= cmdIcon2
                 }
             }
         }
