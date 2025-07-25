@@ -12,6 +12,7 @@ Item
     property alias source: icon.source
     property alias selected: icon.selected
     property bool fullSizeIcon : false
+    property bool customIcon: false
 
     property color highlightColor: root.useSystemColorsOnToggles ? root.themeHighlightColor : root.toggleButtonsColor
 
@@ -29,7 +30,7 @@ Item
             anchors.margins: fullSizeIcon ? root.largeSpacing : root.smallSpacing
             anchors.centerIn: parent
             selected: false
-            isMask: true
+            isMask: customIcon
             color: selected ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
         }
     }

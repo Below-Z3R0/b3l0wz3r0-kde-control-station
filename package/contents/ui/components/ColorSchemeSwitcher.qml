@@ -30,6 +30,7 @@ Lib.CardButton {
         fullSizeIcon: colorSchemeSwitcher.fullSizeIcon
         source: Qt.resolvedUrl("../icons/feather/dark-mode.svg")
         selected: root.isDarkTheme
+        customIcon: true
     }
 
     onClicked: {
