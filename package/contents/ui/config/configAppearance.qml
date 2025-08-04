@@ -13,6 +13,8 @@ import org.kde.kcmutils as KCM
 import org.kde.draganddrop 2.0 as DragDrop
 import org.kde.ksvg 1.0 as KSvg
 
+import "components" as ConfigComponents
+
 
 KCM.SimpleKCM {
     id: configAppearance
@@ -59,6 +61,7 @@ KCM.SimpleKCM {
     property alias cfg_useSystemColorsOnToggles: useSystemColorsOnToggles.checked
     property alias cfg_useSystemColorsOnSliders: useSystemColorsOnSliders.checked
     property color cfg_toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
+    property color cfg_toggleButtonsIconColor: Plasmoid.configuration.toggleButtonsIconColor
     property color cfg_slidersColor: Plasmoid.configuration.slidersColor
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
@@ -282,25 +285,22 @@ KCM.SimpleKCM {
            // enabled: !checked && numChecked < maxNum || checked
         }
 
-        Button {
-            id: toggleButtonColorButton
+        Kirigami.FormLayout { 
             visible: !useSystemColorsOnToggles.checked
-            width: Kirigami.Units.iconSizes.small
-            height: width
-            Kirigami.FormData.label: i18n("Toggle buttons color")
-            Rectangle {
-                anchors.centerIn: parent
-                anchors.fill: parent
-                radius: 10
+
+            ConfigComponents.ColorChooser {
+                id: toggleButtonColorButton
+                Kirigami.FormData.label: i18n("Highlight color: ")
                 color: cfg_toggleButtonsColor
+                onColorChoosed: selectedColor => cfg_toggleButtonsColor = selectedColor;
+                
             }
-            onPressed: toggleButtonsColorDialog.visible ? toggleButtonsColorDialog.close() : toggleButtonsColorDialog.open()
-            ColorDialog {
-                id: toggleButtonsColorDialog
-                title: i18n("Please choose a color")
-                onAccepted: {
-                    cfg_toggleButtonsColor = toggleButtonsColorDialog.selectedColor;
-                }
+
+            ConfigComponents.ColorChooser {
+                id: toggleButtonIconColorColor
+                Kirigami.FormData.label: i18n("Icon color: ")
+                color: cfg_toggleButtonsIconColor
+                onColorChoosed: selectedColor => cfg_toggleButtonsIconColor = selectedColor;
             }
         }
 
@@ -310,25 +310,13 @@ KCM.SimpleKCM {
            // enabled: !checked && numChecked < maxNum || checked
         }
 
-        Button {
-            id: slidersColorButton
+        Kirigami.FormLayout { 
             visible: !useSystemColorsOnSliders.checked
-            width: Kirigami.Units.iconSizes.small
-            height: width
-            Kirigami.FormData.label: i18n("Sliders color")
-            Rectangle {
-                anchors.centerIn: parent
-                anchors.fill: parent
-                radius: 10
+            ConfigComponents.ColorChooser {
+                id: slidersColorButton
+                Kirigami.FormData.label: i18n("Sliders color: ")
                 color: cfg_slidersColor
-            }
-            onPressed: slidersColorDialog.visible ? slidersColorDialog.close() : slidersColorDialog.open()
-            ColorDialog {
-                id: slidersColorDialog
-                title: i18n("Please choose a color")
-                onAccepted: {
-                    cfg_slidersColor = slidersColorDialog.selectedColor;
-                }
+                onColorChoosed: selectedColor => cfg_slidersColor = selectedColor;
             }
         }
 

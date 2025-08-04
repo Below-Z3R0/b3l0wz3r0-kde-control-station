@@ -158,6 +158,10 @@
             <label>Highlight color of toggle buttons.</label>
             <default>#007aff</default>
         </entry>
+        <entry name="toggleButtonsIconColor" type="Color">
+            <label>Highlight color of toggle buttons.</label>
+            <default>#ffffff</default>
+        </entry>
         <entry name="slidersColor" type="Color">
             <label>Highlight color of sliders.</label>
             <default>#ffffff</default>

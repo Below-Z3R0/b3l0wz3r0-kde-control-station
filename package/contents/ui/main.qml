@@ -83,6 +83,7 @@ PlasmoidItem {
     property bool useSystemColorsOnToggles: Plasmoid.configuration.useSystemColorsOnToggles
     property bool useSystemColorsOnSliders: Plasmoid.configuration.useSystemColorsOnSliders
     property color toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
+    property color toggleButtonsIconColor: Plasmoid.configuration.toggleButtonsIconColor
     property color slidersColor: Plasmoid.configuration.slidersColor
 
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge

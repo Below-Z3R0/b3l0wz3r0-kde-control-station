@@ -15,6 +15,7 @@ Item
     property bool customIcon: false
 
     property color highlightColor: root.useSystemColorsOnToggles ? root.themeHighlightColor : root.toggleButtonsColor
+    property color iconColor: root.useSystemColorsOnToggles ?  Kirigami.Theme.highlightedTextColor : root.toggleButtonsIconColor
 
     Rectangle {
         id: rect
@@ -31,7 +32,7 @@ Item
             anchors.centerIn: parent
             selected: false
             isMask: customIcon
-            color: selected ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+            color: selected ? iconColor : Kirigami.Theme.textColor
         }
     }
 }
