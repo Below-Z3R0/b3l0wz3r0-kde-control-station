@@ -26,8 +26,9 @@ Lib.CardButton {
     Lib.Icon {
         id: dndIcon
         anchors.fill: parent
+        customIcon: true
         source: {
-            return (Funcs.checkInhibition() ? "notifications-disabled" : "notifications");
+            return (Funcs.checkInhibition() ? Qt.resolvedUrl("../icons/feather/notifications-off.svg") : Qt.resolvedUrl("../icons/feather/notifications-on.svg"));
         }
         selected: Funcs.checkInhibition()
     }
