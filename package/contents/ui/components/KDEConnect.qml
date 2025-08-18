@@ -14,6 +14,7 @@ Lib.CardButton {
     Layout.fillWidth: true
     Layout.fillHeight: true
     title: i18n("KDE Connect")
+    shouldStickIconSize: true
     Kirigami.Icon {
         anchors.fill: parent
         source: "kdeconnect-tray"

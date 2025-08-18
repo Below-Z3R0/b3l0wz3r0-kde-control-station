@@ -34,6 +34,7 @@ Card {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
+        enabled: !root.editingLayout
         cursorShape: Qt.PointingHandCursor
         onClicked: sliderComp.togglePage()
     }

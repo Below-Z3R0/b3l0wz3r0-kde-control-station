@@ -166,5 +166,9 @@
             <label>Highlight color of sliders.</label>
             <default>#ffffff</default>
         </entry>
+         <entry name="customLayoutModel" type="String">
+            <label>Widgets model for custom layout.</label>
+            <default>null</default>
+        </entry>
     </group>
 </kcfg>

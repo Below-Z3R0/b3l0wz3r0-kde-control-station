@@ -11,9 +11,12 @@ Card {
     property alias title: title.text
     property alias heading: heading.text
     property bool isLongButton: false // Used in ControlCenter layout
-    property bool fullSizeIcon: false
+    property bool shouldStickIconSize: false // This property avoids disproportional icon size when not using Lib.Icon
+    property bool fullSizeIcon: grid.small && !showTitle && !shouldStickIconSize // Used in 'Tahoe' and 'Custom Layout' 
+    property bool showTitle: true
     
     GridLayout {
+        id: grid
         anchors.fill: parent
         property bool small: width < root.fullRepWidth/3
         anchors.margins: fullSizeIcon ? 0 : small ? root.smallSpacing : isLongButton ? root.mediumSpacing : root.largeSpacing
@@ -40,6 +43,7 @@ Card {
             font.weight: Font.Bold
             elide: Text.ElideRight
             visible: !parent.small && text
+            Layout.rowSpan: (isLongButton && !showTitle) ? 2 : 1
         }
         PlasmaComponents.Label {
             id: title
@@ -53,13 +57,14 @@ Card {
             verticalAlignment: Qt.AlignVCenter
             wrapMode: Text.WordWrap
             elide: plasmoid.configuration.layout == 1 ? Text.ElideNone : Text.ElideRight
-            visible: text
+            visible: text && showTitle
         }
     }
     MouseArea {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
+        enabled: !root.editingLayout
 
         onClicked: {
             cardButton.clicked()

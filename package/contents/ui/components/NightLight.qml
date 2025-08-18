@@ -20,6 +20,7 @@ Lib.CardButton {
 
     visible: root.showNightLight
     title: i18n("Night Light")
+    shouldStickIconSize: true
 
     property var control: nightLightPage.control
 

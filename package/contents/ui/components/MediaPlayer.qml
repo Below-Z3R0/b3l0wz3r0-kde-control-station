@@ -14,6 +14,8 @@ Lib.Card {
     id: mediaPlayer
     visible: root.showMediaPlayer
     property bool small: width < (root.fullRepWidth / 4)*3 
+    property bool isLongButton: true
+    cornerRadius: roundedWidget ? 32 : 12
     Layout.fillWidth: true
     Layout.fillHeight: true
     
@@ -21,7 +23,7 @@ Lib.Card {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
-
+        enabled: !root.editingLayout
         onClicked: {
             fullRep.togglePage(fullRep.defaultInitialWidth, fullRep.defaultInitialHeight, mediaPlayerPage);
         }

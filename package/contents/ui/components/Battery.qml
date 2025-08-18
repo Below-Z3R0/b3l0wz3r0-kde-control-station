@@ -18,6 +18,10 @@ Lib.Card {
     Layout.fillWidth: true
     smallTopMargins: true
     smallBottomMargins: true
+    property bool isLongButton: false
+    property bool showTitle: true
+
+    property bool small: height < (root.sectionHeight*1.3) / 3.5
 
     Plasma5Support.DataSource {
         id: pmSource
@@ -34,19 +38,21 @@ Lib.Card {
 
     visible: battery.battery["Has Battery"] && root.showBattery
 
-    RowLayout {
+    GridLayout {
         anchors.fill: parent
         anchors.margins: root.mediumSpacing
-        spacing: 0
         clip: true
-        
+
+        rows: (small || isLongButton) ? 1 : 2
+        columns: 2
+
         BatteryIcon {
             id: batteryIcon
 
-            Layout.alignment: Qt.AlignRight | Qt.AlignVcenter
-            Layout.rightMargin: 5
+            Layout.alignment: isLongButton && showTitle ?  (Qt.AlignRight | Qt.AlignVcenter) : (Qt.AlignHCenter | Qt.AlignVcenter)
             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            Layout.columnSpan: (small || isLongButton ) ? 1 : 2
 
             percent: battery.battery.Percent
             hasBattery: battery.battery["Has Battery"]
@@ -56,16 +62,19 @@ Lib.Card {
 
         PlasmaComponents.Label {
             id: percentLabel
-            horizontalAlignment: Text.AlignLeft
+            Layout.alignment: isLongButton ?  (Qt.AlignLeft | Qt.AlignVcenter) : (Qt.AlignHCenter | Qt.AlignVcenter)
             text: i18nc("Placeholder is battery percentage", "%1%", battery.battery.Percent)
             font.pixelSize: root.mediumFontSize
             font.weight:Font.Bold
+            Layout.columnSpan: (small || isLongButton ) ? 1 : 2
+            visible: showTitle
         }
     }
-
+    
     MouseArea {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
+        enabled: !root.editingLayout
         hoverEnabled: false
         onClicked: {
             var pageHeight =  batteryPage.contentItemHeight + batteryPage.headerHeight;

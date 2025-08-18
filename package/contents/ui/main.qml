@@ -24,7 +24,14 @@ PlasmoidItem {
     property string generalDarkTheme: preferChangeGlobalTheme ? Plasmoid.configuration.darkGlobalTheme : Plasmoid.configuration.darkTheme
 
     property var scale: Plasmoid.configuration.scale * 1 / 100
-    property int fullRepWidth: plasmoid.configuration.layout == 0 ? 420 : plasmoid.configuration.layout == 3 ? (330*scale) : 380 * scale
+    property int fullRepWidth: { 
+        switch (plasmoid.configuration.layout) {
+            case 0: return 420 * scale;
+            case 3: return 330 * scale;
+            case 4: return 330 * scale; //custom/
+            default: return 380 * scale
+        }
+    }
     property int fullRepHeight: 380 * scale
     property int sectionHeight: 180 * scale
 
@@ -46,6 +53,7 @@ PlasmoidItem {
     property color themeHighlightColor: Kirigami.Theme.highlightColor
     property bool isDarkTheme: ColorType.isDark(themeBgColor)
     property color disabledBgColor: isDarkTheme ? Qt.rgba(255, 255, 255, 0.15) : Qt.rgba(0, 0, 0, 0.15)
+    property color redColor: Kirigami.Theme.negativeTextColor
     
     // Main Icon
      Plasmoid.icon: Plasmoid.configuration.useCustomButtonImage ? Plasmoid.configuration.customButtonImage : Plasmoid.configuration.icon
@@ -85,6 +93,8 @@ PlasmoidItem {
     property color toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
     property color toggleButtonsIconColor: Plasmoid.configuration.toggleButtonsIconColor
     property color slidersColor: Plasmoid.configuration.slidersColor
+
+    property bool editingLayout: false
 
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge

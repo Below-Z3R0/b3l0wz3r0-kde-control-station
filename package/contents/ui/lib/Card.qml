@@ -9,6 +9,8 @@ import org.kde.plasma.components as PlasmaComponents
 Rectangle {
     id: rectangle
     color: "transparent"
+    border.width: 1
+    border.color: root.editingLayout ? root.disabledBgColor : "transparent"
 
     /******
      We need to gain space to display the shadow so we reduce top and bottom margins to avoid cut elements

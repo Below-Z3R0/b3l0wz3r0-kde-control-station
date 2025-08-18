@@ -9,7 +9,7 @@ import org.kde.kcmutils as KCM
 import org.kde.coreaddons 1.0 as KCoreAddons
 import "../lib" as Lib
 
-Lib.Card {
+Lib.CardButton {
     id: useraAvatar
 
     Layout.fillWidth: true
@@ -17,76 +17,25 @@ Lib.Card {
 
     visible: root.showAvatar
 
-    smallTopMargins: true
-    smallBottomMargins: true
-
     property bool singleLineWidget: false
 
     KCoreAddons.KUser {
       id: kuser
     }
 
-    RowLayout {
-        anchors.fill: parent
-        anchors.margins: root.mediumSpacing
-        
-        clip: true
-        
-        Rectangle {
-            width: (35 * 1)  
-            height: width
-            color: "transparent"
-            radius: width / 2
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignHLeft
-            KirigamiComponents.AvatarButton {
-                source: kuser.faceIconUrl
-                anchors {
-                    fill: parent
-                }
-            }
-        }
+    heading: kuser.fullName
+    title: i18n("%1@%2", kuser.loginName, kuser.host)
 
-        ColumnLayout {
-            anchors.margins: 1
-            spacing: 1
-            PlasmaComponents.Label {
-                id: userName
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                Layout.margins: root.smallSpacing
-                text: kuser.fullName // i18n("%1@%2", kuser.loginName, kuser.host)
-                font.pixelSize:  root.mediumFontSize + 2
-                font.weight: Font.Bold
-                horizontalAlignment:  Qt.AlignLeft
-                verticalAlignment: Qt.AlignVCenter
-                wrapMode: Text.WordWrap
-            }
-
-            PlasmaComponents.Label {
-                id: userHost
-                visible: !singleLineWidget
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                Layout.margins: root.smallSpacing
-                text: i18n("%1@%2", kuser.loginName, kuser.host)
-                font.pixelSize:  root.smallFontSize + 2
-               // font.weight: Font.Bold
-                horizontalAlignment:  Qt.AlignLeft
-                verticalAlignment: Qt.AlignVCenter
-                wrapMode: Text.WordWrap
-            }
-
+    KirigamiComponents.AvatarButton {
+        source: kuser.faceIconUrl
+        anchors {
+            fill: parent
         }
     }
 
-    MouseArea {
-        anchors.fill: parent
-        cursorShape: Qt.PointingHandCursor
-        hoverEnabled: false
-        onClicked: {
-            KCM.KCMLauncher.openSystemSettings("kcm_users")
-            root.toggle()
-        }
+    onClicked: {
+        KCM.KCMLauncher.openSystemSettings("kcm_users")
+        root.toggle()
     }
 }
 

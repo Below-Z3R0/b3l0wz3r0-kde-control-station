@@ -15,6 +15,8 @@ Lib.Slider {
     useIconButton: true
     title: i18n("Volume")
     canTogglePage: true
+    property bool isLongButton: true
+    cornerRadius: roundedWidget ? 22 : 12
     
     // Volume Feedback
     Vol.VolumeFeedback {

@@ -21,10 +21,14 @@ Item {
     property bool canTogglePage: false
 
     property bool glassEffect: false
-    property int cornerRadius: 12
+    property int cornerRadius: roundedWidget ? 22 : 12
     property bool mediumSizeSlider: false
 
-    // Get brightness control from KDE components
+    property bool flat: false
+    property bool isLongButton: false
+    property bool roundedWidget: false
+    property bool showTitle: false
+
     ScreenBrightnessControl {
         id: sbControl
         isSilent: false
@@ -82,10 +86,11 @@ Item {
             glassEffect: brightnessControl.glassEffect
             cornerRadius: brightnessControl.cornerRadius
             mediumSizeSlider: brightnessControl.mediumSizeSlider
+            roundedWidget: brightnessControl.roundedWidget
             
             showTitle: root.brightness_widget_title
             thinSlider: root.brightness_widget_thin
-            flat: root.brightness_widget_flat // bind to Lib.Card property
+            flat: root.brightness_widget_flat || brightnessControl.flat // bind to Lib.Card property
             
             from: 0
             to: mainScreen.maxBrightness

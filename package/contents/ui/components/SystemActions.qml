@@ -44,6 +44,7 @@ Lib.Card {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
+        enabled: !root.editingLayout
         cursorShape: Qt.PointingHandCursor
         hoverEnabled: true
         onClicked: {

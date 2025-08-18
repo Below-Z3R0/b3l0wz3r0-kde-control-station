@@ -19,6 +19,8 @@ Lib.CardButton {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
+
+    heading: isLongButton ? "Bluetooth" : ""
     
     title: Funcs.getBtDevice() // i18n("Bluetooth")
     Lib.Icon {

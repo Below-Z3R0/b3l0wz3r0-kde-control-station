@@ -107,6 +107,7 @@ ColumnLayout {
             Layout.columnSpan: 2
             glassEffect: true
             roundedWidget: true
+            isLongButton: true
         }
         Components.ScreenshotBtn {
             id:screenshot

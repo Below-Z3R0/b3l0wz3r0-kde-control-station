@@ -235,7 +235,8 @@ KCM.SimpleKCM {
                 i18n("KDE Control Station (Default)"),
                 i18n("Control Center"),
                 i18n("Flat"),
-                i18n("Tahoe")
+                i18n("Tahoe"),
+                i18n("Custom")
             ]
             onActivated: toggleLayoutDefaults(index)
         }

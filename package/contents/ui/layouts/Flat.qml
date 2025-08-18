@@ -126,7 +126,10 @@ ColumnLayout {
 
         Components.UserAvatar{
             flat: true
-            singleLineWidget: true
+            showTitle: false
+            isLongButton: true
+            smallTopMargins: true
+            smallBottomMargins: true
         }
         Components.Battery {
             flat: true

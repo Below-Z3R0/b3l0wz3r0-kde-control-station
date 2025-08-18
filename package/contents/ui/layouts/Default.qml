@@ -20,7 +20,11 @@ ColumnLayout {
         anchors.margins: 1
         visible: header.children.length > 0
         
-        Components.UserAvatar{}
+        Components.UserAvatar{
+            isLongButton: true
+            smallTopMargins: true
+            smallBottomMargins: true
+        }
         Components.Battery {
             id: mainBatteryWidget
             Layout.preferredWidth: header.Layout.preferredHeight * 1.7

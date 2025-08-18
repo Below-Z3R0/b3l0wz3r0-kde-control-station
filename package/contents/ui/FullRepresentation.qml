@@ -31,6 +31,7 @@ Item {
         "layouts/ControlCenter.qml",
         "layouts/Flat.qml",
         "layouts/Tahoe.qml",
+        "layouts/Custom.qml"
     ]
 
     property int defaultInitialWidth: root.fullRepWidth
