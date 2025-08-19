@@ -2,12 +2,27 @@
 
 # KDE Control Station
 
-A modern configuration center for KDE plasma based on the awesome [kde_controlcentre](https://github.com/Prayag2/kde_controlcentre) by [Prayag2](https://github.com/Prayag2/)
+A beautiful and modern configuration center for KDE plasma based on the awesome [kde_controlcentre](https://github.com/Prayag2/kde_controlcentre) by [Prayag2](https://github.com/Prayag2/)
 
-![main-widget](assets/control-station.png)
+![main-widget](assets/KCS2.0.png)
 
+![layouts](assets/layouts.png)
+![layouts](assets/config.png)
 </div>
 
+## Key features
+
+* Ability to create your own layout! reorder, add, delete widgets and customize each widget individually!
+* Ability to change between prebuilt layouts
+* Battery widget that shows relevant information about device battery
+* Button to trigger system session actions
+* Toggle buttons highlighted based on states
+* Dark/Light mode switcher with posibility to also change Global theme (look and feel)
+* Night Light control
+* Widget to execute custom commands
+* Animations while opening/hiding pages
+* Configuration pages for Network, Bluetooth, Battery, Brightness, Volume devices and more
+* Modern media player UI
 
 ## Dependencies
 - KDE Plasma >= 6.0
@@ -28,6 +43,14 @@ A modern configuration center for KDE plasma based on the awesome [kde_controlce
 2. Click "Add New Widgets"
 3. Search for "KDE Control Station"
 4. Drag and drop to your desired place.
+
+## Support Me ♥
+If you enjoy what I do, consider supporting me, every little bit means the world! 
+<br>
+
+<a href="https://ko-fi.com/eliverlara"><img alt="Buy Me A Coffee" src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%234D798C?style=for-the-badge&logo=ko-fi"/></a>
+<a href="https://www.paypal.com/paypalme/EliverLara/"><img alt="Done using PayPal" src="https://img.shields.io/badge/Donate-Blue?style=for-the-badge&logo=paypal&color=%23002991
+"/></a>
 
 ## License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
