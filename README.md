@@ -49,8 +49,7 @@ If you enjoy what I do, consider supporting me, every little bit means the world
 <br>
 
 <a href="https://ko-fi.com/eliverlara"><img alt="Buy Me A Coffee" src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%234D798C?style=for-the-badge&logo=ko-fi"/></a>
-<a href="https://www.paypal.com/paypalme/EliverLara/"><img alt="Done using PayPal" src="https://img.shields.io/badge/Donate-Blue?style=for-the-badge&logo=paypal&color=%23002991
-"/></a>
+<a href="https://www.paypal.com/paypalme/EliverLara/"><img alt="Done using PayPal" src="https://img.shields.io/badge/Donate-Blue?style=for-the-badge&logo=paypal&color=%23002991"/></a>
 
 ## License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
