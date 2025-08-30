@@ -23,7 +23,7 @@ Card {
         rows: small ? 2 : 2
         columns: small ? 1 : 2
         columnSpacing: small ? 0 : 10*root.scale
-        rowSpacing: small ? 0 : root.mediumSpacing
+        rowSpacing: 0
 
         Item {
             id: icon
@@ -39,11 +39,15 @@ Card {
         PlasmaComponents.Label {
             id: heading
             Layout.fillWidth: true
+            Layout.fillHeight: true
+            
             font.pixelSize: root.mediumFontSize
             font.weight: Font.Bold
             elide: Text.ElideRight
             visible: !parent.small && text
             Layout.rowSpan: (isLongButton && !showTitle) ? 2 : 1
+            horizontalAlignment: Qt.AlignLeft
+            verticalAlignment: showTitle ? Qt.AlignBottom : Qt.AlignVCenter
         }
         PlasmaComponents.Label {
             id: title
@@ -54,7 +58,7 @@ Card {
             font.pixelSize: (parent.small || heading.visible) ? root.smallFontSize+0.5 : root.mediumFontSize
             font.weight: (parent.small || !heading.visible) ? Font.Bold : Font.Normal
             horizontalAlignment: parent.small ? Qt.AlignHCenter : Qt.AlignLeft
-            verticalAlignment: Qt.AlignVCenter
+            verticalAlignment: !heading.visible ? Qt.AlignVCenter : Qt.AlignTop
             wrapMode: Text.WordWrap
             elide: plasmoid.configuration.layout == 1 ? Text.ElideNone : Text.ElideRight
             visible: text && showTitle
