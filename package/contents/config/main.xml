@@ -170,5 +170,8 @@
             <label>Widgets model for custom layout.</label>
             <default>null</default>
         </entry>
+        <entry name="usePlasmaSliders" type="bool">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>

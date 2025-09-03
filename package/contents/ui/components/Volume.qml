@@ -9,6 +9,7 @@ import "../lib" as Lib
 import "../js/funcs.js" as Funcs
 
 Lib.Slider {
+    id: slider
     Layout.fillWidth: true
     Layout.fillHeight: true
     visible: sinkAvailable && root.showVolume
@@ -36,6 +37,12 @@ Lib.Slider {
     showTitle: root.volume_widget_title
     thinSlider: root.volume_widget_thin
     flat: root.volume_widget_flat // bind to Lib.Card property
+
+    Binding {
+        target: slider
+        property: "value"
+        value: Math.round(sink.volume / Vol.PulseAudio.NormalVolume * 100)
+    }
     
     // Changes icon based on the current volume percentage
     source: Funcs.volIconName(sink.volume, sink.muted)

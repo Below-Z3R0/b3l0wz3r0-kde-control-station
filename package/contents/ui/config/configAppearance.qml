@@ -63,6 +63,7 @@ KCM.SimpleKCM {
     property color cfg_toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
     property color cfg_toggleButtonsIconColor: Plasmoid.configuration.toggleButtonsIconColor
     property color cfg_slidersColor: Plasmoid.configuration.slidersColor
+    property alias cfg_usePlasmaSliders: usePlasmaSliders.checked
 
     property int numChecked: (layout.currentIndex == 1 ? showKDEConnect.checked : showColorSwitcher.checked) + showNightLight.checked + showCmd1.checked + showCmd2.checked + showScreenshot.checked
     property int maxNum: layout.currentIndex == 0 && !showBrightness.checked ? 4 :  (layout.currentIndex == 2 || layout.currentIndex == 3 )? 6 : 2 
@@ -281,7 +282,7 @@ KCM.SimpleKCM {
 
         CheckBox {
             id: useSystemColorsOnToggles
-            Kirigami.FormData.label: i18n("Highlight color")
+            Kirigami.FormData.label: i18n("Toggle buttons")
             text: i18n('Use System highlight color on toggle buttons')
            // enabled: !checked && numChecked < maxNum || checked
         }
@@ -306,9 +307,14 @@ KCM.SimpleKCM {
         }
 
         CheckBox {
+            id: usePlasmaSliders
+            Kirigami.FormData.label: i18n("Sliders controls style")
+            text: i18n('Use sliders provided by plasma theme')
+        }
+        CheckBox {
             id: useSystemColorsOnSliders
             text: i18n('Use System highlight color on sliders')
-           // enabled: !checked && numChecked < maxNum || checked
+            enabled: !usePlasmaSliders.checked
         }
 
         Kirigami.FormLayout { 
@@ -429,6 +435,7 @@ KCM.SimpleKCM {
                 CheckBox {
                     id: volume_widget_thin
                     text: i18n('Thin slider')
+                    enabled: !usePlasmaSliders.checked
                 }
             }
         }
@@ -450,6 +457,7 @@ KCM.SimpleKCM {
                 CheckBox {
                     id: brightness_widget_thin
                     text: i18n('Thin slider')
+                    enabled: !usePlasmaSliders.checked
                 }
             }
         }

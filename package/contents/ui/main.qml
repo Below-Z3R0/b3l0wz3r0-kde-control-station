@@ -93,8 +93,10 @@ PlasmoidItem {
     property color toggleButtonsColor: Plasmoid.configuration.toggleButtonsColor
     property color toggleButtonsIconColor: Plasmoid.configuration.toggleButtonsIconColor
     property color slidersColor: Plasmoid.configuration.slidersColor
+    property bool usePlasmaSliders: Plasmoid.configuration.usePlasmaSliders
 
     property bool editingLayout: false
+
 
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge
