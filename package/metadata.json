@@ -15,6 +15,7 @@
 		"Id": "KdeControlStation",
 		"License": "GPLv3",
 		"Name": "KDE control station",
+		"Name[de]": "KDE Kontrollzentrum",
 		"Name[ko]": "KDE 제어 센터",
 		"Name[pt_BR]": "Estação de controle KDE",
 		"ServiceTypes": [
