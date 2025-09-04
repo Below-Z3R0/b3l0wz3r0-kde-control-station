@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/plasma6\n"
-"POT-Creation-Date: 2025-04-30 15:32-0600\n"
+"POT-Creation-Date: 2025-09-03 18:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,12 +31,12 @@ msgid "Appearance"
 msgstr "Apariencia"
 
 #: ../contents/config/config.qml
-msgid "Behaviour"
-msgstr "Comportamiento"
-
-#: ../contents/config/config.qml
 msgid "Color schemes"
 msgstr "Esquemas de colores"
+
+#: ../contents/config/config.qml
+msgid "Support"
+msgstr ""
 
 #: ../contents/ui/components/Battery.qml ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Placeholder is battery percentage"
@@ -111,9 +111,23 @@ msgstr ""
 msgid "Volume"
 msgstr "Volumen"
 
+#: ../contents/ui/config/components/ColorChooser.qml
+msgid "Please choose a color"
+msgstr "Por favor elija un color"
+
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
 msgstr "Icono"
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Scale:"
@@ -133,6 +147,14 @@ msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Flat"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Tahoe"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Custom"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
@@ -164,20 +186,24 @@ msgid "Toggle buttons and sliders"
 msgstr "Botones de alternancia y controles deslizantes"
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Highlight color"
-msgstr "Color de resaltado"
+msgid "Toggle buttons"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Toggle buttons color"
-msgstr "Color de botones de alternancia"
+msgid "Highlight color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Please choose a color"
-msgstr "Por favor elija un color"
+msgid "Icon color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Sliders color"
-msgstr "Color de controles deslizantes"
+msgid "Sliders controls style"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Sliders color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Show quick toggle buttons:"
@@ -195,10 +221,6 @@ msgstr "Comando"
 msgid "Show other components:"
 msgstr "Mostrar otros componentes"
 
-#: ../contents/ui/config/configBehaviour.qml
-msgid "Volume:"
-msgstr "Volumen"
-
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
 msgstr "Cambiar tema global en lugar de esquema de color"
@@ -210,6 +232,10 @@ msgstr "Color claro"
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
 msgstr "Color obscuro"
+
+#: ../contents/ui/config/configSupport.qml
+msgid "I'd be very thankful if you like to support the development of this applet by donating or by simply spreading the word, TIA! :)"
+msgstr ""
 
 #: ../contents/ui/js/funcs.js
 msgid "Disabled"
@@ -915,11 +941,7 @@ msgid "Session Actions"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Lock Screen"
-msgstr ""
-
-#: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Log Out"
+msgid "Suspend"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
@@ -931,7 +953,19 @@ msgid "Shutdown"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Suspend"
+msgid "Hibernate"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Lock Screen"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Log Out"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Switch User"
 msgstr ""
 
 #: ../contents/ui/pages/VolumePage.qml

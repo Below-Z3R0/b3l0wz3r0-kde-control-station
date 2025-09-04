@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/plasma6\n"
-"POT-Creation-Date: 2025-04-30 15:32-0600\n"
+"POT-Creation-Date: 2025-09-03 18:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,11 @@ msgid "Appearance"
 msgstr ""
 
 #: ../contents/config/config.qml
-msgid "Behaviour"
+msgid "Color schemes"
 msgstr ""
 
 #: ../contents/config/config.qml
-msgid "Color schemes"
+msgid "Support"
 msgstr ""
 
 #: ../contents/ui/components/Battery.qml ../contents/ui/pages/components/battery/BatteryItem.qml
@@ -111,8 +111,22 @@ msgstr ""
 msgid "Volume"
 msgstr ""
 
+#: ../contents/ui/config/components/ColorChooser.qml
+msgid "Please choose a color"
+msgstr ""
+
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
@@ -133,6 +147,14 @@ msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Flat"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Tahoe"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Custom"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
@@ -164,19 +186,23 @@ msgid "Toggle buttons and sliders"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Highlight color"
+msgid "Toggle buttons"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Toggle buttons color"
+msgid "Highlight color: "
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Please choose a color"
+msgid "Icon color: "
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Sliders color"
+msgid "Sliders controls style"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Sliders color: "
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
@@ -195,10 +221,6 @@ msgstr ""
 msgid "Show other components:"
 msgstr ""
 
-#: ../contents/ui/config/configBehaviour.qml
-msgid "Volume:"
-msgstr ""
-
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
 msgstr ""
@@ -209,6 +231,10 @@ msgstr ""
 
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
+msgstr ""
+
+#: ../contents/ui/config/configSupport.qml
+msgid "I'd be very thankful if you like to support the development of this applet by donating or by simply spreading the word, TIA! :)"
 msgstr ""
 
 #: ../contents/ui/js/funcs.js
@@ -915,11 +941,7 @@ msgid "Session Actions"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Lock Screen"
-msgstr ""
-
-#: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Log Out"
+msgid "Suspend"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
@@ -931,7 +953,19 @@ msgid "Shutdown"
 msgstr ""
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Suspend"
+msgid "Hibernate"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Lock Screen"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Log Out"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Switch User"
 msgstr ""
 
 #: ../contents/ui/pages/VolumePage.qml

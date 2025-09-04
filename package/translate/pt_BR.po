@@ -1,4 +1,4 @@
-# Translation of KdeControlStation in LANGUAGE
+# Translation of KdeControlStation in pt_BR
 # Copyright (C) 2025
 # This file is distributed under the same license as the KdeControlStation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/plasma6\n"
-"POT-Creation-Date: 2025-04-30 15:32-0600\n"
+"POT-Creation-Date: 2025-09-03 18:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,12 +31,12 @@ msgid "Appearance"
 msgstr "Aparência"
 
 #: ../contents/config/config.qml
-msgid "Behaviour"
-msgstr "Comportamento"
-
-#: ../contents/config/config.qml
 msgid "Color schemes"
 msgstr "Esquemas de cores"
+
+#: ../contents/config/config.qml
+msgid "Support"
+msgstr ""
 
 #: ../contents/ui/components/Battery.qml ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Placeholder is battery percentage"
@@ -111,9 +111,23 @@ msgstr "%1@%2"
 msgid "Volume"
 msgstr "Volume"
 
+#: ../contents/ui/config/components/ColorChooser.qml
+msgid "Please choose a color"
+msgstr "Por favor, escolha uma cor"
+
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
 msgstr "Ícone:"
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Scale:"
@@ -134,6 +148,14 @@ msgstr "Central de Controle"
 #: ../contents/ui/config/configAppearance.qml
 msgid "Flat"
 msgstr "Flat"
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Tahoe"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Custom"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "General:"
@@ -164,20 +186,24 @@ msgid "Toggle buttons and sliders"
 msgstr "Botões de alternância e controles deslizantes"
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Highlight color"
-msgstr "Cor de destaque"
+msgid "Toggle buttons"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Toggle buttons color"
-msgstr "Botões de alternância cor"
+msgid "Highlight color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Please choose a color"
-msgstr "Por favor, escolha uma cor"
+msgid "Icon color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Sliders color"
-msgstr "Sliders Color"
+msgid "Sliders controls style"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Sliders color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Show quick toggle buttons:"
@@ -195,10 +221,6 @@ msgstr "Comando:"
 msgid "Show other components:"
 msgstr "Mostre outros componentes:"
 
-#: ../contents/ui/config/configBehaviour.qml
-msgid "Volume:"
-msgstr "Volume:"
-
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
 msgstr "Alterar o tema global em vez de apenas mudar o esquema de cores"
@@ -210,6 +232,10 @@ msgstr "Cor clara"
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
 msgstr "Cor escura"
+
+#: ../contents/ui/config/configSupport.qml
+msgid "I'd be very thankful if you like to support the development of this applet by donating or by simply spreading the word, TIA! :)"
+msgstr ""
 
 #: ../contents/ui/js/funcs.js
 msgid "Disabled"
@@ -357,7 +383,7 @@ msgstr "Falha ao bloquear a supessão automática e o bloqueia da tela"
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgctxt "Minimize the length of this string as much as possible"
 msgid "Your laptop is configured not to sleep when closing the lid while an external monitor is connected."
-msgstr "Seu notebook está configurado para não suspeder ao fechar a tampa enquanto um monitor externo está conectado.""
+msgstr "Seu notebook está configurado para não suspeder ao fechar a tampa enquanto um monitor externo está conectado."
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgid "%1 application is currently blocking sleep and screen locking:"
@@ -915,12 +941,8 @@ msgid "Session Actions"
 msgstr "Ações da sessão"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Lock Screen"
-msgstr "Tela de bloqueio"
-
-#: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Log Out"
-msgstr "Log Out"
+msgid "Suspend"
+msgstr "Suspender"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Restart"
@@ -931,8 +953,20 @@ msgid "Shutdown"
 msgstr "Desligar"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Suspend"
-msgstr "Suspender"
+msgid "Hibernate"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Lock Screen"
+msgstr "Tela de bloqueio"
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Log Out"
+msgstr "Log Out"
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Switch User"
+msgstr ""
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Audio Volume"
@@ -965,3 +999,18 @@ msgstr "Configurar dispositivos de áudio"
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No applications playing or recording audio"
 msgstr "Sem aplicativos tocando ou gravando de áudio"
+
+#~ msgid "Behaviour"
+#~ msgstr "Comportamento"
+
+#~ msgid "Highlight color"
+#~ msgstr "Cor de destaque"
+
+#~ msgid "Toggle buttons color"
+#~ msgstr "Botões de alternância cor"
+
+#~ msgid "Sliders color"
+#~ msgstr "Sliders Color"
+
+#~ msgid "Volume:"
+#~ msgstr "Volume:"
