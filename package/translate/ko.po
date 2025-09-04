@@ -1,4 +1,4 @@
-# Translation of KdeControlStation in LANGUAGE
+# Translation of KdeControlStation in ko
 # Copyright (C) 2025
 # This file is distributed under the same license as the KdeControlStation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/"
 "plasma6\n"
-"POT-Creation-Date: 2025-04-30 15:32-0600\n"
+"POT-Creation-Date: 2025-09-03 18:11-0600\n"
 "PO-Revision-Date: 2025-08-27 23:11+0900\n"
 "Last-Translator: Hyeonwol123 <hyeonwol12345@kakao.com>\n"
 "Language-Team: \n"
@@ -36,12 +36,12 @@ msgid "Appearance"
 msgstr "모양새"
 
 #: ../contents/config/config.qml
-msgid "Behaviour"
-msgstr "동작"
-
-#: ../contents/config/config.qml
 msgid "Color schemes"
 msgstr "색상"
+
+#: ../contents/config/config.qml
+msgid "Support"
+msgstr ""
 
 #: ../contents/ui/components/Battery.qml
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
@@ -123,9 +123,23 @@ msgstr "%1@%2"
 msgid "Volume"
 msgstr "음량"
 
+#: ../contents/ui/config/components/ColorChooser.qml
+msgid "Please choose a color"
+msgstr "색상을 선택"
+
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
 msgstr "아이콘:"
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Scale:"
@@ -146,6 +160,14 @@ msgstr "제어 센터"
 #: ../contents/ui/config/configAppearance.qml
 msgid "Flat"
 msgstr "플랫"
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Tahoe"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Custom"
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "General:"
@@ -176,20 +198,24 @@ msgid "Toggle buttons and sliders"
 msgstr "토글 버튼과 슬라이더"
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Highlight color"
-msgstr "강조 색상"
-
-#: ../contents/ui/config/configAppearance.qml
-msgid "Toggle buttons color"
+msgid "Toggle buttons"
 msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Please choose a color"
-msgstr "색상을 선택"
+msgid "Highlight color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
-msgid "Sliders color"
-msgstr "슬라이더 색상"
+msgid "Icon color: "
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Sliders controls style"
+msgstr ""
+
+#: ../contents/ui/config/configAppearance.qml
+msgid "Sliders color: "
+msgstr ""
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Show quick toggle buttons:"
@@ -207,10 +233,6 @@ msgstr "명령:"
 msgid "Show other components:"
 msgstr "다른 구성요소 보기:"
 
-#: ../contents/ui/config/configBehaviour.qml
-msgid "Volume:"
-msgstr "음량:"
-
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
 msgstr "색상 대신 전역 테마를 변경"
@@ -222,6 +244,12 @@ msgstr "밝은 색상"
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
 msgstr "어두운 색상"
+
+#: ../contents/ui/config/configSupport.qml
+msgid ""
+"I'd be very thankful if you like to support the development of this applet "
+"by donating or by simply spreading the word, TIA! :)"
+msgstr ""
 
 #: ../contents/ui/js/funcs.js
 msgid "Disabled"
@@ -959,12 +987,8 @@ msgid "Session Actions"
 msgstr "세션 동작"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Lock Screen"
-msgstr "잠금"
-
-#: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Log Out"
-msgstr "로그아웃"
+msgid "Suspend"
+msgstr "대기 모드"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Restart"
@@ -975,8 +999,20 @@ msgid "Shutdown"
 msgstr "컴퓨터 끄기"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
-msgid "Suspend"
-msgstr "대기 모드"
+msgid "Hibernate"
+msgstr ""
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Lock Screen"
+msgstr "잠금"
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Log Out"
+msgstr "로그아웃"
+
+#: ../contents/ui/pages/SystemSessionActionsPage.qml
+msgid "Switch User"
+msgstr ""
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Audio Volume"
@@ -1009,3 +1045,15 @@ msgstr "오디오 장치 설정"
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No applications playing or recording audio"
 msgstr "오디오를 재생하거나 녹음하는 앱 없음"
+
+#~ msgid "Behaviour"
+#~ msgstr "동작"
+
+#~ msgid "Highlight color"
+#~ msgstr "강조 색상"
+
+#~ msgid "Sliders color"
+#~ msgstr "슬라이더 색상"
+
+#~ msgid "Volume:"
+#~ msgstr "음량:"
