@@ -7,7 +7,6 @@ import org.kde.kquickcontrolsaddons as KQuickAddons
 import org.kde.coreaddons as KCoreAddons
 import org.kde.plasma.workspace.components 2.0
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.plasma5support as Plasma5Support
 
 import "../lib" as Lib
 
@@ -23,20 +22,7 @@ Lib.Card {
 
     property bool small: height < (root.sectionHeight*1.3) / 3.5
 
-    Plasma5Support.DataSource {
-        id: pmSource
-        engine: "powermanagement"
-        connectedSources: sources
-        function performOperation(what) {
-            var service = serviceForSource("PowerDevil")
-            var operation = service.operationDescription(what)
-            service.startOperationCall(operation)
-        }
-    }
-
-    property var battery: pmSource.data["Battery"]
-
-    visible: battery.battery["Has Battery"] && root.showBattery
+    visible: batteryPage.batteryControl.hasBatteries && root.showBattery
 
     GridLayout {
         anchors.fill: parent
@@ -54,16 +40,16 @@ Lib.Card {
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
             Layout.columnSpan: (small || isLongButton ) ? 1 : 2
 
-            percent: battery.battery.Percent
-            hasBattery: battery.battery["Has Battery"]
-            pluggedIn: battery.battery.State === "Charging"
+            percent: batteryPage.batteryControl.percent
+            hasBattery: batteryPage.batteryControl.hasBatteries
+            pluggedIn: batteryPage.batteryControl.pluggedIn
 
         }
 
         PlasmaComponents.Label {
             id: percentLabel
             Layout.alignment: isLongButton ?  (Qt.AlignLeft | Qt.AlignVcenter) : (Qt.AlignHCenter | Qt.AlignVcenter)
-            text: i18nc("Placeholder is battery percentage", "%1%", battery.battery.Percent)
+            text: i18nc("Placeholder is battery percentage", "%1%", batteryPage.batteryControl.percent)
             font.pixelSize: root.mediumFontSize
             font.weight:Font.Bold
             Layout.columnSpan: (small || isLongButton ) ? 1 : 2

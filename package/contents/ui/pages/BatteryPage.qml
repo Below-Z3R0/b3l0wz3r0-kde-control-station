@@ -34,7 +34,7 @@ PageTemplate {
         readonly property bool isInNonDefaultPowerProfile: powerProfilesControl.activeProfile && powerProfilesControl.activeProfile != powerProfilesControl.defaultPowerProfile
     }
 
-    BatteryControlModel {
+    property BatteryControlModel batteryControl: BatteryControlModel {
         id: batteryControl
 
         readonly property int remainingTime: batteryControl.smoothedRemainingMsec
