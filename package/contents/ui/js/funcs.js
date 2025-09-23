@@ -146,3 +146,18 @@ function volIconName(volume, muted, prefix) {
     }
     return icon;
 }
+
+function getNetworkConnectionName() {
+    var status = network.networkStatus.activeConnections;
+    var statusParts;
+
+    if(isAirplane){ return "On"; }
+
+    if(status && status !== "Disconnected") {
+        statusParts = status.split(":");
+        var connectionName = statusParts[1]?.trim().split(" ").slice(2).join(" ");
+        return connectionName || "Connected";
+    } 
+
+    return "Disconnected";
+}
