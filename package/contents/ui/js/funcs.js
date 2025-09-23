@@ -1,6 +1,11 @@
 function getBtDevice() {
     var connectedDevices = [];
 
+    var status = {
+        active: false,
+        message: ""
+    }
+
     for (var i = 0; i < btManager.devices.length; ++i) {
         var device = btManager.devices[i];
         if (device.connected) {
@@ -9,18 +14,24 @@ function getBtDevice() {
     }
 
     if (btManager.bluetoothBlocked) {
-        return i18n("Disabled");
+        status.active = false;
+        status.message = "Disabled";
     } else if (!btManager.bluetoothOperational) {
         if (!btManager.adapters.length) {
-            return i18n("Unavailable");
+            status.active = false;
+            status.message = "Unavailable";
         } else {
-            return i18n("Offline");
+            status.active = false;
+            status.message = "Offline";
         }
     } else if (connectedDevices.length >= 1) {
-        return i18n(connectedDevices[0].name)
+            status.active = true;
+            status.message = connectedDevices[0].name;
     } else {
-        return i18n("Not Connected");
+        status.active = true;
+        status.message = "Not Connected";
     }
+    return status;
 }
 
 function toggleBluetooth()

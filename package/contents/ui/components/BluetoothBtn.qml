@@ -22,7 +22,7 @@ Lib.CardButton {
 
     heading: isLongButton ? "Bluetooth" : ""
     
-    title: Funcs.getBtDevice() // i18n("Bluetooth")
+    title: i18n(Funcs.getBtDevice().message)
     Lib.Icon {
         id: icon
         anchors.fill: parent
@@ -36,7 +36,7 @@ Lib.CardButton {
             }
             return "network-bluetooth-symbolic";
         }
-        selected:  Funcs.getBtDevice() != "Disabled"
+        selected:  Funcs.getBtDevice().active
     }
     onClicked: {
        fullRep.togglePage(fullRep.defaultInitialWidth, 400, bluetoothPage);
