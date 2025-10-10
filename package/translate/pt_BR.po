@@ -127,7 +127,7 @@ msgstr ""
 #: ../contents/ui/config/configAppearance.qml
 msgctxt "@item:inmenu Reset icon to default"
 msgid "Clear Icon"
-msgstr ""
+msgstr "Resetar Icone"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Scale:"
@@ -954,7 +954,7 @@ msgstr "Desligar"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Hibernate"
-msgstr ""
+msgstr "Hibernar"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Lock Screen"
@@ -966,11 +966,11 @@ msgstr "Log Out"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Switch User"
-msgstr ""
+msgstr "Trocar de Usuário"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Audio Volume"
-msgstr "Volume do áudio"
+msgstr "Volume do Áudio"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No output or input devices found"
