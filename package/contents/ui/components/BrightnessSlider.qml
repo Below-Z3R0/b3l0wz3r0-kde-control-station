@@ -79,7 +79,7 @@ Item {
 
             // Slider properties
             title: mainScreen.label
-            source: "brightness-high"
+            source: "brightness-high-symbolic"
             secondaryTitle: Math.round((mainScreen.brightness / mainScreen.maxBrightness)*100) + "%"
 
             canTogglePage: brightnessControl.canTogglePage
