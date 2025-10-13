@@ -60,7 +60,7 @@ Card {
             horizontalAlignment: parent.small ? Qt.AlignHCenter : Qt.AlignLeft
             verticalAlignment: !heading.visible ? Qt.AlignVCenter : Qt.AlignTop
             wrapMode: Text.WordWrap
-            elide: plasmoid.configuration.layout == 1 ? Text.ElideNone : Text.ElideRight
+            elide: (plasmoid.configuration.layout == 1 && !isLongButton) ? Text.ElideNone : Text.ElideRight
             visible: text && showTitle
         }
     }
