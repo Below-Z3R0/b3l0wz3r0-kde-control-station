@@ -23,7 +23,7 @@ msgstr "Станція керування KDE"
 
 #: ../metadata.json
 msgid "A modern control station for plasma based on the awesome work of prayag2!"
-msgstr "Сучасна станція керування для Plasma, заснована на чудовій роботі prayag2!"
+msgstr "Сучасна станція керування для Plasma, заснована на чудовій праці prayag2!"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"
