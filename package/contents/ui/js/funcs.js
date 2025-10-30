@@ -15,21 +15,21 @@ function getBtDevice() {
 
     if (btManager.bluetoothBlocked) {
         status.active = false;
-        status.message = "Disabled";
+        status.message = i18n("Disabled");
     } else if (!btManager.bluetoothOperational) {
         if (!btManager.adapters.length) {
             status.active = false;
-            status.message = "Unavailable";
+            status.message = i18n("Unavailable");
         } else {
             status.active = false;
-            status.message = "Offline";
+            status.message = i18n("Offline");
         }
     } else if (connectedDevices.length >= 1) {
             status.active = true;
             status.message = connectedDevices[0].name;
     } else {
         status.active = true;
-        status.message = "Not Connected";
+        status.message = i18n("Not Connected");
     }
     return status;
 }
@@ -151,13 +151,13 @@ function getNetworkConnectionName() {
     var status = network.networkStatus.activeConnections;
     var statusParts;
 
-    if(isAirplane){ return "On"; }
+    if(isAirplane){ return i18n("On"); }
 
     if(status && status !== "Disconnected") {
         statusParts = status.split(":");
         var connectionName = statusParts[1]?.trim().split(" ").slice(2).join(" ");
-        return connectionName || "Connected";
+        return connectionName || i18n("Connected");
     } 
 
-    return "Disconnected";
+    return i18n("Disconnected");
 }

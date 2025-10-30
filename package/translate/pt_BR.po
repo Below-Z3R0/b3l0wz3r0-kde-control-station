@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/plasma6\n"
-"POT-Creation-Date: 2025-09-03 18:11-0600\n"
+"POT-Creation-Date: 2025-10-30 12:42-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,18 +74,6 @@ msgstr "Modo Avião"
 #: ../contents/ui/components/NetworkBtn.qml ../contents/ui/pages/components/bluetooth/DeviceItem.qml
 msgid "Network"
 msgstr "Rede"
-
-#: ../contents/ui/components/NetworkBtn.qml ../contents/ui/pages/components/bluetooth/DeviceItem.qml ../contents/ui/pages/components/network/ConnectionItem.qml
-msgid "Connected"
-msgstr "Conectado"
-
-#: ../contents/ui/components/NetworkBtn.qml
-msgid "On"
-msgstr "On"
-
-#: ../contents/ui/components/NetworkBtn.qml
-msgid "Disconnected"
-msgstr "Desconectado"
 
 #: ../contents/ui/components/NightLight.qml ../contents/ui/pages/NightLightPage.qml
 msgid "Night Light"
@@ -252,6 +240,18 @@ msgstr "Offline"
 #: ../contents/ui/js/funcs.js
 msgid "Not Connected"
 msgstr "Não conectado"
+
+#: ../contents/ui/js/funcs.js
+msgid "On"
+msgstr "On"
+
+#: ../contents/ui/js/funcs.js ../contents/ui/pages/components/bluetooth/DeviceItem.qml ../contents/ui/pages/components/network/ConnectionItem.qml
+msgid "Connected"
+msgstr "Conectado"
+
+#: ../contents/ui/js/funcs.js
+msgid "Disconnected"
+msgstr "Desconectado"
 
 #: ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml ../contents/ui/pages/BluetoothPage.qml
 msgid "Bluetooth"

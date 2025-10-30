@@ -1,4 +1,4 @@
-# Translation of KdeControlStation in LANGUAGE
+# Translation of KdeControlStation in nl
 # Copyright (C) 2025
 # This file is distributed under the same license as the KdeControlStation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/"
 "plasma6\n"
-"POT-Creation-Date: 2025-09-03 18:11-0600\n"
+"POT-Creation-Date: 2025-10-30 12:42-0600\n"
 "PO-Revision-Date: 2025-09-06 11:46+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -84,20 +84,6 @@ msgstr "Vliegtuigstand"
 #: ../contents/ui/pages/components/bluetooth/DeviceItem.qml
 msgid "Network"
 msgstr "Netwerk"
-
-#: ../contents/ui/components/NetworkBtn.qml
-#: ../contents/ui/pages/components/bluetooth/DeviceItem.qml
-#: ../contents/ui/pages/components/network/ConnectionItem.qml
-msgid "Connected"
-msgstr "Verbonden"
-
-#: ../contents/ui/components/NetworkBtn.qml
-msgid "On"
-msgstr "Aan"
-
-#: ../contents/ui/components/NetworkBtn.qml
-msgid "Disconnected"
-msgstr "Verbinding verbroken"
 
 #: ../contents/ui/components/NightLight.qml
 #: ../contents/ui/pages/NightLightPage.qml
@@ -269,6 +255,20 @@ msgstr "Offline"
 #: ../contents/ui/js/funcs.js
 msgid "Not Connected"
 msgstr "Niet verbonden"
+
+#: ../contents/ui/js/funcs.js
+msgid "On"
+msgstr "Aan"
+
+#: ../contents/ui/js/funcs.js
+#: ../contents/ui/pages/components/bluetooth/DeviceItem.qml
+#: ../contents/ui/pages/components/network/ConnectionItem.qml
+msgid "Connected"
+msgstr "Verbonden"
+
+#: ../contents/ui/js/funcs.js
+msgid "Disconnected"
+msgstr "Verbinding verbroken"
 
 #: ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 #: ../contents/ui/pages/BluetoothPage.qml

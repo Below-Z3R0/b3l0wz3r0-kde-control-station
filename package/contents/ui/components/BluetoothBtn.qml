@@ -22,7 +22,7 @@ Lib.CardButton {
 
     heading: isLongButton ? "Bluetooth" : ""
     
-    title: i18n(Funcs.getBtDevice().message)
+    title: Funcs.getBtDevice().message
     Lib.Icon {
         id: icon
         anchors.fill: parent

@@ -10,6 +10,7 @@
 		"Category": "Utilities",
 		"Description": "A modern control station for plasma based on the awesome work of prayag2!",
 		"Description[ko]": "prayag2의 훌륭한 작업물을 기반으로 한 Plasma용 현대적인 제어 센터입니다!",
+		"Description[nl]": "Een modern bedieningspaneel voor Plasma, gebaseerd op het geweldige werk van @prayag2!",
 		"Description[pt_BR]": "Uma estação de controle moderna para plasma com base no incrível trabalho de Prayag2!",
 		"Icon": "configure-toolbars",
 		"Id": "KdeControlStation",
@@ -17,6 +18,7 @@
 		"Name": "KDE control station",
 		"Name[de]": "KDE Kontrollzentrum",
 		"Name[ko]": "KDE 제어 센터",
+		"Name[nl]": "KDE-bedieningspaneel",
 		"Name[pt_BR]": "Estação de controle KDE",
 		"ServiceTypes": [
 			"Plasma/Applet"
