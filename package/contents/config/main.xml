@@ -173,5 +173,13 @@
         <entry name="usePlasmaSliders" type="bool">
             <default>false</default>
         </entry>
+
+        <!-- Screenshot config -->
+        <entry name="hideWidgetOnScreenshot" type="bool">
+            <default>false</default>
+        </entry>
+        <entry name="screenshotCommand" type="string">
+            <default>spectacle</default>
+        </entry>
     </group>
 </kcfg>

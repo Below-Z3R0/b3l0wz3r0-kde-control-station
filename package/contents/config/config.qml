@@ -13,6 +13,11 @@ ConfigModel {
         source: "config/configColorscheme.qml"
         visible: Plasmoid.configuration.showColorSwitcher
     }
+    ConfigCategory {
+        name: i18n("Screenshot")
+        icon: "camera-photo-symbolic"
+        source: "config/configScreenshot.qml"
+    }
      ConfigCategory {
         name: i18n("Support")
         icon: "face-angel"

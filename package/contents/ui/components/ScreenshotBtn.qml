@@ -21,7 +21,7 @@ Lib.CardButton {
     Layout.fillHeight: true
     Layout.fillWidth: true
     title: i18n("Screenshot")
-    property string command:  "spectacle"
+    property string command: root.screenshotCommand ?? "spectacle"
     shouldStickIconSize: true
     Kirigami.Icon {
         anchors.fill: parent
@@ -30,6 +30,7 @@ Lib.CardButton {
     }
 
     onClicked: {
+        if(root.hideWidgetBeforeScreenshot) { root.expanded = false; }
         executable.exec(command);
     }
 

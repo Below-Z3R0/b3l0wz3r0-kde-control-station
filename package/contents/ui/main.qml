@@ -95,6 +95,9 @@ PlasmoidItem {
     property color slidersColor: Plasmoid.configuration.slidersColor
     property bool usePlasmaSliders: Plasmoid.configuration.usePlasmaSliders
 
+    property bool hideWidgetBeforeScreenshot: Plasmoid.configuration.hideWidgetOnScreenshot
+    property string screenshotCommand: Plasmoid.configuration.screenshotCommand
+
     property bool editingLayout: false
 
 
