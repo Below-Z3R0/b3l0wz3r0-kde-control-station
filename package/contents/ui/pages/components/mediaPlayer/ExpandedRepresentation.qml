@@ -316,12 +316,12 @@ PlasmaExtras.Representation {
                 level: 5
 
                 textFormat: Text.PlainText
-                wrapMode: Text.Wrap
                 fontSizeMode: Text.VerticalFit
                 elide: Text.ElideRight
                 font.pixelSize: root.largeFontSize 
                 text: mediaPlayerPage.artist
                 Layout.maximumHeight: Kirigami.Units.gridUnit * 2
+                Layout.maximumWidth: detailsColumn.width
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             }
             // Kirigami.Heading { // Song Album
