@@ -6,7 +6,6 @@ import org.kde.plasma.components as PlasmaComponents
 
 Card {
     id: cardButton
-    signal clicked
     default property alias content: icon.data
     property alias title: title.text
     property alias heading: heading.text
@@ -62,16 +61,6 @@ Card {
             wrapMode: Text.WordWrap
             elide: (plasmoid.configuration.layout == 1 && !isLongButton) ? Text.ElideNone : Text.ElideRight
             visible: text && showTitle
-        }
-    }
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        enabled: !root.editingLayout
-
-        onClicked: {
-            cardButton.clicked()
         }
     }
 }

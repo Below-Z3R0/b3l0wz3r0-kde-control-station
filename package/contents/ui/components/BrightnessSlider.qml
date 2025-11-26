@@ -100,7 +100,7 @@ Item {
                 sbControl.setBrightness(mainScreen.displayName, Math.max(brightnessMin, Math.min(mainScreen.maxBrightness, value))) ;
             }
 
-            onTogglePage: {
+            onClicked: {
                 var pageHeight = brightnessControlPage.contentItemHeight + brightnessControlPage.headerHeight;
                 fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, brightnessControlPage);
             }

@@ -46,6 +46,21 @@ Rectangle {
     default property alias content: dataContainer.data
     radius: 12
 
+    property bool hovered: false
+
+    signal clicked
+    
+    MouseArea {
+        anchors.fill: parent
+        enabled: !root.editingLayout
+        hoverEnabled: enabled
+
+        onEntered: rectangle.hovered = true;
+        onExited: rectangle.hovered = false;
+
+        onClicked: rectangle.clicked()
+    }
+
     Item {
         id: shadowContainer
         visible: shadow

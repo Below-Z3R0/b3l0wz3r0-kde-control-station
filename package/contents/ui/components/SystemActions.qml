@@ -17,8 +17,6 @@ Lib.Card {
     Layout.fillHeight: true
     Layout.fillWidth: true
 
-   property bool showToolTip: false
-
     visible: root.showSessionActions
  
     PlasmaComponents.ToolTip {
@@ -37,21 +35,12 @@ Lib.Card {
 
     PlasmaComponents.ToolTip {
         parent: sysActions
-        visible: showToolTip
+        visible: hovered
         text: i18n("Power Off")
     }
 
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        enabled: !root.editingLayout
-        cursorShape: Qt.PointingHandCursor
-        hoverEnabled: true
-        onClicked: {
-            fullRep.togglePage(300, 350, systemSessionActionsPage);
-        }
-        onEntered: showToolTip = true
-        onExited: showToolTip = false
+    onClicked: {
+        fullRep.togglePage(300, 350, systemSessionActionsPage);
     }
 }
 

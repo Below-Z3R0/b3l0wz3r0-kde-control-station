@@ -8,8 +8,7 @@ import org.kde.kirigami as Kirigami
 Card {
     id: sliderComp
     signal moved
-    signal clicked
-    signal togglePage
+    signal actionButtonClicked
 
     property bool pressed: false
     property alias title: title.text
@@ -46,15 +45,6 @@ Card {
             sliderComp.value = sliderLoader.item.value;
             sliderComp.moved();
         }
-    }
-    
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        enabled: !root.editingLayout
-        cursorShape: Qt.PointingHandCursor
-        onClicked: sliderComp.togglePage()
     }
 
     ColumnLayout {
@@ -114,7 +104,7 @@ Card {
                 icon.name: sliderComp.source
                 Layout.preferredHeight: root.largeFontSize*2
                 Layout.preferredWidth: Layout.preferredHeight
-                onClicked: sliderComp.clicked()
+                onClicked: sliderComp.actionButtonClicked()
             }
 
             Loader {
@@ -201,7 +191,7 @@ Card {
                 icon.name: "arrow-right"
                 Layout.preferredHeight: root.largeFontSize*2
                 Layout.preferredWidth: Layout.preferredHeight
-                onClicked: sliderComp.togglePage()
+                onClicked: sliderComp.clicked()
             }
         }
     }

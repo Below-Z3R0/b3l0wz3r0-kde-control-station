@@ -18,16 +18,6 @@ Lib.Card {
     cornerRadius: roundedWidget ? 32 : 12
     Layout.fillWidth: true
     Layout.fillHeight: true
-    
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        enabled: !root.editingLayout
-        onClicked: {
-            fullRep.togglePage(fullRep.defaultInitialWidth, fullRep.defaultInitialHeight, mediaPlayerPage);
-        }
-    }
 
     GridLayout {
         anchors.fill: parent
@@ -135,5 +125,7 @@ Lib.Card {
         }
     }
 
-
+    onClicked: {
+        fullRep.togglePage(fullRep.defaultInitialWidth, fullRep.defaultInitialHeight, mediaPlayerPage);
+    }
 }

@@ -62,13 +62,13 @@ Lib.Slider {
         sink.volume = value * Vol.PulseAudio.NormalVolume / 100
     }
     // Display view that shows audio devices list
-    onTogglePage: {
+    onClicked: {
         var pageHeight =  volumePage.contentItemHeight + volumePage.headerHeight;
         fullRep.togglePage(fullRep.defaultInitialWidth, pageHeight, volumePage);
     }
     
     property var oldVol: 100 * Vol.PulseAudio.NormalVolume / 100
-    onClicked: {
+    onActionButtonClicked: {
         if(value!=0){
             oldVol = sink.volume
             sink.volume=0
