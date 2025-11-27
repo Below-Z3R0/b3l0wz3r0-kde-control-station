@@ -24,6 +24,8 @@ Lib.Card {
 
     visible: batteryPage.batteryControl.hasBatteries && root.showBattery
 
+    showContentOverflowIndicator: isLongButton
+
     GridLayout {
         anchors.fill: parent
         anchors.margins: root.mediumSpacing

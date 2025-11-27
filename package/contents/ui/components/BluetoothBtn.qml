@@ -16,6 +16,7 @@ Lib.CardButton {
     property QtObject btManager : BluezQt.Manager
     property alias sourceColor: icon.sourceColor
     visible: true
+    showContentOverflowIndicator: isLongButton
 
     Layout.fillWidth: true
     Layout.fillHeight: true

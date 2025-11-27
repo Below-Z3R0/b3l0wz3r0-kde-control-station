@@ -5,6 +5,7 @@ import Qt5Compat.GraphicalEffects
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: rectangle
@@ -47,11 +48,12 @@ Rectangle {
     radius: 12
 
     property bool hovered: false
+    property bool showContentOverflowIndicator: false
 
     signal clicked
     
     MouseArea {
-        anchors.fill: parent
+        anchors.fill: contentOverflowIndicator
         enabled: !root.editingLayout
         hoverEnabled: enabled
 
@@ -118,5 +120,33 @@ Rectangle {
         anchors.bottomMargin: noMargins ? -1 : smallBottomMargins ? 2 : 5
         anchors.leftMargin: (noMargins || smallLeftMargins) ? -1 : 5
         anchors.rightMargin: (noMargins || smallRightMargins) ? -1 : 5
+    }
+
+    Rectangle {
+        id: contentOverflowIndicator
+        width: cardBg.width
+        height: cardBg.height - 2
+        color: "transparent"
+        radius: cornerRadius
+        visible: showContentOverflowIndicator
+        opacity: rectangle.hovered ? 1 : 0
+        
+        anchors.right: cardBg.right
+        anchors.rightMargin: 1
+        anchors.verticalCenter: cardBg.verticalCenter
+
+        Kirigami.Icon {
+            source: "arrow-right"
+            width: 15
+            height: width
+            scale: contentOverflowIndicator.opacity
+
+            anchors.right: parent.right
+            anchors.rightMargin: 5
+            anchors.verticalCenter: parent.verticalCenter
+
+        }
+
+        Behavior on opacity { PropertyAnimation {} }
     }
 }

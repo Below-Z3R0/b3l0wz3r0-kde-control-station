@@ -53,6 +53,8 @@ Lib.CardButton {
     
     title: Funcs.getNetworkConnectionName()
 
+    showContentOverflowIndicator: isLongButton
+
     Lib.Icon {
         anchors.fill: parent
         source: network.activeConnectionIcon
