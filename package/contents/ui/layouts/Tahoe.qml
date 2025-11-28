@@ -36,6 +36,7 @@ ColumnLayout {
             noMargins: true
             fullSizeIcon: true
             title: ""
+            showTitle: false
             roundedWidget: true
             sourceColor: "transparent"
         }

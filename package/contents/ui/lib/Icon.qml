@@ -13,6 +13,9 @@ Item
     property alias selected: icon.selected
     property bool fullSizeIcon : false
     property bool customIcon: false
+    property bool enableQuickAction: false
+
+    signal quickActionTriggered
 
     property color highlightColor: root.useSystemColorsOnToggles ? root.themeHighlightColor : root.toggleButtonsColor
     property color iconColor: root.useSystemColorsOnToggles ?  Kirigami.Theme.highlightedTextColor : root.toggleButtonsIconColor
@@ -34,5 +37,13 @@ Item
             isMask: customIcon
             color: selected ? iconColor : Kirigami.Theme.textColor
         }
+    }
+
+    MouseArea {
+        enabled: !root.editingLayout && enableQuickAction
+        hoverEnabled: true
+        anchors.fill: parent
+        
+        onClicked: quickActionTriggered()
     }
 }

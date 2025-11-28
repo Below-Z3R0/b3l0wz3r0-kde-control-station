@@ -59,6 +59,17 @@ Lib.CardButton {
         anchors.fill: parent
         source: network.activeConnectionIcon
         selected: (network.networkStatus.activeConnections != "") || isAirplane 
+        enableQuickAction: true
+
+        onQuickActionTriggered: {
+            if(!wifiCheckVisible) { return; }
+            if(!isAirplane) {
+                network.handler.enableWireless(!wifiCheckChecked); 
+            } else {
+                network.handler.enableAirplaneMode(false);
+                PlasmaNM.Configuration.airplaneModeEnabled = false;
+            }
+        }
     }
     onClicked: fullRep.togglePage(fullRep.defaultInitialWidth, 400, networkPage);
     
