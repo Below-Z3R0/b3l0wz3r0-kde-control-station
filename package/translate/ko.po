@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/"
 "plasma6\n"
-"POT-Creation-Date: 2025-10-30 12:42-0600\n"
+"POT-Creation-Date: 2025-12-24 16:06-0600\n"
 "PO-Revision-Date: 2025-08-27 23:11+0900\n"
 "Last-Translator: Hyeonwol123 <hyeonwol12345@kakao.com>\n"
 "Language-Team: \n"
@@ -38,6 +38,10 @@ msgstr "모양새"
 #: ../contents/config/config.qml
 msgid "Color schemes"
 msgstr "색상"
+
+#: ../contents/config/config.qml ../contents/ui/components/ScreenshotBtn.qml
+msgid "Screenshot"
+msgstr "스크린샷"
 
 #: ../contents/config/config.qml
 msgid "Support"
@@ -92,10 +96,6 @@ msgstr "야간 조명"
 #: ../contents/ui/components/RedShift.qml
 msgid "Night Color"
 msgstr "야간 색상"
-
-#: ../contents/ui/components/ScreenshotBtn.qml
-msgid "Screenshot"
-msgstr "스크린샷"
 
 #: ../contents/ui/components/SystemActions.qml
 msgid "Power Off"
@@ -230,6 +230,14 @@ msgstr "밝은 색상"
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
 msgstr "어두운 색상"
+
+#: ../contents/ui/config/configScreenshot.qml
+msgid "Hide widget before screenshotting:"
+msgstr ""
+
+#: ../contents/ui/config/configScreenshot.qml
+msgid "Screenshot Command (default is 'spectacle'):"
+msgstr ""
 
 #: ../contents/ui/config/configSupport.qml
 msgid ""

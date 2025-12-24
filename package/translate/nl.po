@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/"
 "plasma6\n"
-"POT-Creation-Date: 2025-10-30 12:42-0600\n"
+"POT-Creation-Date: 2025-12-24 16:06-0600\n"
 "PO-Revision-Date: 2025-09-06 11:46+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -39,6 +39,10 @@ msgstr "Vormgeving"
 #: ../contents/config/config.qml
 msgid "Color schemes"
 msgstr "Kleurenschema's"
+
+#: ../contents/config/config.qml ../contents/ui/components/ScreenshotBtn.qml
+msgid "Screenshot"
+msgstr "Schermfoto"
 
 #: ../contents/config/config.qml
 msgid "Support"
@@ -93,10 +97,6 @@ msgstr "Nachtlicht"
 #: ../contents/ui/components/RedShift.qml
 msgid "Night Color"
 msgstr "Nachtkleur"
-
-#: ../contents/ui/components/ScreenshotBtn.qml
-msgid "Screenshot"
-msgstr "Schermfoto"
 
 #: ../contents/ui/components/SystemActions.qml
 msgid "Power Off"
@@ -231,6 +231,14 @@ msgstr "Licht thema"
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Dark color"
 msgstr "Donker thema"
+
+#: ../contents/ui/config/configScreenshot.qml
+msgid "Hide widget before screenshotting:"
+msgstr ""
+
+#: ../contents/ui/config/configScreenshot.qml
+msgid "Screenshot Command (default is 'spectacle'):"
+msgstr ""
 
 #: ../contents/ui/config/configSupport.qml
 msgid ""
