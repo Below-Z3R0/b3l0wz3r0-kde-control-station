@@ -41,7 +41,7 @@ msgstr "Screenshot"
 
 #: ../contents/config/config.qml
 msgid "Support"
-msgstr ""
+msgstr "Unterstützung"
 
 #: ../contents/ui/components/Battery.qml ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Placeholder is battery percentage"
@@ -94,7 +94,7 @@ msgstr "Herunterfahren"
 
 #: ../contents/ui/components/UserAvatar.qml
 msgid "%1@%2"
-msgstr ""
+msgstr "%1@%2"
 
 #: ../contents/ui/components/Volume.qml
 msgid "Volume"
@@ -102,7 +102,7 @@ msgstr "Lautstärke"
 
 #: ../contents/ui/config/components/ColorChooser.qml
 msgid "Please choose a color"
-msgstr "Bitte wähle eine Farbe"
+msgstr "Bitte eine Farbe auswählen"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
@@ -140,7 +140,7 @@ msgstr "Flach"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Tahoe"
-msgstr ""
+msgstr "Tahoe"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Custom"
@@ -212,7 +212,7 @@ msgstr "Weitere Komponenten anzeigen:"
 
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
-msgstr "Anstelle nur des Farbschemas wird das globale Design gewechselt"
+msgstr "Ändere das globale Thema anstatt nur das Farbschema."
 
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Light color"
