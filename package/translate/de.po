@@ -25,7 +25,7 @@ msgstr "KDE Kontrollzentrum"
 
 #: ../metadata.json
 msgid "A modern control station for plasma based on the awesome work of prayag2!"
-msgstr ""
+msgstr "Eine moderne Steuerstation für Plasma, basierend auf der großartigen Arbeit von prayag2!"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"
