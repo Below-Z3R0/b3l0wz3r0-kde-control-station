@@ -1,3 +1,4 @@
+
 # Translation of KdeControlStation in German / Deutsch
 # Copyright (C) 2025
 # This file is distributed under the same license as the KdeControlStation package.
@@ -12,7 +13,8 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Marcel K. <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: German / DeutschMIME-Version: 1.0\n"
+"Language: German / Deutsch"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
@@ -23,7 +25,7 @@ msgstr "KDE Kontrollzentrum"
 
 #: ../metadata.json
 msgid "A modern control station for plasma based on the awesome work of prayag2!"
-msgstr ""
+msgstr "Eine moderne Steuerstation für Plasma, basierend auf der großartigen Arbeit von prayag2!"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"
@@ -39,7 +41,7 @@ msgstr "Screenshot"
 
 #: ../contents/config/config.qml
 msgid "Support"
-msgstr ""
+msgstr "Unterstützung"
 
 #: ../contents/ui/components/Battery.qml ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Placeholder is battery percentage"
@@ -92,7 +94,7 @@ msgstr "Herunterfahren"
 
 #: ../contents/ui/components/UserAvatar.qml
 msgid "%1@%2"
-msgstr ""
+msgstr "%1@%2"
 
 #: ../contents/ui/components/Volume.qml
 msgid "Volume"
@@ -100,21 +102,21 @@ msgstr "Lautstärke"
 
 #: ../contents/ui/config/components/ColorChooser.qml
 msgid "Please choose a color"
-msgstr "Bitte wähle eine Farbe"
+msgstr "Bitte eine Farbe auswählen"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon:"
-msgstr "Bild:"
+msgstr "Symbol:"
 
 #: ../contents/ui/config/configAppearance.qml
 msgctxt "@item:inmenu Open icon chooser dialog"
 msgid "Choose…"
-msgstr ""
+msgstr "Auswählen …"
 
 #: ../contents/ui/config/configAppearance.qml
 msgctxt "@item:inmenu Reset icon to default"
 msgid "Clear Icon"
-msgstr ""
+msgstr "Symbol entfernen"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Scale:"
@@ -138,11 +140,11 @@ msgstr "Flach"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Tahoe"
-msgstr ""
+msgstr "Tahoe"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Custom"
-msgstr ""
+msgstr "Benutzerdefiniert"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "General:"
@@ -174,23 +176,23 @@ msgstr "Tasten und Schieberegler aktivieren"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Toggle buttons"
-msgstr ""
+msgstr "Umschalttasten"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Highlight color: "
-msgstr ""
+msgstr "Hervorhebungsfarbe"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Icon color: "
-msgstr ""
+msgstr "Symbolfarbe"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Sliders controls style"
-msgstr ""
+msgstr "Schieberegler-Steuerelemente Stil"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Sliders color: "
-msgstr ""
+msgstr "Schieberegler-Farbe"
 
 #: ../contents/ui/config/configAppearance.qml
 msgid "Show quick toggle buttons:"
@@ -210,7 +212,7 @@ msgstr "Weitere Komponenten anzeigen:"
 
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Change global theme instead of just changing color scheme"
-msgstr "Anstelle nur des Farbschemas wird das globale Design gewechselt"
+msgstr "Ändere das globale Thema anstatt nur das Farbschema."
 
 #: ../contents/ui/config/configColorscheme.qml
 msgid "Light color"
@@ -222,15 +224,15 @@ msgstr "Dunkler Modus"
 
 #: ../contents/ui/config/configScreenshot.qml
 msgid "Hide widget before screenshotting:"
-msgstr ""
+msgstr "Widget vor dem Erstellen eines Screenshots ausblenden"
 
 #: ../contents/ui/config/configScreenshot.qml
 msgid "Screenshot Command (default is 'spectacle'):"
-msgstr ""
+msgstr "Screenshot-Befehl (Standard ist 'Spektakel')"
 
 #: ../contents/ui/config/configSupport.qml
 msgid "I'd be very thankful if you like to support the development of this applet by donating or by simply spreading the word, TIA! :)"
-msgstr ""
+msgstr "Ich wäre dir sehr dankbar, wenn du die Entwicklung dieses Applets durch eine Spende oder einfach durch Weiterempfehlung unterstützen würdest, vielen Dank im Voraus! :"
 
 #: ../contents/ui/js/funcs.js
 msgid "Disabled"
@@ -266,11 +268,11 @@ msgstr "Bluetooth"
 
 #: ../contents/ui/pages/BatteryPage.qml
 msgid "The battery applet has enabled suppressing sleep and screen locking"
-msgstr "Ruhezustand und Bildschirmsperre durch Batteriewidget blockiert"
+msgstr "Ruhezustand und Bildschirmsperre durch Akku-Widget blockiert"
 
 #: ../contents/ui/pages/BatteryPage.qml
 msgid "Power and Battery"
-msgstr "Energie und Batterie"
+msgstr "Energie und Akku"
 
 #: ../contents/ui/pages/BatteryPage.qml ../contents/ui/pages/components/battery/PowerManagementItem.qml ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Power Management"
@@ -282,7 +284,7 @@ msgstr "Aktivieren"
 
 #: ../contents/ui/pages/BluetoothPage.qml
 msgid "Pair Device…"
-msgstr "Gerät verbinden..."
+msgstr "Gerät verbinden …"
 
 #: ../contents/ui/pages/BluetoothPage.qml
 msgid "No Bluetooth adapters available"
@@ -290,7 +292,7 @@ msgstr "Kein Bluetoothadapter verfügbar"
 
 #: ../contents/ui/pages/BluetoothPage.qml
 msgid "Bluetooth is disabled"
-msgstr "Bluetooth ist deaktiviert"
+msgstr "Bluetooth deaktiviert"
 
 #: ../contents/ui/pages/BluetoothPage.qml
 msgid "No devices paired"
@@ -322,16 +324,16 @@ msgstr "Vollständig geladen"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgid "Not Charging"
-msgstr "Wird nicht geladn"
+msgstr "Wird nicht geladen"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Battery is currently not present in the bay"
 msgid "Not present"
-msgstr "Es ist keine Batterie eingelegt"
+msgstr "Es ist kein Akku eingelegt"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgid "This battery's health is at only %1% and it should be replaced. Contact the manufacturer."
-msgstr "Der Gesundheitszustand dieser Batterie beträgt nur noch %1% und sie sollte ersetzt werden. Kontaktiere den Hersteller."
+msgstr "Der Gesundheitszustand dieses Akkus beträgt nur noch %1% und er sollte ersetzt werden. Kontaktiere den Hersteller."
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgid "Time To Full:"
@@ -344,11 +346,11 @@ msgstr "Verbleibende Zeit:"
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "@info"
 msgid "Estimating…"
-msgstr "Schätzen…"
+msgstr "Schätzen …"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgid "Battery Health:"
-msgstr "Batteriegesundheit:"
+msgstr "Akkugesundheit:"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgctxt "Placeholder is battery health percentage"
@@ -357,7 +359,7 @@ msgstr "%1%"
 
 #: ../contents/ui/pages/components/battery/BatteryItem.qml
 msgid "Battery is configured to charge up to approximately %1%."
-msgstr "Die Batterie ist konfiguriert um bis etwa %1% zu laden."
+msgstr "Akku ist konfiguriert, um bis etwa %1% zu laden."
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgctxt "@title:group"
@@ -395,8 +397,8 @@ msgstr "Beim Zuklappen wechselt Ihr Laptop bei angeschlossenem externem Monitor 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgid "%1 application is currently blocking sleep and screen locking:"
 msgid_plural "%1 applications are currently blocking sleep and screen locking:"
-msgstr[0] "%1 Anwendung verhindert gerade Ruhezustand und Bildschirmsperre:"
-msgstr[1] "%1 Anwendungen verhindern gerade Ruhezustand und Bildschirmsperre:"
+msgstr[0] "%1 App verhindert gerade Ruhezustand und Bildschirmsperre:"
+msgstr[1] "%1 Apps verhindern gerade Ruhezustand und Bildschirmsperre:"
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgid "%1 is currently blocking sleep and screen locking (%2)"
@@ -408,11 +410,11 @@ msgstr "%1 verhindert gerade Ruhezustand und Bildschirmsperre (Grund unbekannt)"
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgid "An application is currently blocking sleep and screen locking (%1)"
-msgstr "Eine Anwendung verhindert gerade Ruhezustand und Bildschirmsperre (%1)"
+msgstr "Eine App verhindert gerade Ruhezustand und Bildschirmsperre (%1)"
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgid "An application is currently blocking sleep and screen locking (unknown reason)"
-msgstr "Eine Anwendung verhindert gerade Ruhezustand und Bildschirmsperre (Grund unbekannt)"
+msgstr "Eine App verhindert gerade Ruhezustand und Bildschirmsperre (Grund unbekannt)"
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgctxt "Application name: reason for preventing sleep and screen locking"
@@ -427,12 +429,12 @@ msgstr "%1: Grund unbekannt"
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgctxt "Application name: reason for preventing sleep and screen locking"
 msgid "Unknown application: %1"
-msgstr "Unbekannte Anwendung: %1"
+msgstr "Unbekannte App: %1"
 
 #: ../contents/ui/pages/components/battery/PowerManagementItem.qml
 msgctxt "Application name: reason for preventing sleep and screen locking"
 msgid "Unknown application: unknown reason"
-msgstr "Unbekannte Anwendung: Grund unbekannt"
+msgstr "Unbekannte App: Grund unbekannt"
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Power Save"
@@ -457,11 +459,11 @@ msgstr "Nicht verfügbar"
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Failed to activate %1 mode"
-msgstr "Aktivieruen von Modus %1 fehlgeschlagen"
+msgstr "Modus %1 aktivieren fehlgeschlagen"
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Performance mode has been disabled to reduce heat generation because the computer has detected that it may be sitting on your lap."
-msgstr "Der Leistungsmodus wurde deaktiviert, um die Wärmeentwicklung zu reduzieren, da der Computer erkannt hat, dass er möglicherweise auf Ihrem Schoß liegt."
+msgstr "Der Leistungsmodus wurde deaktiviert, um die Wärmeentwicklung zu reduzieren, da der Computer erkannt hat, dass er möglicherweise auf deinem Schoß liegt."
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Performance mode is unavailable because the computer is running too hot."
@@ -473,7 +475,7 @@ msgstr "Der Leistungsmodus ist nicht verfügbar."
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Performance may be lowered to reduce heat generation because the computer has detected that it may be sitting on your lap."
-msgstr "Die Leistung kann zur Reduzierung der Wärmeentwicklung verringert sein, da der Computer erkannt hat, dass er möglicherweise auf Ihrem Schoß liegt."
+msgstr "Die Leistung kann zur Reduzierung der Wärmeentwicklung verringert sein, da der Computer erkannt hat, dass er möglicherweise auf deinem Schoß liegt."
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Performance may be reduced because the computer is running too hot."
@@ -486,8 +488,8 @@ msgstr "Die Leistung kann verringert sein."
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "One application has requested activating %2:"
 msgid_plural "%1 applications have requested activating %2:"
-msgstr[0] "Eine Anwendung fordert die Aktivierung von %2:"
-msgstr[1] "%1 Anwendungen fordern die Aktivierung von %2:"
+msgstr[0] "Eine App fordert die Aktivierung von %2:"
+msgstr[1] "%1 Apps fordern die Aktivierung von %2:"
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgctxt "%1 is the name of the application, %2 is the reason provided by it for activating performance mode"
@@ -496,7 +498,7 @@ msgstr "%1: %2"
 
 #: ../contents/ui/pages/components/battery/PowerProfileItem.qml
 msgid "Power profiles may be supported on your device.<nl/>Try installing the <command>power-profiles-daemon</command> package using your distribution's package manager and restarting the system."
-msgstr "Möglicherweise werden Energieprofile auf Ihrem Gerät unterstützt.<nl/>Versuchen Sie, das Paket <command>power-profiles-daemon</command> mit dem Paketmanager Ihrer Distribution zu installieren und das System neu zu starten."
+msgstr "Möglicherweise werden Energieprofile auf deinem Gerät unterstützt.<nl/>Versuche, das Paket <command>power-profiles-daemon</command> mit dem Paketmanager deiner Distribution zu installieren und das System neu zu starten."
 
 #: ../contents/ui/pages/components/bluetooth/DeviceItem.qml ../contents/ui/pages/components/network/ConnectionItem.qml
 msgid "Disconnect"
@@ -597,7 +599,7 @@ msgstr "Anderes Gerät"
 
 #: ../contents/ui/pages/components/bluetooth/DeviceItem.qml
 msgid "%1% Battery"
-msgstr "%1% Batterie"
+msgstr "%1% Akku"
 
 #: ../contents/ui/pages/components/bluetooth/Header.qml
 msgid "Configure Bluetooth"
@@ -655,12 +657,12 @@ msgstr "-%1"
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgctxt "@action:button"
 msgid "Shuffle"
-msgstr "Shuffle"
+msgstr "Zufall"
 
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgctxt "Play previous track"
 msgid "Previous Track"
-msgstr "Vorheriger Song"
+msgstr "Vorheriger Titel"
 
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgctxt "Pause playback"
@@ -675,11 +677,11 @@ msgstr "Abspielen"
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgctxt "Play next track"
 msgid "Next Track"
-msgstr "Nächster Song"
+msgstr "Nächster Titel"
 
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgid "Repeat Track"
-msgstr "Song wiederholen"
+msgstr "Titel wiederholen"
 
 #: ../contents/ui/pages/components/mediaPlayer/ExpandedRepresentation.qml
 msgid "Repeat"
@@ -691,7 +693,7 @@ msgstr "Netzwerk als QR-Code anzeigen"
 
 #: ../contents/ui/pages/components/network/ConnectionItem.qml ../contents/ui/pages/NightLightPage.qml
 msgid "Configure…"
-msgstr "Einstellungen…"
+msgstr "Konfigurieren …"
 
 #: ../contents/ui/pages/components/network/ConnectionItem.qml
 msgid "Speed"
@@ -712,7 +714,7 @@ msgstr "Verbunden, ⬇ %1/s, ⬆ %2/s"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "You need to log in to this network"
-msgstr "Sie müssen sich im Netzwerk anmelden"
+msgstr "du musst dich im Netzwerk anmelden"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgctxt "@action:button"
@@ -721,19 +723,19 @@ msgstr "Anmelden"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "Airplane mode is enabled"
-msgstr "Flugzeugmodus ist aktiviert"
+msgstr "Flugzeugmodus aktiviert"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "Wireless and mobile networks are deactivated"
-msgstr "WLAN und mobile Netzwerke sind deaktiviert"
+msgstr "WLAN und mobile Netzwerke deaktiviert"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "Wireless is deactivated"
-msgstr "WLAN ist deaktiviert"
+msgstr "WLAN deaktiviert"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "Mobile network is deactivated"
-msgstr "Mobile Netzwerke sind deaktiviert"
+msgstr "Mobile Netzwerke deaktiviert"
 
 #: ../contents/ui/pages/components/network/ConnectionListPage.qml
 msgid "No matches"
@@ -745,7 +747,7 @@ msgstr "Keine Verbindung verfügbar"
 
 #: ../contents/ui/pages/components/network/ShareNetworkQrCodePage.qml
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr "Scannen Sie diesen QR-Code mit einem anderen Gerät, um eine Verbindung zum Netzwerk \"%1\" herzustellen."
+msgstr "Scanne diesen QR-Code mit einem anderen Gerät, um eine Verbindung zum Netzwerk \'%1\' herzustellen."
 
 #: ../contents/ui/pages/components/network/Toolbar.qml
 msgid "Enable Wi-Fi"
@@ -779,7 +781,7 @@ msgstr "Hotspot erstellen"
 
 #: ../contents/ui/pages/components/network/Toolbar.qml
 msgid "Configure network connections…"
-msgstr "Netzwerkverbindungen einrichten…"
+msgstr "Netzwerkverbindungen einrichten …"
 
 #: ../contents/ui/pages/components/network/TrafficMonitor.qml
 msgid "/s"
@@ -813,7 +815,7 @@ msgstr "Zusätzliche Optionen für %1 anzeigen"
 #: ../contents/ui/pages/components/volume/ListItemBase.qml
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Stummschaltung aufheben"
+msgstr "Stummschaltung aus"
 
 #: ../contents/ui/pages/components/volume/ListItemBase.qml
 msgctxt "@action:button"
@@ -849,7 +851,7 @@ msgstr "Streamname nicht gefunden"
 
 #: ../contents/ui/pages/MediaPlayerPage.qml
 msgid "Media Player"
-msgstr "Medienspieler"
+msgstr "Media Player"
 
 #: ../contents/ui/pages/NetworkPage.qml
 msgid "Networks"
@@ -867,7 +869,7 @@ msgstr "Nachtlichtstatus"
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "Night light status"
 msgid "Suspended"
-msgstr "Nachtlicht pausieren"
+msgstr "Ausgesetzt"
 
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "Night light status"
@@ -887,7 +889,7 @@ msgstr "Zurzeit pausiert"
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "Night light status"
 msgid "On"
-msgstr "Aktiviert"
+msgstr "An"
 
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "Night light phase"
@@ -917,11 +919,11 @@ msgstr "%1K"
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "@action:button Night Light"
 msgid "Suspend"
-msgstr "Pausieren"
+msgstr "Aussetzen"
 
 #: ../contents/ui/pages/NightLightPage.qml
 msgid "Enable and Configure…"
-msgstr "Aktivieren und einrichten…"
+msgstr "Aktivieren und einrichten …"
 
 #: ../contents/ui/pages/NightLightPage.qml
 msgctxt "Label for a time"
@@ -973,7 +975,7 @@ msgstr "Abmelden"
 
 #: ../contents/ui/pages/SystemSessionActionsPage.qml
 msgid "Switch User"
-msgstr ""
+msgstr "Benutzer wechseln"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Audio Volume"
@@ -993,7 +995,7 @@ msgstr "Geräte"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Applications"
-msgstr "Anwendungen"
+msgstr "Apps"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "Force mute all playback devices"
@@ -1005,7 +1007,7 @@ msgstr "Audiogeräte einrichten"
 
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No applications playing or recording audio"
-msgstr "Keine Anwendung spielt zurzeit Ton ab oder zeichnet welchen auf"
+msgstr "Keine App spielt zurzeit Ton ab oder zeichnet welchen auf"
 
 #~ msgid "Behaviour"
 #~ msgstr "Verhalten"
