@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
 "Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/plasma6\n"
-"POT-Creation-Date: 2026-01-04 16:33-0600\n"
+"POT-Creation-Date: 2026-01-22 17:26-0600\n"
 "PO-Revision-Date: 2025-12-30 07:49\n"
 "Last-Translator: dmali <dmali@example.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -1008,3 +1008,12 @@ msgstr "Настроить аудиоустройства"
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No applications playing or recording audio"
 msgstr "Нет приложений, воспроизводящих или записывающих звук"
+
+#: ../contents/ui/pages/VolumePage.qml
+msgctxt "@info"
+msgid "Prolonged use of this feature will damage the device's speakers. Only use it temporarily to make quiet media audible."
+msgstr ""
+
+#: ../contents/ui/pages/VolumePage.qml
+msgid "Raise maximum volume"
+msgstr ""
