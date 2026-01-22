@@ -384,6 +384,44 @@ PageTemplate {
                 }
             }
         }
+
+
+        ColumnLayout {
+            width: parent.width
+            spacing: 0
+
+            Kirigami.InlineMessage {
+                id: raiseMaxVolumeWarning
+
+                Layout.fillWidth: true
+
+                showCloseButton: true
+                type: Kirigami.MessageType.Warning
+
+                text: xi18nc("@info", "Prolonged use of this feature will damage the device's speakers. Only use it temporarily to make quiet media audible.")
+            }
+
+            PC3.Switch {
+                id: raiseMaximumVolumeCheckbox
+                Layout.fillWidth: true
+
+                checked: config.raiseMaximumVolume
+
+                Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
+                KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
+                Keys.onUpPressed: event => {
+                    KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                }
+
+                text: i18n("Raise maximum volume")
+
+                onToggled: {
+                    config.raiseMaximumVolume = checked;
+                    config.save();
+                    raiseMaxVolumeWarning.visible = checked;
+                }
+            }
+        }
     }
 
 }
