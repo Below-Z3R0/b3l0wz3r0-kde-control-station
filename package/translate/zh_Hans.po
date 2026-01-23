@@ -1007,3 +1007,12 @@ msgstr "配置音频设备"
 #: ../contents/ui/pages/VolumePage.qml
 msgid "No applications playing or recording audio"
 msgstr "无应用正在播放或录制音频"
+
+#: ../contents/ui/pages/VolumePage.qml
+msgctxt "@info"
+msgid "Prolonged use of this feature will damage the device's speakers. Only use it temporarily to make quiet media audible."
+msgstr "长时间使用此功能会损坏设备的扬声器。请仅在需要听清音量过小的媒体时临时使用。"
+
+#: ../contents/ui/pages/VolumePage.qml
+msgid "Raise maximum volume"
+msgstr "提高最大音量"
