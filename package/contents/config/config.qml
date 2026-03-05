@@ -18,6 +18,11 @@ ConfigModel {
         icon: "camera-photo-symbolic"
         source: "config/configScreenshot.qml"
     }
+    ConfigCategory {
+        name: i18n("Quick Actions")
+        icon: "quickopen"
+        source: "config/configQuickActions.qml"
+    }
      ConfigCategory {
         name: i18n("Support")
         icon: "face-angel"

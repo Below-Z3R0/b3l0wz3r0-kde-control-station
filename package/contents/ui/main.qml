@@ -100,6 +100,9 @@ PlasmoidItem {
 
     property bool editingLayout: false
 
+    // Enables quick action(triggering action when clicking icon) on Quick toggle buttons
+    property bool enableQuickActions: Plasmoid.configuration.enableQuickActions
+
 
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge

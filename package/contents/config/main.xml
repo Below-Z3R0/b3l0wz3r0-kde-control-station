@@ -181,5 +181,10 @@
         <entry name="screenshotCommand" type="string">
             <default>spectacle</default>
         </entry>
+
+        <!-- Quick actions in quick toggle buttons config -->
+        <entry name="enableQuickActions" type="bool">
+            <default>true</default>
+        </entry>
     </group>
 </kcfg>

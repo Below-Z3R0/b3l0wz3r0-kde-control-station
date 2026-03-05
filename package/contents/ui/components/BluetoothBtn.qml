@@ -38,7 +38,7 @@ Lib.CardButton {
             return "network-bluetooth-symbolic";
         }
         selected:  Funcs.getBtDevice().active
-        enableQuickAction: isLongButton || showTitle
+        enableQuickAction: (isLongButton || showTitle) && root.enableQuickActions
 
         onQuickActionTriggered: Funcs.toggleBluetooth();
     }
