@@ -176,7 +176,7 @@ Item {
 
     LayoutComponents.Footer {
         id: editLayoutBtn
-        height: 40
+        height: root.editingLayout ? 40 : 0
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom            

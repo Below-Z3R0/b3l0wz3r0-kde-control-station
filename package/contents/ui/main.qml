@@ -103,6 +103,13 @@ PlasmoidItem {
     // Enables quick action(triggering action when clicking icon) on Quick toggle buttons
     property bool enableQuickActions: Plasmoid.configuration.enableQuickActions
 
+    readonly property var layouts: {
+        "Default": 0, 
+        "ControlCenter": 1,
+        "Flat": 2,
+        "Tahoe": 3,
+        "Custom": 4
+    }
 
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge
@@ -128,4 +135,14 @@ PlasmoidItem {
     preferredRepresentation: inPanel ? Plasmoid.compactRepresentation : Plasmoid.fullRepresentation
     fullRepresentation: FullRepresentation { }
     compactRepresentation: CompactRepresentation {}
+
+    Plasmoid.contextualActions: [
+        PlasmaCore.Action {
+            text: i18n("Edit Layout")
+            icon.name: "document-edit-symbolic"
+            visible: (Plasmoid.immutability !== PlasmaCore.Types.SystemImmutable) 
+                     && Plasmoid.configuration.layout == layouts.Custom
+            onTriggered: root.editingLayout = true
+        }
+    ]
 }
