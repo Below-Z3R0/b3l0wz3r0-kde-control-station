@@ -242,6 +242,13 @@ KCM.SimpleKCM {
             onActivated: toggleLayoutDefaults(index)
         }
 
+        Kirigami.InlineMessage {
+            id: inlineMessage
+            Layout.fillWidth: true
+            text: "You could edit your layout by right clicking on the widget > Edit Layout"
+            visible: layout.currentIndex === 4
+        }
+
         Item {
             Kirigami.FormData.isSection: true
         }
