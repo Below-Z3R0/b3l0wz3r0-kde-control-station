@@ -167,6 +167,34 @@ Card {
                             NumberAnimation { duration: 200 }
                         }
                     }
+
+                    WheelHandler {
+                        orientation: Qt.Vertical | Qt.Horizontal
+                        property int wheelDelta: 0
+                        acceptedButtons: Qt.NoButton
+                        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+                        onWheel: wheel => {
+                            const lastValue = slider.value
+                            // We want a positive delta to increase the slider for up/right scrolling,
+                            // independently of the scrolling inversion setting
+                            // The x-axis is also inverted (scrolling right produce negative values)
+                            const delta = (wheel.angleDelta.y || -wheel.angleDelta.x) * (wheel.inverted ? -1 : 1)
+                            wheelDelta += delta;
+                            // magic number 120 for common "one click"
+                            // See: https://doc.qt.io/qt-6/qml-qtquick-wheelevent.html#angleDelta-prop
+                            while (wheelDelta >= 120) {
+                                wheelDelta -= 120;
+                                slider.increase();
+                            }
+                            while (wheelDelta <= -120) {
+                                wheelDelta += 120;
+                                slider.decrease();
+                            }
+                            if (lastValue !== slider.value) {
+                                slider.moved();
+                            }
+                        }     
+                    }
                 }
 
             }
