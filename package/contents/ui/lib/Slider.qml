@@ -25,6 +25,7 @@ Card {
 
     property int from: 0
     property int to: 100
+    property real stepSize: 2
 
     property color highlightColor: root.useSystemColorsOnSliders ? root.themeHighlightColor : root.slidersColor
 
@@ -125,7 +126,7 @@ Card {
                     Layout.margins: 0
                     from: sliderComp.from
                     to: sliderComp.to
-                    stepSize: 2
+                    stepSize: sliderComp.stepSize
                     snapMode: Slider.SnapAlways
 
                     background: Rectangle {
@@ -208,7 +209,7 @@ Card {
                     Layout.margins: 0
                     from: sliderComp.from
                     to: sliderComp.to
-                    stepSize: 2
+                    stepSize: sliderComp.stepSize
                     snapMode: Slider.SnapAlways
                 }
             }

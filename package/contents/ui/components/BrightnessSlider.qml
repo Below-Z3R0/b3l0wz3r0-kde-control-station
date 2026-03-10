@@ -92,12 +92,13 @@ Item {
             thinSlider: root.brightness_widget_thin
             flat: root.brightness_widget_flat || brightnessControl.flat // bind to Lib.Card property
             
-            from: 0
+            from: brightnessMin
             to: mainScreen.maxBrightness
             value: mainScreen.brightness
+            stepSize: mainScreen.maxBrightness / 100
             
             onMoved: {
-                sbControl.setBrightness(mainScreen.displayName, Math.max(brightnessMin, Math.min(mainScreen.maxBrightness, value))) ;
+                sbControl.setBrightness(mainScreen.displayName, value) ;
             }
 
             onClicked: {
