@@ -35,7 +35,7 @@ Lib.CardButton {
 
     onClicked: {
         var colorSchemeName = root.isDarkTheme ? root.generalLightTheme : root.generalDarkTheme
-        executable.swapColorScheme(command+colorSchemeName);
+        executable.swapColorScheme(`${command}"${colorSchemeName}"`);
         root.isDarkTheme = !root.isDarkTheme
     }
 
