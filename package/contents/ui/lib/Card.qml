@@ -41,7 +41,7 @@ Rectangle {
 
     property bool roundedWidget: false
 
-    property int cornerRadius: roundedWidget ? 32 : 12
+    property int cornerRadius: roundedWidget ? 50 : 12
 
     property var margins: shadowContainer.margins
     default property alias content: dataContainer.data

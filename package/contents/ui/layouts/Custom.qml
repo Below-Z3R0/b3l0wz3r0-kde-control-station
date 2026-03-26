@@ -69,7 +69,7 @@ Item {
         rowSpacing: root.editingLayout ? 5 : 0
 
         property var cellWidth: root.editingLayout ? ((root.fullRepWidth-columnSpacing*columns) / columns) : root.fullRepWidth / columns
-        property var cellHeight: (root.sectionHeight*1.3) / 3
+        property var cellHeight: cellWidth
 
         Repeater {
 
