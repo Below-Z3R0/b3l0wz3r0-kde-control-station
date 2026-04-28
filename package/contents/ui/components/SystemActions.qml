@@ -40,7 +40,7 @@ Lib.Card {
     }
 
     onClicked: {
-        fullRep.togglePage(300, 350, systemSessionActionsPage);
+        fullRep.togglePage(300, 400, systemSessionActionsPage);
     }
 }
 

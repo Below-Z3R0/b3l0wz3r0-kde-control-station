@@ -66,8 +66,7 @@ PageTemplate {
     GridLayout {
         id: buttonsColumn
         anchors.fill: parent
-        anchors.margins: root.smallSpacing
-
+        rowSpacing: 0
         columns: 1
 
         property int columnImplicitWidth: children[0].width + columnSpacing
