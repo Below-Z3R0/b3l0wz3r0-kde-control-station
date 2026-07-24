@@ -28,17 +28,17 @@ Lib.Card {
         columnSpacing: 1
         rowSpacing: 1
         uniformCellHeights: true
-        Components.BrightnessSlider{
+        Components.BrightnessSlider {
             id: brightnessSlider
             Layout.columnSpan: 2
             Layout.alignment: Qt.AlignTop
         }
 
-        Components.NightLight{
+        Components.NightLight {
             Layout.maximumHeight: parent.height / 2
              Layout.alignment: Qt.AlignTop
         }
-        Components.ColorSchemeSwitcher{
+        Components.ColorSchemeSwitcher {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
@@ -46,7 +46,7 @@ Lib.Card {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
-        Components.CommandRun{
+        Components.CommandRun {
             visible: root.showCmd1
             title: root.cmdTitle1
             icon: root.cmdIcon1
@@ -54,7 +54,7 @@ Lib.Card {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
         }
-        Components.CommandRun{
+        Components.CommandRun {
             visible: root.showCmd2
             title: root.cmdTitle2
             icon: root.cmdIcon2

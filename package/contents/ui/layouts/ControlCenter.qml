@@ -1,5 +1,5 @@
-import QtQml 2.15
-import QtQuick 2.15
+import QtQml
+import QtQuick
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.0
 import "../components" as Components
@@ -19,7 +19,7 @@ ColumnLayout {
         anchors.margins: 1
         visible: header.children.length > 0
         
-        Components.UserAvatar{
+        Components.UserAvatar {
             isLongButton: true
             smallTopMargins: true
             smallBottomMargins: true
@@ -29,7 +29,7 @@ ColumnLayout {
             Layout.preferredWidth: header.Layout.preferredHeight * 1.7
             Layout.maximumWidth: Layout.preferredWidth
         }
-        Components.SystemActions{
+        Components.SystemActions {
             Layout.preferredWidth: header.Layout.preferredHeight
             Layout.maximumWidth: Layout.preferredWidth
         }
@@ -45,20 +45,20 @@ ColumnLayout {
         Layout.maximumHeight: root.sectionHeight 
         
         // Network, Bluetooth and Settings Button
-        LayoutComponents.LeftColumn{}
+        LayoutComponents.LeftColumn {}
 
         // Screen controls section
-        LayoutComponents.RightColumn{}
+        LayoutComponents.RightColumn {}
     }
-    Components.BrightnessSlider{
+    Components.BrightnessSlider {
         id: brightnessSlider
         Layout.preferredHeight: root.sectionHeight / (root.brightness_widget_title ? 2 : 2.8)
         canTogglePage: true
     }
-    Components.Volume{
+    Components.Volume {
         Layout.preferredHeight: root.sectionHeight / (root.volume_widget_title ? 2 : 2.8)
     }
-    Components.MediaPlayer{
+    Components.MediaPlayer {
         Layout.preferredHeight: root.sectionHeight/2
     }
 }

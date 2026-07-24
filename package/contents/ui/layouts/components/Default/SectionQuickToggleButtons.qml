@@ -37,15 +37,15 @@ Lib.Card {
         RowLayout {
             anchors.margins: 1
             spacing: 1
-            Components.NetworkBtn{}
-            Components.BluetoothBtn{}
+            Components.NetworkBtn {}
+            Components.BluetoothBtn {}
         }
 
         RowLayout {
             anchors.margins: 1
             spacing: 1
-            Components.DndButton{}
-            Components.KDEConnect{}
+            Components.DndButton {}
+            Components.KDEConnect {}
         }
     }
 }

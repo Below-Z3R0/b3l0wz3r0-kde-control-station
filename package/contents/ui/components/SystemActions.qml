@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Layouts 1.15
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents2

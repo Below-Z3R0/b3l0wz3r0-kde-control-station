@@ -1,5 +1,5 @@
-import QtQml 2.15
-import QtQuick 2.15
+import QtQml
+import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls 2.0
 import "../components" as Components
@@ -11,7 +11,7 @@ ColumnLayout {
     anchors.margins: 1
     spacing: 1
 
-    Components.MediaPlayer{
+    Components.MediaPlayer {
         Layout.preferredHeight: root.sectionHeight/1.5
     }
 
@@ -28,28 +28,28 @@ ColumnLayout {
         columnSpacing: 1
         rowSpacing: 1
 
-        Components.NetworkBtn{
+        Components.NetworkBtn {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
             flat: true
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.BluetoothBtn{
+        Components.BluetoothBtn {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
             flat: true
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.DndButton{
+        Components.DndButton {
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
             flat: true
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.KDEConnect{
+        Components.KDEConnect {
             id: kdeConnect
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
@@ -57,7 +57,7 @@ ColumnLayout {
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.NightLight{
+        Components.NightLight {
             id: nightLight
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
@@ -65,7 +65,7 @@ ColumnLayout {
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.ColorSchemeSwitcher{
+        Components.ColorSchemeSwitcher {
             id: colorSwitcher
             Layout.maximumHeight: parent.height / 2
             Layout.alignment: Qt.AlignTop
@@ -81,7 +81,7 @@ ColumnLayout {
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.CommandRun{
+        Components.CommandRun {
             id: cmd1
             visible: root.showCmd1
             title: root.cmdTitle1
@@ -93,7 +93,7 @@ ColumnLayout {
             smallLeftMargins: true
             smallRightMargins: true
         }
-        Components.CommandRun{
+        Components.CommandRun {
             id: cmd2
             visible: root.showCmd2
             title: root.cmdTitle2
@@ -106,12 +106,12 @@ ColumnLayout {
             smallRightMargins: true
         }
     }
-    Components.BrightnessSlider{
+    Components.BrightnessSlider {
         id: brightnessSlider
         Layout.preferredHeight: root.sectionHeight / (root.brightness_widget_title ? 2 : 2.8)
         canTogglePage: true
     }
-    Components.Volume{
+    Components.Volume {
         Layout.preferredHeight: root.sectionHeight / (root.volume_widget_title ? 2 : 2.8)
     }
 
@@ -124,7 +124,7 @@ ColumnLayout {
         anchors.margins: 1
         visible: header.children.length > 0
 
-        Components.UserAvatar{
+        Components.UserAvatar {
             flat: true
             showTitle: false
             isLongButton: true
@@ -136,7 +136,7 @@ ColumnLayout {
             Layout.preferredWidth: header.Layout.preferredHeight * 1.7
             Layout.maximumWidth: Layout.preferredWidth
         }
-        Components.SystemActions{
+        Components.SystemActions {
             flat: true
             Layout.preferredWidth: header.Layout.preferredHeight
             Layout.maximumWidth: Layout.preferredWidth

@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.15
 //import QtGraphicalEffects 1.15
@@ -13,7 +13,6 @@ Card {
     Layout.fillHeight: true
     Layout.rightMargin: root.smallSpacing
     Layout.leftMargin: root.smallSpacing
-    signal clicked;
 
     property alias title: title.text
     property alias subtitle: subtitle.text

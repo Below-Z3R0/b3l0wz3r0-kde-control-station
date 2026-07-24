@@ -1,5 +1,5 @@
-import QtQml 2.15
-import QtQuick 2.15
+import QtQml
+import QtQuick
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.0
 import "../../../components" as Components
@@ -17,18 +17,18 @@ Lib.Card {
         anchors.margins: 1
         spacing: 1
 
-        Components.NetworkBtn{
+        Components.NetworkBtn {
             flat: true
             noMargins: true
             isLongButton: true
         }
-        Components.BluetoothBtn{
+        Components.BluetoothBtn {
             flat: true
             noMargins: true
             isLongButton: true
             heading: i18n("Bluetooth")
         }
-        Components.ColorSchemeSwitcher{
+        Components.ColorSchemeSwitcher {
             flat: true
             noMargins: true
             isLongButton: true

@@ -1,5 +1,5 @@
-import QtQml 2.15
-import QtQuick 2.15
+import QtQml
+import QtQuick
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.0
 import "../components" as Components
@@ -23,14 +23,14 @@ ColumnLayout {
             roundedWidget: true
         }
 
-        Components.MediaPlayer{
+        Components.MediaPlayer {
             Layout.columnSpan: 2
             Layout.rowSpan: 2
             glassEffect: true
             roundedWidget: true
         }
 
-        Components.BluetoothBtn{
+        Components.BluetoothBtn {
             width: height
             glassEffect: true
             noMargins: true
@@ -40,7 +40,7 @@ ColumnLayout {
             roundedWidget: true
             sourceColor: "transparent"
         }
-        Components.ColorSchemeSwitcher{
+        Components.ColorSchemeSwitcher {
             width: height
             glassEffect: true
             noMargins: true
@@ -50,14 +50,14 @@ ColumnLayout {
             sourceColor: "transparent"
         }
 
-        Components.DndButton{
+        Components.DndButton {
             Layout.columnSpan: 2
             glassEffect: true
             isLongButton: true
             roundedWidget: true
         }
 
-        Components.NightLight{
+        Components.NightLight {
             width: height
             glassEffect: true
             noMargins: true
@@ -66,7 +66,7 @@ ColumnLayout {
             roundedWidget: true
         }
 
-        Components.KDEConnect{
+        Components.KDEConnect {
             width: height
             glassEffect: true
             noMargins: true
@@ -76,7 +76,7 @@ ColumnLayout {
         }
     }
 
-    Components.BrightnessSlider{
+    Components.BrightnessSlider {
         Layout.preferredHeight: (root.sectionHeight*1.3) / 3
         Layout.maximumHeight: Layout.preferredHeight
         canTogglePage: true
@@ -84,7 +84,7 @@ ColumnLayout {
         cornerRadius: 22
         mediumSizeSlider: true
     }
-    Components.Volume{
+    Components.Volume {
         Layout.preferredHeight:  (root.sectionHeight*1.3) / 3
         Layout.maximumHeight: Layout.preferredHeight
         glassEffect: true
@@ -120,7 +120,7 @@ ColumnLayout {
             title: ""
             roundedWidget: true
          }
-        Components.SystemActions{
+        Components.SystemActions {
             id: systemActions
             Layout.maximumWidth: width
             width: height
@@ -128,7 +128,7 @@ ColumnLayout {
             noMargins: true
             roundedWidget: true
         }
-        Components.CommandRun{
+        Components.CommandRun {
             id: cmd1
             visible: root.showCmd1
             title: root.cmdTitle1
@@ -139,7 +139,7 @@ ColumnLayout {
             isLongButton: title !="" ? true : false
             Layout.columnSpan: isLongButton ? 2 : 1
         }
-        Components.CommandRun{
+        Components.CommandRun {
             id: cmd2
             visible: root.showCmd2
             title: root.cmdTitle2

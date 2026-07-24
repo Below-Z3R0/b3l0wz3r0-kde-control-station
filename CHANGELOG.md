@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.9.0-b3l0wz3r0.5] - 2026-07-24
+### Fixed
+- Mechanical: removed `import Qt* 2.15` version specifiers across 41 QML files (Plasma 6 wants unversioned imports).
+- Mechanical: `Components.X{` → `Components.X {` single-line syntax replacement (48 occurrences across 7 layout files) — silences `Type Components.X unavailable` runtime warning.
+
 ## [Unreleased]
 ### Fixed
 - Icons now follow the colour scheme correctly.
@@ -46,6 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1] - 2022-10-07
 Initial Release
 
-[Unreleased]: https://shattereddisk.github.io/rickroll/rickroll.mp4
+[Unreleased]: https://github.com/Below-Z3R0/b3l0wz3r0-kde-control-station/compare/v2.9.0-b3l0wz3r0.5...HEAD
+[2.9.0-b3l0wz3r0.5]: https://github.com/Below-Z3R0/b3l0wz3r0-kde-control-station/compare/v2.9.0-b3l0wz3r0.4...v2.9.0-b3l0wz3r0.5
 [0.1.0]: https://github.com/Prayag2/kde_controlcentre/compare/15e251b08e25bfd4034b869747fbcd039d29a8d7...0.1.0
 [0.0.1]: https://github.com/Prayag2/kde_controlcentre/compare/185d82086af4f3183fe07603fdd96f8168d9f5ae...15e251b08e25bfd4034b869747fbcd039d29a8d7

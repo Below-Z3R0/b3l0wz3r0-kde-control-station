@@ -1,5 +1,5 @@
-import QtQml 2.15
-import QtQuick 2.15
+import QtQml
+import QtQuick
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.0
 import org.kde.plasma.components as PlasmaComponents
@@ -26,9 +26,14 @@ Item {
         from plasmoid config and sets it to masterWidgetsModel in order to
         be able to manipulate the data */
 
-        if(customLayoutModel !== "null"){ 
-            var datamodel = JSON.parse(customLayoutModel);
-            masterWidgetsModel.widgetsModel = datamodel;
+        if(customLayoutModel !== "null" && customLayoutModel !== ""){
+            try {
+                var datamodel = JSON.parse(customLayoutModel);
+                masterWidgetsModel.widgetsModel = datamodel;
+            } catch(e) {
+                console.warn("Custom.qml: invalid customLayoutModel JSON, using default empty layout");
+                masterWidgetsModel.widgetsModel = [];
+            }
         }
     }
 
