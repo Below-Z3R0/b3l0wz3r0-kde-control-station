@@ -20,7 +20,7 @@ ColumnLayout {
         anchors.margins: 1
         visible: header.children.length > 0
         
-        Components.UserAvatar{
+        Components.UserAvatar {
             isLongButton: true
             smallTopMargins: true
             smallBottomMargins: true
@@ -30,7 +30,7 @@ ColumnLayout {
             Layout.preferredWidth: header.Layout.preferredHeight * 1.7
             Layout.maximumWidth: Layout.preferredWidth
         }
-        Components.SystemActions{
+        Components.SystemActions {
             Layout.preferredWidth: header.Layout.preferredHeight
             Layout.maximumWidth: Layout.preferredWidth
         }
@@ -46,16 +46,16 @@ ColumnLayout {
         Layout.maximumHeight: root.sectionHeight
         
         // Network, Bluetooth and Settings Button
-        LayoutComponents.SectionQuickToggleButtons{}
+        LayoutComponents.SectionQuickToggleButtons {}
 
         // Screen controls section
-        LayoutComponents.SectionScreenControls{}
+        LayoutComponents.SectionScreenControls {}
     }
 
-    Components.Volume{
+    Components.Volume {
         Layout.preferredHeight: root.sectionHeight / (root.volume_widget_title ? 2 : 2.8)
     }
-    Components.MediaPlayer{
+    Components.MediaPlayer {
         Layout.preferredHeight: root.sectionHeight/2
     }
 }
