@@ -32,6 +32,7 @@ T.Menu {
 
     contentItem: ListView {
         implicitHeight: contentHeight
+        reuseItems: true
         property bool hasCheckables: false
         property bool hasIcons: false
         model: control.contentModel

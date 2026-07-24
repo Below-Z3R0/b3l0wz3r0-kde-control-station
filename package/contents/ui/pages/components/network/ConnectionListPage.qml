@@ -52,6 +52,7 @@ ColumnLayout {
 
         contentItem: ListView {
             id: connectionView
+            reuseItems: true
 
             property int currentVisibleButtonIndex: -1
             property bool showSeparator: false

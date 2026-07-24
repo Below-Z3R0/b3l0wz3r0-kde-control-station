@@ -69,7 +69,7 @@ Rectangle {
         
         anchors.fill: parent
         anchors.margins: 0
-        layer.enabled: true
+        layer.enabled: shadowContainer.visible
 
         opacity: 0.1 // This controls the opcity of the shadow
         clip: true
