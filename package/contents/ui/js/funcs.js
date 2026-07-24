@@ -49,7 +49,11 @@ function toggleBluetooth()
 function checkInhibition() {
     var inhibited = false;
 
-    if (!NotificationManager.Server.valid) {
+    try {
+        if (!NotificationManager.Server.valid) {
+            return false;
+        }
+    } catch(e) {
         return false;
     }
     var inhibitedUntil = notificationSettings.notificationsInhibitedUntil;
@@ -68,22 +72,22 @@ function checkInhibition() {
 }
 
 function toggleDnd() {
-    if (Funcs.checkInhibition()) {
-        notificationSettings.notificationsInhibitedUntil = undefined;
-        notificationSettings.revokeApplicationInhibitions();
+    try {
+        if (Funcs.checkInhibition()) {
+            notificationSettings.notificationsInhibitedUntil = undefined;
+            notificationSettings.revokeApplicationInhibitions();
+            notificationSettings.screensMirrored = false;
+            notificationSettings.save();
+            return;
+        }
 
-        // overrules current mirrored screen setup, updates again when screen configuration
-        notificationSettings.screensMirrored = false;
+        var d = new Date();
+        d.setYear(d.getFullYear()+1);
+        notificationSettings.notificationsInhibitedUntil = d;
         notificationSettings.save();
-
+    } catch(e) {
         return;
     }
-
-    var d = new Date();
-    d.setYear(d.getFullYear()+1)
-
-    notificationSettings.notificationsInhibitedUntil = d
-    notificationSettings.save()
 }
 
 function revokeInhibitions() {
