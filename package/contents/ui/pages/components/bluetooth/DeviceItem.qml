@@ -157,7 +157,6 @@ PlasmaExtras.ExpandableListItem {
                     rowSpacing: Kirigami.Units.smallSpacing / 4
 
                     Repeater {
-                        reuseItems: true
                         id: repeater
 
                         model: root.currentDeviceDetails
