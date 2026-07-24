@@ -35,11 +35,12 @@ Lib.Card {
             Layout.rowSpan: small ? 2 : 1
             enabled: mediaPlayerPage.track || (mediaPlayerPage.playbackStatus > Mpris.PlaybackStatus.Stopped) ? true : false
 
-            ColorOverlay {
+            MultiEffect {
                 visible: !mediaPlayerPage.albumArt && audioThumb.enabled
                 anchors.fill: audioThumb
                 source: audioThumb
-                color: Kirigami.Theme.textColor
+                colorizationColor: Kirigami.Theme.textColor
+                colorization: 1.0
             }
 
             layer.enabled: audioThumb.enabled
