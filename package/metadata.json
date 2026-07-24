@@ -36,7 +36,7 @@
 		"ServiceTypes": [
 			"Plasma/Applet"
 		],
-		"Version": "2.8.0-b3l0wz3r0.3",
+		"Version": "2.8.0-b3l0wz3r0.4",
 		"Website": "https://github.com/Below-Z3R0/b3l0wz3r0-kde-control-station"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",

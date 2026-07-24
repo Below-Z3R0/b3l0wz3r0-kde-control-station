@@ -1,10 +1,10 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 //import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 import org.kde.plasma.private.mpris as Mpris
 
@@ -42,17 +42,14 @@ Lib.Card {
                 color: Kirigami.Theme.textColor
             }
 
-            layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: Item {
-                    width: audioThumb.width
-                    height: audioThumb.height
-                    Rectangle {
-                        anchors.centerIn: parent
-                        width: audioThumb.adapt ? audioThumb.width : Math.min(audioThumb.width, audioThumb.height)
-                        height: audioThumb.adapt ? audioThumb.height : width
-                        radius: 12//Math.min(width, height)
-                    }
+            layer.enabled: audioThumb.enabled
+            layer.effect: MultiEffect {
+                maskEnabled: true
+                maskSource: Rectangle {
+                    anchors.centerIn: parent
+                    width: audioThumb.adapt ? audioThumb.width : Math.min(audioThumb.width, audioThumb.height)
+                    height: audioThumb.adapt ? audioThumb.height : width
+                    radius: 12
                 }
             }
         }

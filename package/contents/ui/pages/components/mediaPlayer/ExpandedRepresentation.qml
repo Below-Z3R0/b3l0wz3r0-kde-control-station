@@ -9,7 +9,7 @@
 
 import QtQuick
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 3.0 as PlasmaComponents3
@@ -209,21 +209,13 @@ PlasmaExtras.Representation {
             anchors.verticalCenter: albumArt.verticalCenter
             visible: (albumArt.animating || albumArt.hasImage) && !softwareRendering
 
-            layer.enabled: !softwareRendering
-            layer.effect: HueSaturation {
-                cached: true
-
-                lightness: -0.2
-                saturation: 0.9
-
-                layer.enabled: true
-                layer.effect: FastBlur {
-                    cached: true
-
-                    radius: 128
-
-                    transparentBorder: true
-                }
+            layer.enabled: (albumArt.animating || albumArt.hasImage) && !softwareRendering
+            layer.effect: MultiEffect {
+                brightness: -0.1
+                saturation: 1.45
+                blurEnabled: true
+                blurMax: 64
+                blur: 1.0
             }
             // use State to avoid unnecessary reevaluation of width and height
             states: State {

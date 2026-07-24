@@ -1,7 +1,7 @@
-import QtQuick 2.15
-import QtQml 2.15
-import QtQuick.Layouts 1.15
-import Qt5Compat.GraphicalEffects
+import QtQuick
+import QtQml
+import QtQuick.Layouts
+import QtQuick.Effects
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
@@ -85,15 +85,14 @@ Rectangle {
             color: root.themeBgColor
             radius: cornerRadius
         }
-        DropShadow {
+        MultiEffect {
             anchors.fill: shadowWidget
             source: shadowWidget
-            transparentBorder: true
-            horizontalOffset: 0
-            verticalOffset: 2
-            radius: 12
-            samples: 25
-            color: "black"
+            shadowEnabled: true
+            shadowColor: "black"
+            shadowVerticalOffset: 2
+            shadowHorizontalOffset: 0
+            shadowBlur: 1.5
         }
     }
 

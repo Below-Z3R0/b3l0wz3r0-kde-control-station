@@ -6,7 +6,6 @@ import org.kde.plasma.components as PlasmaComponents
 import org.kde.kquickcontrolsaddons as KQuickAddons
 import org.kde.coreaddons as KCoreAddons
 import org.kde.plasma.workspace.components 2.0
-import Qt5Compat.GraphicalEffects
 import org.kde.kirigami as Kirigami
 
 import "../lib" as Lib
