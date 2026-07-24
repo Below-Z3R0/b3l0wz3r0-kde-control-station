@@ -25,8 +25,8 @@ PageTemplate {
         id: config
     }
 
-    property bool volumeFeedback: config.audioFeedback
-    property bool globalMute: config.globalMute
+    property bool volumeFeedback: config ? config.audioFeedback : false
+    property bool globalMute: config ? config.globalMute : false
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
@@ -406,7 +406,7 @@ PageTemplate {
                 id: raiseMaximumVolumeCheckbox
                 Layout.fillWidth: true
 
-                checked: config.raiseMaximumVolume
+                checked: config ? config.raiseMaximumVolume : false
 
                 Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
                 KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
@@ -417,8 +417,10 @@ PageTemplate {
                 text: i18n("Raise maximum volume")
 
                 onToggled: {
-                    config.raiseMaximumVolume = checked;
-                    config.save();
+                    if (config) {
+                        config.raiseMaximumVolume = checked;
+                        config.save();
+                    }
                     raiseMaxVolumeWarning.visible = checked;
                 }
             }

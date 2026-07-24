@@ -60,7 +60,7 @@ PlasmaComponents3.ItemDelegate {
         
         Kirigami.Icon {
             id: icon
-            source: powerManagementItem.isManuallyInhibited || powerManagementItem.inhibitions.length > 0 ? "system-suspend-inhibited" : "system-suspend-uninhibited"
+            source: powerManagementItem.isManuallyInhibited || (powerManagementItem.inhibitions || []).length > 0 ? "system-suspend-inhibited" : "system-suspend-uninhibited"
             Layout.alignment: Qt.AlignTop
             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -86,7 +86,7 @@ PlasmaComponents3.ItemDelegate {
                 PlasmaComponents3.Label {
                     id: pmStatusLabel
                     Layout.alignment: Qt.AlignRight | Qt.AlignTop
-                    text: powerManagementItem.isManuallyInhibited || powerManagementItem.inhibitions.length > 0 ? i18nc("Sleep and Screen Locking after Inactivity", "Blocked") : i18nc("Sleep and Screen Locking after Inactivity", "Automatic")
+                    text: powerManagementItem.isManuallyInhibited || (powerManagementItem.inhibitions || []).length > 0 ? i18nc("Sleep and Screen Locking after Inactivity", "Blocked") : i18nc("Sleep and Screen Locking after Inactivity", "Automatic")
                     textFormat: Text.PlainText
                 }
             }
@@ -165,7 +165,7 @@ PlasmaComponents3.ItemDelegate {
                 id: inhibitionReasonsLayout
 
                 Layout.fillWidth: false
-                visible: powerManagementItem.inhibitsLidAction || (powerManagementItem.inhibitions.length > 0)
+                visible: powerManagementItem.inhibitsLidAction || ((powerManagementItem.inhibitions || []).length > 0)
 
                 InhibitionHint {
                   anchors.fill:parent
@@ -177,14 +177,14 @@ PlasmaComponents3.ItemDelegate {
                 PlasmaComponents3.Label {
                     id: inhibitionExplanation
                     Layout.fillWidth: true
-                    visible: powerManagementItem.inhibitions.length > 1
+                    visible: (powerManagementItem.inhibitions || []).length > 1
                     font: Kirigami.Theme.smallFont
                     wrapMode: Text.WordWrap
                     elide: Text.ElideRight
                     maximumLineCount: 3
                     text: i18np("%1 application is currently blocking sleep and screen locking:",
                                 "%1 applications are currently blocking sleep and screen locking:",
-                                powerManagementItem.inhibitions.length)
+                                (powerManagementItem.inhibitions || []).length)
                     textFormat: Text.PlainText
                 }
 
