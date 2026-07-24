@@ -8,8 +8,8 @@
 			}
 		],
 		"Category": "Utilities",
-		"Description": "A modern control station for plasma based on the awesome work of prayag2!",
-		"Description[de]": "Eine moderne Steuerstation für Plasma, basierend auf der großartigen Arbeit von prayag2!",
+		"Description": "A modern control station for plasma — b3l0wz3r0 fork",
+		"Description[de]": "Eine moderne Steuerstation für Plasma — b3l0wz3r0-Fork",
 		"Description[fr]": "Une station de contrôle moderne pour Plasma basée sur l'excellent travail de prayag2 !",
 		"Description[ko]": "prayag2의 훌륭한 작업물을 기반으로 한 Plasma용 현대적인 제어 센터입니다!",
 		"Description[nl]": "Een modern bedieningspaneel voor Plasma, gebaseerd op het geweldige werk van @prayag2!",
@@ -20,9 +20,9 @@
 		"Description[zh_Hans]": "基于 prayag2 杰作的现代化 Plasma 控制中心",
 		"Description[zh_Hant]": "基於 prayag2 傑作的現代化 Plasma 控制中心",
 		"Icon": "configure-toolbars",
-		"Id": "KdeControlStation",
+		"Id": "b3l0wz3r0-kde-control-station",
 		"License": "GPLv3",
-		"Name": "KDE control station",
+		"Name": "KDE Control Station",
 		"Name[de]": "KDE Kontrollzentrum",
 		"Name[fr]": "Station de contrôle KDE",
 		"Name[ko]": "KDE 제어 센터",
@@ -36,8 +36,8 @@
 		"ServiceTypes": [
 			"Plasma/Applet"
 		],
-		"Version": "2.8.0",
-		"Website": "https://github.com/EliverLara/kde-control-station/tree/plasma6"
+		"Version": "2.8.0-b3l0wz3r0.1",
+		"Website": "https://github.com/Below-Z3R0/b3l0wz3r0-kde-control-station"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
 	"X-Plasma-MainScript": "ui/main.qml",

@@ -1,14 +1,24 @@
 <div align="center">
 
-# KDE Control Station
+# b3l0wz3r0 KDE Control Station
 
-A beautiful and modern configuration center for KDE plasma based on the awesome [kde_controlcentre](https://github.com/Prayag2/kde_controlcentre) by [Prayag2](https://github.com/Prayag2/)
+Fork by **Below-Z3R0** ([github.com/Below-Z3R0](https://github.com/Below-Z3R0))
+
+> A beautiful and modern configuration center for KDE plasma based on the awesome [kde_controlcentre](https://github.com/Prayag2/kde_controlcentre) by [Prayag2](https://github.com/Prayag2/)
 
 ![main-widget](assets/KCS2.0.png)
 
 ![layouts](assets/layouts.png)
 ![layouts](assets/config.png)
 </div>
+
+## About this fork
+
+This is a **b3l0wz3r0** maintained fork of [EliverLara/kde-control-station](https://github.com/EliverLara/kde-control-station).
+
+- **ID**: `b3l0wz3r0-kde-control-station`
+- **Upstream**: [EliverLara/kde-control-station](https://github.com/EliverLara/kde-control-station/tree/plasma6)
+- **Purpose**: Independent namespace so updates from upstream don't overwrite local changes.
 
 ## Key features
 
