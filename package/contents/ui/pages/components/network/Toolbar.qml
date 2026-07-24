@@ -89,6 +89,7 @@ RowLayout {
                 }
                 Connections {
                     target: handler
+            ignoreUnknownSignals: true
                     function onScanningChanged() {
                         if (handler.scanning) {
                             timer.restart();
@@ -178,6 +179,7 @@ RowLayout {
 
         Connections {
             target: handler
+            ignoreUnknownSignals: true
             function onHotspotCreated() {
                 hotspotButton.checked = true
                 tooltip.text = i18n("Disable Hotspot")
