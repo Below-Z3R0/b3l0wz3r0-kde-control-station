@@ -24,7 +24,7 @@ msgstr "Stacja kontroli KDE"
 
 #: ../metadata.json
 msgid "A modern control station for plasma b3l0wz3r0 fork!"
-msgstr "Nowoczesna stacja kontroli dla Plasma oparta na wspaniałej pracy prayag2!"
+msgstr "Nowoczesna stacja kontroli dla Plasma fork b3l0wz3r0!"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"

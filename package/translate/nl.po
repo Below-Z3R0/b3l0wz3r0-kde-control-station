@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KdeControlStation\n"
-"Report-Msgid-Bugs-To: https://github.com/EliverLara/kde-control-station/tree/"
+"Report-Msgid-Bugs-To: https://github.com/Below-Z3R0/b3l0wz3r0-kde-control-station"
 "plasma6\n"
 "POT-Creation-Date: 2026-01-22 17:26-0600\n"
 "PO-Revision-Date: 2025-09-06 11:46+0200\n"
@@ -29,7 +29,7 @@ msgid ""
 "A modern control station for plasma b3l0wz3r0 fork!"
 msgstr ""
 "Een modern bedieningspaneel voor Plasma, gebaseerd op het geweldige werk van "
-"@prayag2!"
+"b3l0wz3r0 fork!"
 
 #: ../contents/config/config.qml
 #: ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml

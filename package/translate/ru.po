@@ -23,7 +23,7 @@ msgstr "Панель управления KDE"
 
 #: ../metadata.json
 msgid "A modern control station for plasma b3l0wz3r0 fork!"
-msgstr "Современная панель управления для Plasma, основанная на замечательной работе prayag2!"
+msgstr "Современная панель управления для Plasma, форк b3l0wz3r0!"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"

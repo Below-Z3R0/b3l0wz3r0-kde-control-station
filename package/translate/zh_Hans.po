@@ -24,7 +24,7 @@ msgstr "KDE 控制中心"
 
 #: ../metadata.json
 msgid "A modern control station for plasma b3l0wz3r0 fork!"
-msgstr "基于 prayag2 杰作的现代化 Plasma 控制中心"
+msgstr "b3l0wz3r0 分支现代化 Plasma 控制中心"
 
 #: ../contents/config/config.qml ../contents/ui/layouts/components/ControlCenter/LeftColumn.qml
 msgid "Appearance"
