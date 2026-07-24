@@ -99,6 +99,7 @@ PageTemplate {
 
         contentItem: ListView {
             id: listView
+            reuseItems: true
 
             model: (BluezQt.Manager.adapters.length > 0 && !BluezQt.Manager.bluetoothBlocked) ? root.plasmaVersion < 2 ? oldDevicesModel : devicesModel : null
             clip: true

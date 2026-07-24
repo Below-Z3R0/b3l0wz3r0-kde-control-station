@@ -650,7 +650,7 @@ Item {
                 flat: false,
                 roundedWidget: false,
                 isLongButton: false,
-                command: "xdg-open 'https://bit.ly/3yCFTip'",
+                command: "echo 'Configure me in Custom layout settings'",
                 title: "cmd",
                 showTitle: true,
                 icon: "system-run-symbolic"
@@ -1323,7 +1323,7 @@ Item {
                 flat: false,
                 roundedWidget: false,
                 isLongButton: false,
-                command: "xdg-open 'https://bit.ly/3yCFTip'",
+                command: "echo 'Configure me in Custom layout settings'",
                 title: "cmd",
                 showTitle: true,
                 icon: "system-run-symbolic"

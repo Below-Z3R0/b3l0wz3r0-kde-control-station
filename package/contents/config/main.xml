@@ -105,9 +105,9 @@
             <default>false</default>
         </entry>
         
-        <!--      HEHEHE GET RICKROLLED LOL        -->
+        <!--      b3l0wz3r0 fork: removed Rickroll default      -->
         <entry name="cmdRun1" type="string">
-            <default>xdg-open "https://shattereddisk.github.io/rickroll/rickroll.mp4"</default>
+            <default>echo "Configure me in settings"</default>
         </entry>
         <entry name="cmdTitle1" type="string">
             <default>Command Button</default>
@@ -116,7 +116,7 @@
             <default>system-run-symbolic</default>
         </entry>
         <entry name="cmdRun2" type="string">
-            <default>xdg-open "https://bit.ly/3yCFTip"</default>
+            <default>echo "Configure me in settings"</default>
         </entry>
         <entry name="cmdTitle2" type="string">
             <default>Command Button</default>

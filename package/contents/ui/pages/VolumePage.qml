@@ -309,6 +309,7 @@ PageTemplate {
                     anchors.fill: parent
                     spacing: 0
                     ListView {
+                        reuseItems: true
                         id: upperSection
                         visible: count //&& !fullRep.hiddenTypes.includes(scrollView.upperType)
                         interactive: false

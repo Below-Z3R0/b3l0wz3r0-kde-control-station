@@ -47,41 +47,49 @@ Item {
     // System session actions page
     Pages.SystemSessionActionsPage {
         id: systemSessionActionsPage
+        visible: false
     }
 
     // Night Light Page
     Pages.NightLightPage {
         id: nightLightPage
+        visible: false
     }
 
     // Volume devices Page
     Pages.VolumePage {
         id: volumePage
+        visible: false
     }
 
     // Battery devices Page
     Pages.BatteryPage {
         id: batteryPage
+        visible: false
     }
 
     // Media player Page
     Pages.MediaPlayerPage {
         id: mediaPlayerPage
+        visible: false
     }
 
     // Brightness control Page
     Pages.BrightnessControlPage {
         id: brightnessControlPage
+        visible: false
     }
 
     // Bluetooth control Page
     Pages.BluetoothPage {
         id: bluetoothPage
+        visible: false
     }
 
     // Network control Page
     Pages.NetworkPage {
         id: networkPage
+        visible: false
     }
 
     Loader {
